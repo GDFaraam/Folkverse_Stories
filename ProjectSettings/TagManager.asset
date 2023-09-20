@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Pole
+  - Longer Pole
+  - C Pole
+  - Enemy
+  - Checkpoint
+  - Wrong Pole
+  - Fake
+  - Grass
+  - Tall Grass
+  - Hidden Area
+  - Tree
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Grasses
+    uniqueID: 762812993
+    locked: 0
+  - name: Player Sprite
+    uniqueID: 1784124363
+    locked: 0
+  - name: Poles
+    uniqueID: 3527372257
+    locked: 0
+  - name: Canvas
+    uniqueID: 1654536917
+    locked: 0
+  - name: Ground
+    uniqueID: 4046645577
+    locked: 0
+  - name: Clutters
+    uniqueID: 2358703257
+    locked: 0
+  - name: Characters
+    uniqueID: 3863673265
+    locked: 0
