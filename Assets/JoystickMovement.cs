@@ -22,6 +22,8 @@ public class JoystickMovement : MonoBehaviour
 
     void Update(){
 
+        joystickOriginalPos = joystickBG.transform.position;
+
         float horizontalInput = joystickVec.x;
         float verticalInput = joystickVec.y;
 
@@ -34,25 +36,25 @@ public class JoystickMovement : MonoBehaviour
     }
 
     public void Drag(BaseEventData baseEventData)
-{
-    PointerEventData pointerEventData = baseEventData as PointerEventData;
-    Vector2 dragPos = pointerEventData.position;
-
-    joystickVec = (dragPos - joystickOriginalPos).normalized;
-
-    float joystickDist = Vector2.Distance(dragPos, joystickOriginalPos);
-
-    if (joystickDist < joystickRadius)
     {
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        Vector2 dragPos = pointerEventData.position;
+
+        joystickVec = (dragPos - joystickOriginalPos).normalized;
+
+        float joystickDist = Vector2.Distance(dragPos, joystickOriginalPos);
+
+        if (joystickDist < joystickRadius)
+        {
         joystick.transform.position = dragPos;
-    }
-    else
-    {
+        }
+        else
+        {
         joystick.transform.position = joystickOriginalPos + joystickVec * joystickRadius;
-    }
+        }
 
-    joystickTouchPos = joystick.transform.position;
-}
+        joystickTouchPos = joystick.transform.position;
+    }
 
 
 
