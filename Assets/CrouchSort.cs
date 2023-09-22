@@ -9,20 +9,7 @@ public class CrouchSort : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (spriteUpper == null){
-            spriteUpper = animator.gameObject.GetComponent<GrassInteraction>().spriteUpper;
-        }
-
-        if (spriteLower == null){
-            spriteLower = animator.gameObject.GetComponent<GrassInteraction>().spriteLower;
-        }
-
-        foreach (var SpritesUp in spriteUpper){
-            SpritesUp.sortingOrder = 5;
-        }
-        foreach (var SpritesLow in spriteLower){
-            SpritesLow.sortingOrder = 4;
-        }
+        
     }
 
 
@@ -35,12 +22,7 @@ public class CrouchSort : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        foreach (var SpritesUp in spriteUpper){
-            SpritesUp.sortingOrder = 6;
-        }
-        foreach (var SpritesLow in spriteLower){
-            SpritesLow.sortingOrder = 5;
-        }
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

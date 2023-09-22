@@ -3,11 +3,7 @@ using System.Collections;
 
 public class GrassInteraction : MonoBehaviour
 {
-    public PlayerMovement playerMovement;
-    public SpriteRenderer[] spriteUpper;
-    public SpriteRenderer[] spriteLower;
     private bool tallGrass = false;
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,15 +18,6 @@ public class GrassInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Tall Grass")){
             tallGrass = true;
             UpdateWindDirection(collision.gameObject);
-            SpriteRenderer spriteRenderer = collision.gameObject.GetComponent<SpriteRenderer>();
-            
-            if (spriteRenderer != null)
-            {
-                Color currentColor = spriteRenderer.color;
-                currentColor.a = 0.7f;
-
-                spriteRenderer.color = currentColor;
-            }
         }
     }
 
@@ -46,13 +33,14 @@ public class GrassInteraction : MonoBehaviour
 
         MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
         grassRenderer.GetPropertyBlock(propBlock);
-        propBlock.SetFloat("_WindStrength", 3f);
-        propBlock.SetFloat("_WindInfluenceMask", 3.5f);
         if (tallGrass){
-            propBlock.SetFloat("_WindSpeed", 1.5f);
+            propBlock.SetFloat("_WindStrength", 1f);
+            propBlock.SetFloat("_WindInfluenceMask", 1f);
+            propBlock.SetFloat("_WindScale", 2f);
         }
-        if (playerMovement.playerSpeed == 5f){
-            propBlock.SetFloat("_WindStrength", 5f);
+        else {
+            propBlock.SetFloat("_WindStrength", 3f);
+            propBlock.SetFloat("_WindInfluenceMask", 3.5f);
         }
         grassRenderer.SetPropertyBlock(propBlock);
     }
@@ -70,17 +58,8 @@ public class GrassInteraction : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("Tall Grass")){
-            tallGrass = false;
             UpdateWindDirectionExit(collision.gameObject);
-            SpriteRenderer spriteRenderer = collision.gameObject.GetComponent<SpriteRenderer>();
-            
-            if (spriteRenderer != null)
-            {
-                Color currentColor = spriteRenderer.color;
-                currentColor.a = 1f;
-
-                spriteRenderer.color = currentColor;
-            }
+            tallGrass = false;
         }
     }
 
@@ -97,6 +76,7 @@ public class GrassInteraction : MonoBehaviour
         grassRenderer.GetPropertyBlock(propBlock);
         propBlock.SetFloat("_WindStrength", 1f);
         propBlock.SetFloat("_WindInfluenceMask", 4f);
+        propBlock.SetFloat("_WindScale", 1f);
         grassRenderer.SetPropertyBlock(propBlock);
     }
 }
