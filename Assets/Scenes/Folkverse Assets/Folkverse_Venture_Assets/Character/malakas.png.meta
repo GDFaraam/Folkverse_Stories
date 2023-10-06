@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -4946,7 +4946,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       malakas_90: -827070570
-      malakas_176: 995811605
+      malakas_106: 206278660
       malakas_3: -1607929151
       malakas_119: 415492012
       malakas_222: 1612898330
@@ -5076,16 +5076,16 @@ TextureImporter:
       malakas_41: -104698620
       malakas_189: 2061821101
       malakas_78: 1544325261
-      malakas_182: 559414210
       malakas_199: -146581876
       malakas_141: -441236632
-      malakas_193: 585178783
+      malakas_182: 559414210
       malakas_101: 1317841400
       malakas_98: -231680527
       malakas_115: 1166273272
       malakas_149: 2014573157
       malakas_108: 855925656
       malakas_1: 827160192
+      malakas_193: 585178783
       malakas_60: -737776913
       malakas_99: -1887254331
       malakas_183: -1072982855
@@ -5103,8 +5103,8 @@ TextureImporter:
       malakas_135: 1165259642
       malakas_188: 247238595
       malakas_13: -179303420
-      malakas_37: 1232620396
       malakas_168: -840478181
+      malakas_37: 1232620396
       malakas_213: 214365182
       malakas_145: -162620722
       malakas_31: 942981878
@@ -5174,7 +5174,7 @@ TextureImporter:
       malakas_96: 282366245
       malakas_133: -2026844406
       malakas_179: -1791496829
-      malakas_106: 206278660
+      malakas_176: 995811605
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

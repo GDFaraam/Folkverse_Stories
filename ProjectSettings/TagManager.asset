@@ -15,6 +15,7 @@ TagManager:
   - Tall Grass
   - Hidden Area
   - Tree
+  - Boy
   layers:
   - Default
   - TransparentFX
@@ -61,11 +62,11 @@ TagManager:
   - name: Poles
     uniqueID: 3527372257
     locked: 0
-  - name: Canvas
-    uniqueID: 1654536917
-    locked: 0
   - name: Ground
     uniqueID: 4046645577
+    locked: 0
+  - name: FireFlies
+    uniqueID: 2077124591
     locked: 0
   - name: Clutters
     uniqueID: 2358703257
@@ -75,4 +76,7 @@ TagManager:
     locked: 0
   - name: Huge Trees
     uniqueID: 2339450167
+    locked: 0
+  - name: Canvas
+    uniqueID: 1654536917
     locked: 0

@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -3891,13 +3891,13 @@ TextureImporter:
       maganda_6: -920436843
       maganda_171: -684768547
       maganda_71: 782910197
-      maganda_10: 1204144845
+      maganda_167: -207711166
       maganda_4: -9246481
       maganda_114: -1632434538
       maganda_157: -1775034128
       maganda_118: 2054313076
       maganda_138: -312412272
-      maganda_167: -207711166
+      maganda_10: 1204144845
       maganda_140: 2081496551
       maganda_5: -1487515983
       maganda_17: -2024470312

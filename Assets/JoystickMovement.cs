@@ -13,11 +13,14 @@ public class JoystickMovement : MonoBehaviour
     private float joystickRadius;
     public Animator characterAnimator;
 
+    public GameObject fadeIn;
+
     // Start is called before the first frame update
     void Start()
     {
         joystickOriginalPos = joystickBG.transform.position;
         joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4;
+        StartCoroutine(fadeInGone());
     }
 
     void Update(){
@@ -63,5 +66,10 @@ public class JoystickMovement : MonoBehaviour
         joystickVec = Vector2.zero;
         joystick.transform.position = joystickOriginalPos;
         joystickBG.transform.position = joystickOriginalPos;
+    }
+
+    IEnumerator fadeInGone(){
+        yield return new WaitForSeconds(5f);
+        fadeIn.SetActive(false);
     }
 }

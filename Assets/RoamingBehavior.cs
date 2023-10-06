@@ -2,79 +2,47 @@ using UnityEngine;
 
 public class RoamingBehavior : MonoBehaviour
 {
-    public float maxRoamingDistance = 5f; // Maximum distance the object can roam from its initial position.
-    public float moveSpeed = 2f; // Speed at which the object moves.
-    private Transform target;
-    public float baseMoveSpeed = 5.0f;
-    private bool targetIsActive = false;
+    public float maxRoamingDistance = 5f;
+    public float moveSpeed = 2f;
     private Vector2 initialPosition;
     private Vector2 targetPosition;
     private Rigidbody2D rb;
-    public Animator anim;
-    private BoxCollider2D boxCollider;
-
+    private Animator animator;
 
     private void Start()
     {
-        Debug.Log("Target is" + target);
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         initialPosition = rb.position;
         FindNewRandomTarget();
-        boxCollider = GetComponent<BoxCollider2D>();
-        SetColliderSize(8f, 15f, 15f);
     }
 
     private void Update()
     {
-        if (!targetIsActive){
+        // Check if the object has reached its target position.
         if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
         {
             FindNewRandomTarget();
         }
-        }
 
+        // Move towards the target position.
         Vector2 moveDirection = (targetPosition - rb.position).normalized;
         rb.velocity = moveDirection * moveSpeed;
 
-        if (anim.GetBool("isHiddenInTallGrass")){
-            SetColliderSize(4f, 4f, 4f);
-        }
-        else{
-            SetColliderSize(8f, 15f, 15f);
-        }
-        if (targetIsActive){
-        Vector3 directionToTarget = (target.position - transform.position).normalized;
-        float distanceToTarget = Vector3.Distance(transform.position, target.position);
-        float moveSpeed = Mathf.Lerp(baseMoveSpeed, baseMoveSpeed * 2, Mathf.Clamp01(distanceToTarget / 10.0f));
-        transform.position += directionToTarget * moveSpeed * Time.deltaTime;
-        }
+        // Update animator parameters based on the movement direction.
+        UpdateAnimatorParameters(moveDirection);
     }
-
-    void OnTriggerEnter2D(Collider2D coll)
-    {
-        if (coll.gameObject.CompareTag("Player"))
-        {
-            if (target == null){
-            target = coll.gameObject.transform;
-            targetIsActive = true;
-            }
-        }
-    }
-
-
 
     private void FindNewRandomTarget()
     {
+        // Generate a random target position within the maximum roaming distance.
         targetPosition = initialPosition + Random.insideUnitCircle * maxRoamingDistance;
     }
 
-    private void SetColliderSize(float offsetX, float sizeX, float sizeY)
+    private void UpdateAnimatorParameters(Vector2 moveDirection)
     {
-        if (boxCollider != null)
-        {
-            // Set the offset and size of the BoxCollider2D.
-            boxCollider.offset = new Vector2(offsetX, 0f);
-            boxCollider.size = new Vector2(sizeX, sizeY);
-        }
+        // Set boolean parameters in the animator based on the movement direction.
+        animator.SetBool("isLeft", moveDirection.x < 0);
+        animator.SetBool("isRight", moveDirection.x > 0);
     }
 }
