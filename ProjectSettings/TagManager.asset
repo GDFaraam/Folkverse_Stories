@@ -53,8 +53,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water
+    uniqueID: 1139302321
+    locked: 0
+  - name: Ground
+    uniqueID: 2939930325
+    locked: 0
+  - name: Elevated Ground
+    uniqueID: 926615853
+    locked: 0
   - name: Grasses
     uniqueID: 762812993
+    locked: 0
+  - name: World
+    uniqueID: 95478431
     locked: 0
   - name: Player Sprite
     uniqueID: 1784124363

@@ -45,4 +45,10 @@ public class RoamingBehavior : MonoBehaviour
         animator.SetBool("isLeft", moveDirection.x < 0);
         animator.SetBool("isRight", moveDirection.x > 0);
     }
+
+    void OnCollisionEnter2D(Collision2D coll){
+        if (coll.gameObject.CompareTag("Tree")){
+            FindNewRandomTarget();
+        }
+    }
 }

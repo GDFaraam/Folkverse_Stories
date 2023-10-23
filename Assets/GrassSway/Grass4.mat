@@ -56,9 +56,9 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _WindInfluenceMask: 4
-    - _WindScale: 1
+    - _WindScale: 3
     - _WindSpeed: 2
-    - _WindStrength: 4
+    - _WindStrength: 3
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
