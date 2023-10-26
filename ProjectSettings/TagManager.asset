@@ -23,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Bird
   - 
   - 
   - 
@@ -91,4 +91,7 @@ TagManager:
     locked: 0
   - name: Canvas
     uniqueID: 1654536917
+    locked: 0
+  - name: Sky
+    uniqueID: 186733277
     locked: 0
