@@ -12,6 +12,7 @@ public class JoystickMovement : MonoBehaviour
     private Vector2 joystickOriginalPos;
     private float joystickRadius;
     public Animator characterAnimator;
+    public Animator characterAnimatorShadow;
 
     public GameObject fadeIn;
 
@@ -36,6 +37,13 @@ public class JoystickMovement : MonoBehaviour
         characterAnimator.SetBool("isRight", horizontalInput > 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
 
         characterAnimator.SetBool("isIdle", joystickVec == Vector2.zero);
+
+        characterAnimatorShadow.SetBool("isUp", verticalInput > 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
+        characterAnimatorShadow.SetBool("isDown", verticalInput < 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
+        characterAnimatorShadow.SetBool("isLeft", horizontalInput < 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
+        characterAnimatorShadow.SetBool("isRight", horizontalInput > 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
+
+        characterAnimatorShadow.SetBool("isIdle", joystickVec == Vector2.zero);
     }
 
     public void Drag(BaseEventData baseEventData)

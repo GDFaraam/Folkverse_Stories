@@ -5,13 +5,16 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
-    
-    void LateUpdate()
+    public float smoothTime = 0.125f; // Adjust this to control the smoothness
+    private Vector3 velocity = Vector3.zero;
+
+    private void LateUpdate(){
+    if (target != null)
     {
-        if (target != null)
-        {
-            Vector3 newPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
-            transform.position = newPosition;
-        }
+        Vector3 desiredPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
+        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
+        transform.position = smoothedPosition;
     }
+ }
+
 }

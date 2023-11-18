@@ -92,6 +92,6 @@ public class SceneManigger : MonoBehaviour
     
     IEnumerator NextScene(){
         yield return new WaitForSeconds(9f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

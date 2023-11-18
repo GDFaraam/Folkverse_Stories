@@ -794,7 +794,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"b824aab319a462c4392e9c75d3eac6f8\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":8400000,\"guid\":\"76c115eafdb79b44a9a2b621a5aafe21\",\"type\":2}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -1508,7 +1508,7 @@
     "m_StageCapability": 3,
     "m_Value": {
         "x": 1.0,
-        "y": -1.0
+        "y": 1.0
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -1632,7 +1632,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Y",
     "m_StageCapability": 3,
-    "m_Value": 1.0,
+    "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": [
         "Y"

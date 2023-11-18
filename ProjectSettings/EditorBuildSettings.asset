@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Malakas At si Maganda Intro.unity
+    path: Assets/Scenes/Lobby World Map.unity
+    guid: b2c878adc803d6143915effcf3e96be1
+  - enabled: 1
+    path: Assets/Scenes/Si Malakas at Si Maganda/Malakas At si Maganda Intro.unity
     guid: 746543e5e75efd442b04c5985783db45
   - enabled: 1
-    path: Assets/Scenes/Folkverse.unity
+    path: Assets/Scenes/Si Malakas at Si Maganda/Folkverse.unity
     guid: a45f1ed448baa4f4ea1298c4aa8d959e
   - enabled: 1
-    path: Assets/Scenes/Nature Scene.unity
+    path: Assets/Scenes/Si Malakas at Si Maganda/Nature Scene.unity
     guid: 9381c66787ff875438a69c84e325e18d
+  - enabled: 1
+    path: Assets/Scenes/Si Malakas at Si Maganda/Bamboo Scene.unity
+    guid: f4bbbf12576011b4195823445df6957a
   m_configObjects: {}

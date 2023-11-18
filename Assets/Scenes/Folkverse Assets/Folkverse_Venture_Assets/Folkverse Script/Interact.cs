@@ -32,6 +32,6 @@ public class Interact : MonoBehaviour
 
     IEnumerator phoenixScene(){
         yield return new WaitForSeconds (1.5f);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }
