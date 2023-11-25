@@ -11,7 +11,7 @@ public class JoystickMovement : MonoBehaviour
     private Vector2 joystickTouchPos;
     private Vector2 joystickOriginalPos;
     private float joystickRadius;
-    public Animator characterAnimator;
+    public Animator characterAnimator; 
     public Animator characterAnimatorShadow;
 
     public GameObject fadeIn;
@@ -22,6 +22,8 @@ public class JoystickMovement : MonoBehaviour
         joystickOriginalPos = joystickBG.transform.position;
         joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4;
         StartCoroutine(fadeInGone());
+        characterAnimator = this.gameObject.transform.parent.parent.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        characterAnimatorShadow = this.gameObject.transform.parent.parent.gameObject.transform.GetChild(3).gameObject.GetComponent<Animator>();
     }
 
     void Update(){
