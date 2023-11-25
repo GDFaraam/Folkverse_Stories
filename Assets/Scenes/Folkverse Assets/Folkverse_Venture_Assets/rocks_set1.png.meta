@@ -105,12 +105,12 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 50
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -1466,8 +1466,8 @@ TextureImporter:
       rocks_set1_36: 1276282274
       rocks_set1_75: -74825158
       rocks_set1_65: -1920902414
-      rocks_set1_7: 668011176
       rocks_set1_73: 515902030
+      rocks_set1_7: 668011176
       rocks_set1_3: 1428987503
       rocks_set1_56: 1240305178
       rocks_set1_30: -1725660494

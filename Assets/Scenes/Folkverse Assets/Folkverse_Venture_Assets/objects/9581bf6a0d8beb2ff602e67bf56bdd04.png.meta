@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2189,18 +2201,18 @@ TextureImporter:
       9581bf6a0d8beb2ff602e67bf56bdd04_17: -1773788107
       9581bf6a0d8beb2ff602e67bf56bdd04_4: 376609541
       9581bf6a0d8beb2ff602e67bf56bdd04_25: 1092527386
-      9581bf6a0d8beb2ff602e67bf56bdd04_39: 1689737719
       9581bf6a0d8beb2ff602e67bf56bdd04_59: -1730900251
       9581bf6a0d8beb2ff602e67bf56bdd04_36: 563273504
       9581bf6a0d8beb2ff602e67bf56bdd04_88: 750153052
-      9581bf6a0d8beb2ff602e67bf56bdd04_7: -1771368591
+      9581bf6a0d8beb2ff602e67bf56bdd04_39: 1689737719
       9581bf6a0d8beb2ff602e67bf56bdd04_60: 1419612188
+      9581bf6a0d8beb2ff602e67bf56bdd04_7: -1771368591
       9581bf6a0d8beb2ff602e67bf56bdd04_27: 472797401
-      9581bf6a0d8beb2ff602e67bf56bdd04_44: 2079288239
       9581bf6a0d8beb2ff602e67bf56bdd04_16: 105058841
       9581bf6a0d8beb2ff602e67bf56bdd04_34: 991161523
       9581bf6a0d8beb2ff602e67bf56bdd04_75: -735069199
       9581bf6a0d8beb2ff602e67bf56bdd04_18: -282336173
+      9581bf6a0d8beb2ff602e67bf56bdd04_44: 2079288239
       9581bf6a0d8beb2ff602e67bf56bdd04_41: -164019577
       9581bf6a0d8beb2ff602e67bf56bdd04_32: -1152780941
       9581bf6a0d8beb2ff602e67bf56bdd04_30: 262112516
