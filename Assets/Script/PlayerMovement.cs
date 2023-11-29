@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviourPun
     public RoleChecker role;
     public bool Teacher = false;
 
-    public JoystickMovement joystickMovement;
+    [SerializeField] public static JoystickMovement joystickMovement;
     
     public static GameObject LocalPlayerInstance;
 
@@ -50,17 +50,21 @@ public class PlayerMovement : MonoBehaviourPun
 
     void Update()
     {
-        if (photonView.IsMine)
+
+        if(photonView.IsMine)
         {
-
-
+            if (joystickMovement!=null)
+            {
             movement = joystickMovement.joystickVec;
+            }
+            else
+            {
+            Debug.LogError("JoystickMovement component not assigned in the Inspector.", this);
+            }
         }
-
-        if (!photonView.IsMine)
-        {
-            return;
-        }
+        
+  
+ 
 
 
         Teacher = role;
@@ -115,4 +119,7 @@ public class PlayerMovement : MonoBehaviourPun
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.LoadLevel("NEW LOBBY");
     }
+
+
+
 }

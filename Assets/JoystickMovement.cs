@@ -2,28 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Photon.Pun;
 
-public class JoystickMovement : MonoBehaviour
+public class JoystickMovement : MonoBehaviourPun    
 {
-    public GameObject joystick;
-    public GameObject joystickBG;
+    [SerializeField]public GameObject joystick;
+    [SerializeField]public GameObject joystickBG;
     public Vector2 joystickVec;
     private Vector2 joystickTouchPos;
     private Vector2 joystickOriginalPos;
     private float joystickRadius;
-    public Animator characterAnimator; 
-    public Animator characterAnimatorShadow;
+    [SerializeField]public Animator characterAnimator; 
+    [SerializeField]public Animator characterAnimatorShadow;
+    [SerializeField]public GameObject fadeIn;
+    public bool pvIsMine = false;
 
-    public GameObject fadeIn;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        joystickOriginalPos = joystickBG.transform.position;
-        joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4;
-        StartCoroutine(fadeInGone());
-        characterAnimator = this.gameObject.transform.parent.parent.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
-        characterAnimatorShadow = this.gameObject.transform.parent.parent.gameObject.transform.GetChild(3).gameObject.GetComponent<Animator>();
+        if(PlayerMovement.LocalPlayerInstance != null)
+        {
+            joystickOriginalPos = joystickBG.transform.position;
+            joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4;
+            StartCoroutine(fadeInGone());   
+        }
+        
     }
 
     void Update(){
@@ -33,19 +38,20 @@ public class JoystickMovement : MonoBehaviour
         float horizontalInput = joystickVec.x;
         float verticalInput = joystickVec.y;
 
-        characterAnimator.SetBool("isUp", verticalInput > 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
-        characterAnimator.SetBool("isDown", verticalInput < 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
-        characterAnimator.SetBool("isLeft", horizontalInput < 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
-        characterAnimator.SetBool("isRight", horizontalInput > 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
+            characterAnimator.SetBool("isUp", verticalInput > 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
+            characterAnimator.SetBool("isDown", verticalInput < 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
+            characterAnimator.SetBool("isLeft", horizontalInput < 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
+            characterAnimator.SetBool("isRight", horizontalInput > 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
 
-        characterAnimator.SetBool("isIdle", joystickVec == Vector2.zero);
+            characterAnimator.SetBool("isIdle", joystickVec == Vector2.zero);
 
-        characterAnimatorShadow.SetBool("isUp", verticalInput > 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
-        characterAnimatorShadow.SetBool("isDown", verticalInput < 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
-        characterAnimatorShadow.SetBool("isLeft", horizontalInput < 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
-        characterAnimatorShadow.SetBool("isRight", horizontalInput > 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
+            characterAnimatorShadow.SetBool("isUp", verticalInput > 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
+            characterAnimatorShadow.SetBool("isDown", verticalInput < 0 && Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput));
+            characterAnimatorShadow.SetBool("isLeft", horizontalInput < 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
+            characterAnimatorShadow.SetBool("isRight", horizontalInput > 0 && Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput));
 
-        characterAnimatorShadow.SetBool("isIdle", joystickVec == Vector2.zero);
+            characterAnimatorShadow.SetBool("isIdle", joystickVec == Vector2.zero);
+        
     }
 
     public void Drag(BaseEventData baseEventData)
