@@ -113,6 +113,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1765,11 +1789,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tileset_ground1_33: -1568744236
-      tileset_ground1_60: 1282075291
+      tileset_ground1_19: 355909856
+      tileset_ground1_49: 1716293762
       tileset_ground1_34: 1485169941
       tileset_ground1_39: -2078081175
-      tileset_ground1_49: 1716293762
+      tileset_ground1_60: 1282075291
       tileset_ground1_46: -1689676579
       tileset_ground1_40: 454276146
       tileset_ground1_23: 1058691939
@@ -1842,7 +1866,7 @@ TextureImporter:
       tileset_ground1_8: 1256922052
       tileset_ground1_22: -1079013079
       tileset_ground1_31: -250649834
-      tileset_ground1_19: 355909856
+      tileset_ground1_33: -1568744236
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -7,25 +7,22 @@ public class PlayerMovement : MonoBehaviourPun
 {
     public float moveSpeed = 5f;
     private Vector3 targetPosition;
-
     public Rigidbody2D rb;
     Vector2 movement;
-    Vector2 lastMoveDirection;
-
     public RoleChecker role;
     public bool Teacher = false;
-
-    [SerializeField] public static JoystickMovement joystickMovement;
-    
+    [SerializeField] public Joystick joystick;
     public static GameObject LocalPlayerInstance;
-
     public PhotonView view;
+    [SerializeField]public Animator characterAnimator; 
+    [SerializeField]public Animator characterAnimatorShadow;
+    [SerializeField] public GameObject PlayerUIPrefab;
+    public float speed;
 
     void Start()
     {
         
         rb = this.gameObject.GetComponent<Rigidbody2D>();
-        joystickMovement = this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(0).gameObject.GetComponent<JoystickMovement>();
 
         CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
@@ -41,33 +38,55 @@ public class PlayerMovement : MonoBehaviourPun
              Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
         }
 
-
-
+        if(photonView.IsMine)
+        {
+            if(PlayerUIPrefab != null)
+            {
+            GameObject _uiGo = Instantiate(PlayerUIPrefab);
+            _uiGo.SendMessage ("SetTarget", this, SendMessageOptions.RequireReceiver);
+            }
+        else
+            {
+            Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
+        }
+        }
+        
 
         
 
     }
 
+
+
     void Update()
     {
 
+
+        joystick = this.gameObject.transform.GetChild(5).gameObject.transform.GetChild(0).gameObject.GetComponent<Joystick>();
+
+        speed = movement.sqrMagnitude;
+
         if(photonView.IsMine)
         {
-            if (joystickMovement!=null)
-            {
-            movement = joystickMovement.joystickVec;
-            }
-            else
-            {
-            Debug.LogError("JoystickMovement component not assigned in the Inspector.", this);
-            }
+
+            movement.x = joystick.Horizontal;
+            movement.y = joystick.Vertical;
+        
         }
         
-  
+            characterAnimator.SetFloat("Horizontal", movement.x);
+            characterAnimator.SetFloat("Vertical", movement.y);
+            characterAnimator.SetFloat("speed", speed);
+
+
  
 
 
         Teacher = role;
+
+
+        
+        
     }
 
     private void Awake() 
@@ -83,6 +102,12 @@ public class PlayerMovement : MonoBehaviourPun
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    void CalledOnLevelWasLoaded()
+    {
+        GameObject _uiGo = Instantiate(this.PlayerUIPrefab);
+        _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

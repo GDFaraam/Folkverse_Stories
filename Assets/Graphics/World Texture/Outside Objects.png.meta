@@ -125,6 +125,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -6618,19 +6630,19 @@ TextureImporter:
       Outside Objects_97: 1823349591
       Outside Objects_205: -1063238217
       Outside Objects_103: -372047187
-      Outside Objects_84: -1640507285
+      Outside Objects_89: -1336299012
       Outside Objects_229: -831129385
+      Outside Objects_84: -1640507285
       Outside Objects_51: 1671029317
       Outside Objects_219: 12298096
       Outside Objects_265: 165221911
       Outside Objects_197: -372326039
       Outside Objects_189: -355771081
       Outside Objects_233: 1544657839
-      Outside Objects_230: 1401182450
-      Outside Objects_20: -794490765
       Outside Objects_296: 963673470
+      Outside Objects_230: 1401182450
       Outside Objects_35: 1819473699
-      Outside Objects_89: -1336299012
+      Outside Objects_20: -794490765
       Outside Objects_166: -1051607675
       Outside Objects_258: -55703284
       Outside Objects_171: 1436210383
