@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &836352934868443901
 Transform:
   m_ObjectHideFlags: 0
@@ -1324,6 +1324,10 @@ PrefabInstance:
     - target: {fileID: 594182070834308154, guid: bdf48bfd80aff2646aef7bc6b5c75c3e, type: 3}
       propertyPath: m_Name
       value: Leaf Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 594182070834308154, guid: bdf48bfd80aff2646aef7bc6b5c75c3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdf48bfd80aff2646aef7bc6b5c75c3e, type: 3}
