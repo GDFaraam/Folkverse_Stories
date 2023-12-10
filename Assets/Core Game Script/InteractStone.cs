@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class InteractStone : MonoBehaviour
 {
     public bool canTransition = false;
+
     void OnTriggerEnter2D (Collider2D coll){
         if (coll.gameObject.CompareTag("StonePedestal")){
             canTransition = true;
@@ -17,6 +18,17 @@ public class InteractStone : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
         SceneManager.LoadScene(nextSceneIndex);
+        canTransition = false;
         }
+    }
+
+    void OnTriggerExit2D (Collider2D coll){
+        if (coll.gameObject.CompareTag("StonePedestal")){
+            canTransition = false;
+        }
+    }
+
+    public void ToggleOutroScene(){
+        SceneManager.LoadScene(11);
     }
 }

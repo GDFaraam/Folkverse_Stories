@@ -24,7 +24,6 @@ public class PhoenixMovementCutscene : MonoBehaviour
         // Determine if the movement is primarily vertical.
         bool isVerticalMovement = Mathf.Abs(movementDirection.y) > Mathf.Abs(movementDirection.x);
 
-        // Set the animator parameters based on the movement direction.
         characterAnimator.SetBool("isUp", isVerticalMovement && movementDirection.y > 0);
         characterAnimator.SetBool("isDown", isVerticalMovement && movementDirection.y < 0);
         characterAnimator.SetBool("isLeft", !isVerticalMovement && movementDirection.x < 0);

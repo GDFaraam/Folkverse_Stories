@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 4352151386954581818}
   - component: {fileID: 4352151386954581820}
   - component: {fileID: 4352151386954581821}
+  - component: {fileID: 8867279034224691367}
   m_Layer: 0
   m_Name: Tree 3
   m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4352151386954581818
 Transform:
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7698ab0ad9521824ab11b83ae4a1baf2, type: 2}
+  - {fileID: 2100000, guid: bad566df3ed12f34f8cd1309648e7577, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 95478431
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 2049487691, guid: 04b3280519ce3c54ebfbede67d5bdc8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,3 +102,17 @@ CircleCollider2D:
   m_Offset: {x: 0.0487808, y: -0.3}
   serializedVersion: 2
   m_Radius: 0.89206123
+--- !u!114 &8867279034224691367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352151386954581819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: trees_plants_2

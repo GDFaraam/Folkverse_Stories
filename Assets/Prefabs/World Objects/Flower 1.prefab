@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 4792564927468582058}
   - component: {fileID: 4792564927468582060}
   - component: {fileID: 4792564927468582061}
+  - component: {fileID: -8907469522056385956}
   m_Layer: 0
   m_Name: Flower 1
   m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4792564927468582058
 Transform:
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5029e4b9408a69a41874662c451c26c0, type: 2}
+  - {fileID: 2100000, guid: 11e4b9f1a5e417141aa611a920b721c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 95478431
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dd09c4f14ee695d49b7e12b5a91e2869, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,3 +102,17 @@ CircleCollider2D:
   m_Offset: {x: 0.040213265, y: 0.5}
   serializedVersion: 2
   m_Radius: 1.1014874
+--- !u!114 &-8907469522056385956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4792564927468582059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Flower1

@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 1078655597199359005}
   - component: {fileID: 1078655597199359003}
   - component: {fileID: 1078655597199359006}
+  - component: {fileID: 1785185305606341717}
   m_Layer: 0
   m_Name: Bamboo 4
   m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1078655597199359005
 Transform:
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a3a03cfe895d2cd4291e5d148abd14b4, type: 2}
+  - {fileID: 2100000, guid: bad566df3ed12f34f8cd1309648e7577, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,14 +73,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 95478431
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -425266153, guid: 04b3280519ce3c54ebfbede67d5bdc8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.24, y: 8.14477}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,8 +103,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.2}
-    oldSize: {x: 2.2401562, y: 8.14}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.24, y: 8.14477}
+    newSize: {x: 2.24, y: 8.14477}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -111,3 +112,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.69271374, y: 2.3886776}
   m_EdgeRadius: 0
+--- !u!114 &1785185305606341717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078655597199359004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: trees_plants_10

@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 3675728248091527383}
   - component: {fileID: 3675728248091527377}
   - component: {fileID: 3675728248091527376}
+  - component: {fileID: -7389773873444239337}
   m_Layer: 0
   m_Name: Rock (4)
   m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3675728248091527383
 Transform:
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 95478431
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -883869441, guid: d8634581223130348a4b49915a8ff51b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,3 +102,17 @@ CircleCollider2D:
   m_Offset: {x: 0.00905635, y: -0.13932139}
   serializedVersion: 2
   m_Radius: 0.5926925
+--- !u!114 &-7389773873444239337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3675728248091527382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: rocks_set1_34

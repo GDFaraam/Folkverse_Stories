@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PHOTON/LOADING TO MAIN.unity
     guid: 7836603658065a3489238ad0c51e131f
+  - enabled: 1
+    path: Assets/Scenes/Si Malakas at Si Maganda/Folkverse Cutscene.unity
+    guid: b22025c240b7a694e94a5908d53dd2ee
+  - enabled: 1
+    path: Assets/Scenes/Alamat ng Pilipinas/Alamat ng Pilipinas.unity
+    guid: 5e7f92d88417b1d4c82c8bc48b0226da
   m_configObjects: {}
