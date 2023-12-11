@@ -34,10 +34,8 @@ public class SceneManigger : MonoBehaviour
 
     public void ShowDialogue(){
         textComponent.text = string.Empty;
-        buttons[0].interactable = false;
         sceneObjects[0].SetActive(true);
         cutscene[1].Play();
-        sceneObjects[1].SetActive(false);
         StartCoroutine(TypeLine());
     }
 
@@ -76,12 +74,14 @@ public class SceneManigger : MonoBehaviour
     }
 
     IEnumerator TypeLine(){
+        buttons[0].interactable = false;
+        sceneObjects[6].SetActive(false);
         foreach (char c in lines[index].ToCharArray()){
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        sceneObjects[1].SetActive(true);
         buttons[0].interactable = true;
+        sceneObjects[6].SetActive(true);
     }
 
     IEnumerator NextDialogue(){

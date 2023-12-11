@@ -39,7 +39,6 @@ public class CutsceneBehavior : MonoBehaviour
 
     public void ShowDialogue(){
         textComponent.text = string.Empty;
-        buttons[0].interactable = false;
         sceneObjects[0].SetActive(true);
         cutscene[0].Play();
         StartCoroutine(TypeLine());
@@ -47,7 +46,6 @@ public class CutsceneBehavior : MonoBehaviour
 
     public void ShowDialogueBamboo(){
         textComponent.text = string.Empty;
-        buttons[0].interactable = false;
         sceneObjects[0].SetActive(true);
         cutscene[0].Play();
         StartCoroutine(TypeLineBamboo());
@@ -202,19 +200,25 @@ public class CutsceneBehavior : MonoBehaviour
     }
 
     IEnumerator TypeLine(){
+        sceneObjects[1].SetActive(false);
+        buttons[0].interactable = false;
         foreach (char c in lines[index].ToCharArray()){
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
         buttons[0].interactable = true;
+        sceneObjects[1].SetActive(true);
     }
 
     IEnumerator TypeLineBamboo(){
+        sceneObjects[1].SetActive(false);
+        buttons[0].interactable = false;
         foreach (char c in bambooLines[bambooLinesIndex].ToCharArray()){
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
         buttons[0].interactable = true;
+        sceneObjects[1].SetActive(true);
     }
 
     public void CallOnOutro(){

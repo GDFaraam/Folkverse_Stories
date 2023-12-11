@@ -4,14 +4,15 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class ANPDialogue : MonoBehaviour
 {
     public PlayableDirector[] cutscene;
-    public PlayableDirector[] transitions;
     public GameObject[] storyScenes;
-    public Button[] buttons;
     public GameObject[] characters;
+    public GameObject[] sceneObjects;
+    public Button[] buttons;
 
     public GameObject diaBox;
     
@@ -41,7 +42,6 @@ public class ANPDialogue : MonoBehaviour
 
     public void ShowDialogue(){
         textComponent.text = string.Empty;
-        buttons[0].interactable = false;
         diaBox.SetActive(true);
         StartCoroutine(TypeLine());
     }
@@ -66,6 +66,76 @@ public class ANPDialogue : MonoBehaviour
             buttons[1].gameObject.SetActive(true);
             index++;
         }
+        else if (index == 3){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            cutscene[2].Play();
+            index++;
+            StartCoroutine(NextLine(4f));
+        }
+        else if (index == 4){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            sceneObjects[0].SetActive(true);
+            storyScenes[2].SetActive(false);
+            characters[0].SetActive(false);
+            storyScenes[1].SetActive(true);
+            characters[1].SetActive(true);
+            cutscene[3].Play();
+            index++;
+            StartCoroutine(NextLine(3f));
+        }
+        else if (index == 5){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            index++;
+            StartCoroutine(NextLine(1f));
+        }
+        else if (index == 6){
+            textComponent.text = string.Empty;
+            index++;
+            StartCoroutine(TypeLine());
+        }
+        else if (index == 7){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            index++;
+            StartCoroutine(NextLine(2f));
+        }
+        else if (index == 8){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            cutscene[4].Play();
+            index++;
+            StartCoroutine(NextLine(7f));
+        }
+        else if (index == 9){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            cutscene[5].Play();
+            index++;
+            StartCoroutine(NextLine(3f));
+        }
+        else if (index == 10){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            storyScenes[2].SetActive(true);
+            storyScenes[1].SetActive(false);
+            characters[0].SetActive(true);
+            characters[1].SetActive(false);
+            cutscene[6].Play();
+            index++;
+            StartCoroutine(NextLine(11f));
+        }
+        else if (index == 11){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            index++;
+            StartCoroutine(NextLine(6f));
+        }
+        else if (index == 12){
+            SceneManager.LoadScene(13);
+        }
 
     }
 
@@ -75,11 +145,14 @@ public class ANPDialogue : MonoBehaviour
     }
 
     IEnumerator TypeLine(){
+        sceneObjects[1].SetActive(false);
+        buttons[0].interactable = false;
         foreach (char c in lines[index].ToCharArray()){
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
         buttons[0].interactable = true;
+        sceneObjects[1].SetActive(true);
     }
 
     public void HideDialogue(){
@@ -87,6 +160,7 @@ public class ANPDialogue : MonoBehaviour
     }
 
     public void CaveScene(){
+        sceneObjects[0].SetActive(false);
         storyScenes[0].SetActive(false);
         storyScenes[2].SetActive(true);
         cutscene[1].Play();

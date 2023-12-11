@@ -10,7 +10,7 @@ public class PhoenixMovementCutscene : MonoBehaviour
 
     void Start()
     {
-        characterAnimator = GetComponent<Animator>(); // Get the Animator component of the GameObject.
+        characterAnimator = GetComponent<Animator>(); 
         lastPosition = transform.position;
     }
 
@@ -18,23 +18,24 @@ public class PhoenixMovementCutscene : MonoBehaviour
     {
         Vector3 currentPosition = transform.position;
 
-        // Calculate the movement direction based on the change in position.
+        bool isIdle = currentPosition == lastPosition;
+
         Vector3 movementDirection = currentPosition - lastPosition;
 
-        // Determine if the movement is primarily vertical.
         bool isVerticalMovement = Mathf.Abs(movementDirection.y) > Mathf.Abs(movementDirection.x);
 
         characterAnimator.SetBool("isUp", isVerticalMovement && movementDirection.y > 0);
         characterAnimator.SetBool("isDown", isVerticalMovement && movementDirection.y < 0);
         characterAnimator.SetBool("isLeft", !isVerticalMovement && movementDirection.x < 0);
         characterAnimator.SetBool("isRight", !isVerticalMovement && movementDirection.x > 0);
+        characterAnimator.SetBool("isIdle", isIdle);
 
         characterAnimatorShadow.SetBool("isUp", isVerticalMovement && movementDirection.y > 0);
         characterAnimatorShadow.SetBool("isDown", isVerticalMovement && movementDirection.y < 0);
         characterAnimatorShadow.SetBool("isLeft", !isVerticalMovement && movementDirection.x < 0);
         characterAnimatorShadow.SetBool("isRight", !isVerticalMovement && movementDirection.x > 0);
+        characterAnimatorShadow.SetBool("isIdle", isIdle);
 
-        // Update the last position for the next frame.
         lastPosition = currentPosition;
     }
 }
