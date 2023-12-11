@@ -10,7 +10,8 @@ public class MalakasIntroStart : MonoBehaviour
 
     void Start()
     {
-        GameObject.FindWithTag("Boy").transform.position = this.gameObject.transform.position;
+        GameObject.FindWithTag("Teacher").transform.position = this.gameObject.transform.position;
+        GameObject.FindWithTag("Player").transform.position = this.gameObject.transform.position;
     }
 
     void Awake()

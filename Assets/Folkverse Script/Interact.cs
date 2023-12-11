@@ -10,15 +10,24 @@ public class Interact : MonoBehaviour
     public GameObject fadeOutObject;
     public PlayableDirector fadeOut;
 
+    public InteractStone interactStone; 
+
+    void Start()
+    {
+    
+    }
+
     void OnTriggerEnter2D(Collider2D coll){
-        if (coll.gameObject.CompareTag("Boy")){
+
+        if (coll.gameObject.CompareTag("Teacher")){
         isInteract = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D coll){
-        if (coll.gameObject.CompareTag("Boy")){
-        isInteract = false;
+
+        if (coll.gameObject.CompareTag("Teacher")){
+        isInteract = true;
         }
     }
 

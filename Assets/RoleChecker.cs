@@ -1,31 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
-public class RoleChecker : MonoBehaviourPun
+public class RoleChecker : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static RoleChecker Instance;
+    public string role;
 
-    public bool TeacherRole = false;
-    public PhotonView pv;
-
-    void Start()
+    private void Awake()
     {
-
-        pv = this.gameObject.GetComponent<PhotonView>();
-
-        if(pv.Owner.IsMasterClient == true)
+        if (Instance == null)
         {
-            TeacherRole = true;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
 }

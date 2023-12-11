@@ -42,6 +42,7 @@ MonoBehaviour:
   - RPC_TPLobby
   - RPC_TPStory
   - Start
+  - SetPlayerRole
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

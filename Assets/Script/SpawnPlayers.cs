@@ -6,7 +6,8 @@ using Photon.Pun;
 public class SpawnPlayers : MonoBehaviour
 {
     
-    public GameObject playerPrefabs;
+    public GameObject studentPrefabs;
+    public GameObject teacherPrefabs;
     
     public float minX;
     public float maxX;
@@ -23,9 +24,16 @@ public class SpawnPlayers : MonoBehaviour
 
         if(PlayerMovement.LocalPlayerInstance == null)
         {
+
+            string role = DeterminePlayerRole();
+            
             Vector2 randomposition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-            PhotonNetwork.Instantiate(playerPrefabs.name, randomposition, Quaternion.identity);
-            Debug.Log("spawned players");
+
+            GameObject playerPrefab = GetPlayerPrefab(role);
+
+            PhotonNetwork.Instantiate(playerPrefab.name, randomposition, Quaternion.identity);
+
+            Debug.Log("spawned players with role: " + role);
         }
         else
         {
@@ -34,6 +42,31 @@ public class SpawnPlayers : MonoBehaviour
 
         
         
+    }
+
+    string DeterminePlayerRole()
+    {
+        RoleChecker roleChecker = RoleChecker.Instance;
+
+        // Check if a role has been assigned
+        if (!string.IsNullOrEmpty(roleChecker.role))
+        {
+            return roleChecker.role;
+        }
+
+        return roleChecker.role;
+    }
+
+    GameObject GetPlayerPrefab(string role)
+    {
+        if (role == "Teacher")
+        {
+            return teacherPrefabs;
+        }
+        else
+        {
+            return studentPrefabs;
+        }
     }
 
     // Update is called once per frame

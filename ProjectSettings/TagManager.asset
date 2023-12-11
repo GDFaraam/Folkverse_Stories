@@ -17,6 +17,8 @@ TagManager:
   - Tree
   - Boy
   - StonePedestal
+  - player
+  - Teacher
   layers:
   - Default
   - TransparentFX
@@ -25,8 +27,8 @@ TagManager:
   - Water
   - UI
   - Bird
-  - 
-  - 
+  - Student
+  - Teacher
   - 
   - 
   - 
