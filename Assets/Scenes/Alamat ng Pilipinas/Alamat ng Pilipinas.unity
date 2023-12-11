@@ -271,6 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5318167}
   - component: {fileID: 5318168}
+  - component: {fileID: 5318169}
   m_Layer: 0
   m_Name: Bamboos (2)
   m_TagString: Untagged
@@ -345,6 +346,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5318169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: trees_plants_7
 --- !u!1 &31383356
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33778802}
   - component: {fileID: 33778803}
+  - component: {fileID: 33778804}
   m_Layer: 0
   m_Name: Decor (12)
   m_TagString: Untagged
@@ -513,6 +529,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &33778804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33778801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_217
 --- !u!1 &45079583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6162,6 +6192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 156106095}
   - component: {fileID: 156106096}
+  - component: {fileID: 156106097}
   m_Layer: 0
   m_Name: Decor (4)
   m_TagString: Untagged
@@ -6236,6 +6267,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &156106097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156106094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_217
 --- !u!1 &170852186
 GameObject:
   m_ObjectHideFlags: 0
@@ -6456,6 +6501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179841900}
   - component: {fileID: 179841901}
+  - component: {fileID: 179841902}
   m_Layer: 0
   m_Name: Bed (2)
   m_TagString: Untagged
@@ -6530,6 +6576,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &179841902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179841899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_193
 --- !u!1 &194789527
 GameObject:
   m_ObjectHideFlags: 0
@@ -10197,6 +10257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 436743583}
   - component: {fileID: 436743584}
+  - component: {fileID: 436743585}
   m_Layer: 0
   m_Name: Decor
   m_TagString: Untagged
@@ -10271,6 +10332,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &436743585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436743582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_107
 --- !u!1 &437083763
 GameObject:
   m_ObjectHideFlags: 0
@@ -10381,6 +10456,10 @@ PlayableDirector:
     value: {fileID: 232789689}
   - key: {fileID: -1631127326307416042, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
     value: {fileID: 2064167399}
+  - key: {fileID: 7446727982943873379, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
+    value: {fileID: 680043246}
+  - key: {fileID: -679266501059900841, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
+    value: {fileID: 1980478654}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &441339723
@@ -11088,6 +11167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563178135}
   - component: {fileID: 563178136}
+  - component: {fileID: 563178137}
   m_Layer: 0
   m_Name: Decor
   m_TagString: Untagged
@@ -11162,6 +11242,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &563178137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563178134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_2
 --- !u!1 &605475932
 GameObject:
   m_ObjectHideFlags: 0
@@ -11333,6 +11427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 639881760}
   - component: {fileID: 639881761}
+  - component: {fileID: 639881762}
   m_Layer: 0
   m_Name: Bamboos
   m_TagString: Untagged
@@ -11407,6 +11502,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &639881762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639881759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: trees_plants_10
 --- !u!1 &647638001
 GameObject:
   m_ObjectHideFlags: 0
@@ -12918,11 +13027,21 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -14, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -13, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -13208,11 +13327,21 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -14, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -13, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -13493,6 +13622,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -13788,6 +13927,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -13, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -14073,6 +14222,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -14368,6 +14527,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -13, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -14653,6 +14822,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -14948,6 +15127,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -13, y: 4, z: 0}
     second:
       serializedVersion: 2
@@ -15233,6 +15422,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -15528,6 +15727,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -13, y: 6, z: 0}
     second:
       serializedVersion: 2
@@ -15818,6 +16027,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 7, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -13, y: 7, z: 0}
     second:
       serializedVersion: 2
@@ -16103,6 +16322,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: 8, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -16400,29 +16629,29 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 445
+  - m_RefCount: 443
     m_Data: {fileID: 11400000, guid: 01052a13d3af9fa4888a9bd98af3bc33, type: 2}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: a8cd06524bd875744b1f1f3ccf8129bb, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 572a655fb0d6dc744ad620a48651759c, type: 2}
-  - m_RefCount: 34
+  - m_RefCount: 46
     m_Data: {fileID: 11400000, guid: 308829edb73564540a30fbe31ef1dea5, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 445
+  - m_RefCount: 443
     m_Data: {fileID: -414737732, guid: b7c2671312d439148a8897978b34ed24, type: 3}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: -1131631528, guid: b7c2671312d439148a8897978b34ed24, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: -63734236, guid: b7c2671312d439148a8897978b34ed24, type: 3}
-  - m_RefCount: 34
+  - m_RefCount: 46
     m_Data: {fileID: 799599536, guid: b7c2671312d439148a8897978b34ed24, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 490
+  - m_RefCount: 502
     m_Data:
       e00: 1
       e01: 0
@@ -16441,7 +16670,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 490
+  - m_RefCount: 502
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -16478,6 +16707,7 @@ GameObject:
   - component: {fileID: 680043245}
   - component: {fileID: 680043247}
   - component: {fileID: 680043246}
+  - component: {fileID: 680043248}
   m_Layer: 0
   m_Name: Bisaya Shadow
   m_TagString: Untagged
@@ -16499,7 +16729,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1329274504}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.001243394}
 --- !u!95 &680043246
 Animator:
   serializedVersion: 5
@@ -16572,6 +16802,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &680043248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680043244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6f3e796a814b0439c942dcea5f1d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &681515118
 GameObject:
   m_ObjectHideFlags: 0
@@ -16874,6 +17116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708716881}
   - component: {fileID: 708716882}
+  - component: {fileID: 708716883}
   m_Layer: 0
   m_Name: Bamboos (1)
   m_TagString: Untagged
@@ -16948,6 +17191,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &708716883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708716880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: trees_plants_8
 --- !u!1 &717146361
 GameObject:
   m_ObjectHideFlags: 0
@@ -17444,7 +17701,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -2
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -18053,6 +18310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 868943834}
   - component: {fileID: 868943835}
+  - component: {fileID: 868943836}
   m_Layer: 0
   m_Name: Bamboos (3)
   m_TagString: Untagged
@@ -18127,6 +18385,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &868943836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868943833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: trees_plants_7
 --- !u!1 &871323533
 GameObject:
   m_ObjectHideFlags: 0
@@ -18758,7 +19030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969023618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.01, y: 0.64, z: 0}
+  m_LocalPosition: {x: 4.26, y: 1.02, z: 0}
   m_LocalScale: {x: 1.1957536, y: 1.2871515, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18827,6 +19099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970511084}
   - component: {fileID: 970511085}
+  - component: {fileID: 970511086}
   m_Layer: 0
   m_Name: Decor (11)
   m_TagString: Untagged
@@ -18901,6 +19174,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &970511086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970511083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_281
 --- !u!1 &978862936
 GameObject:
   m_ObjectHideFlags: 0
@@ -20370,6 +20657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1199296925}
   - component: {fileID: 1199296926}
+  - component: {fileID: 1199296927}
   m_Layer: 0
   m_Name: Decor (2)
   m_TagString: Untagged
@@ -20444,6 +20732,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1199296927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199296924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_185
 --- !u!1 &1215506780
 GameObject:
   m_ObjectHideFlags: 0
@@ -21708,6 +22010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361094563}
   - component: {fileID: 1361094564}
+  - component: {fileID: 1361094565}
   m_Layer: 0
   m_Name: Decor (1)
   m_TagString: Untagged
@@ -21782,6 +22085,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1361094565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361094562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_185
 --- !u!1 &1371843777
 GameObject:
   m_ObjectHideFlags: 0
@@ -21876,6 +22193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409602777}
   - component: {fileID: 1409602778}
+  - component: {fileID: 1409602779}
   m_Layer: 0
   m_Name: Decor (6)
   m_TagString: Untagged
@@ -21950,6 +22268,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1409602779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409602776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_281
 --- !u!1 &1423254941
 GameObject:
   m_ObjectHideFlags: 0
@@ -22276,6 +22608,10 @@ PlayableDirector:
     value: {fileID: 232789689}
   - key: {fileID: -7157938363592123056, guid: b690288fca3766e43b3a98876997acf1, type: 2}
     value: {fileID: 2064167399}
+  - key: {fileID: -2516775174454181276, guid: b690288fca3766e43b3a98876997acf1, type: 2}
+    value: {fileID: 680043246}
+  - key: {fileID: -241322098940296230, guid: b690288fca3766e43b3a98876997acf1, type: 2}
+    value: {fileID: 1980478654}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1440360468
@@ -23813,6 +24149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693603601}
   - component: {fileID: 1693603602}
+  - component: {fileID: 1693603603}
   m_Layer: 0
   m_Name: Bed (1)
   m_TagString: Untagged
@@ -23887,6 +24224,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1693603603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693603600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_193
 --- !u!1 &1705795764
 GameObject:
   m_ObjectHideFlags: 0
@@ -24767,6 +25118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1815393049}
   - component: {fileID: 1815393050}
+  - component: {fileID: 1815393051}
   m_Layer: 0
   m_Name: Decor
   m_TagString: Untagged
@@ -24841,6 +25193,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1815393051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815393048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_2
 --- !u!1 &1816125917
 GameObject:
   m_ObjectHideFlags: 0
@@ -24935,6 +25301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1819806984}
   - component: {fileID: 1819806985}
+  - component: {fileID: 1819806986}
   m_Layer: 0
   m_Name: Bed (3)
   m_TagString: Untagged
@@ -25009,6 +25376,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1819806986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819806983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_193
 --- !u!1 &1841016784
 GameObject:
   m_ObjectHideFlags: 0
@@ -25635,6 +26016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1951863097}
   - component: {fileID: 1951863098}
+  - component: {fileID: 1951863099}
   m_Layer: 0
   m_Name: Decor (14)
   m_TagString: Untagged
@@ -25709,6 +26091,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1951863099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951863096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_217
 --- !u!1 &1955590736
 GameObject:
   m_ObjectHideFlags: 0
@@ -25845,6 +26241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1968758313}
   - component: {fileID: 1968758314}
+  - component: {fileID: 1968758315}
   m_Layer: 0
   m_Name: Decor
   m_TagString: Untagged
@@ -25919,6 +26316,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1968758315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968758312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_2
 --- !u!1 &1980478652
 GameObject:
   m_ObjectHideFlags: 0
@@ -25930,6 +26341,7 @@ GameObject:
   - component: {fileID: 1980478653}
   - component: {fileID: 1980478655}
   - component: {fileID: 1980478654}
+  - component: {fileID: 1980478656}
   m_Layer: 0
   m_Name: Luz Shadow
   m_TagString: Untagged
@@ -25951,7 +26363,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 232789688}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.001243394}
 --- !u!95 &1980478654
 Animator:
   serializedVersion: 5
@@ -26024,6 +26436,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &1980478656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980478652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6f3e796a814b0439c942dcea5f1d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2001341047
 GameObject:
   m_ObjectHideFlags: 0
@@ -26177,7 +26601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003504033}
   m_LocalRotation: {x: -0, y: -0, z: -0.04656105, w: 0.9989155}
-  m_LocalPosition: {x: 4.89, y: 0.18, z: -0.13927266}
+  m_LocalPosition: {x: 5.79, y: -0.07, z: -0.13927266}
   m_LocalScale: {x: 0.5, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26496,6 +26920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058278888}
   - component: {fileID: 2058278889}
+  - component: {fileID: 2058278890}
   m_Layer: 0
   m_Name: Bamboos (4)
   m_TagString: Untagged
@@ -26570,6 +26995,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2058278890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058278887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: trees_plants_7
 --- !u!1 &2064167397
 GameObject:
   m_ObjectHideFlags: 0
@@ -26845,6 +27284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107411748}
   - component: {fileID: 2107411749}
+  - component: {fileID: 2107411750}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -26919,6 +27359,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2107411750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107411747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed355e9ee97c8643a45f7164d26eb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atlas: {fileID: 4343727234628468602, guid: 7be6fc16f780e934d8b9078747649d57, type: 2}
+  atlasName: Outside Objects_193
 --- !u!1 &2134790379
 GameObject:
   m_ObjectHideFlags: 0

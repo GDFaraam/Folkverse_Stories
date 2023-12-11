@@ -171,7 +171,7 @@ public class ANPDialogue : MonoBehaviour
             characters[1].SetActive(false);
             cutscene[6].Play();
             index++;
-            StartCoroutine(NextLine(11f));
+            StartCoroutine(NextLine(14f));
         }
         else if (index == 11){
             textComponent.text = string.Empty;

@@ -64,7 +64,7 @@ public class ShoreScene : MonoBehaviour
         if (index == 0){
             textComponent.text = string.Empty;
             index++;
-            StartCoroutine(NextLine(2f));
+            StartCoroutine(NextLine(5f));
             HideDialogue();
             cutscene[1].Play();
         }

@@ -11,10 +11,10 @@ public class AnimatorControl : MonoBehaviour
     }
 
     public void DisableAnimator(){
-        animator.enabled = false;
+        animator.speed = 0;
     }
 
     public void EnableAnimator(){
-        animator.enabled = true;
+        animator.speed = 1;
     }
 }
