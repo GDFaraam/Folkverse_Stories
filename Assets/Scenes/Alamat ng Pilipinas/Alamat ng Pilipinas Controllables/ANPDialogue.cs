@@ -19,9 +19,48 @@ public class ANPDialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     private float textSpeed = 0.02f;
-    private int index;
+    public int index;
+
+    public static ANPDialogue instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        else if (instance != this) {
+        
+        Destroy(instance.gameObject);
+
+        instance = this;
+        index = 13;
+
+        DontDestroyOnLoad(gameObject);
+
+        }
+    }
 
     void Start(){
+        if (index == 13){
+            foreach (GameObject sceneGo in storyScenes){
+            sceneGo.SetActive(false);
+        }
+        foreach (GameObject charactersGo in characters){
+            charactersGo.SetActive(false);
+        }
+        diaBox.SetActive(false);
+            buttons[1].gameObject.SetActive(false);
+            storyScenes[2].SetActive(true);
+            characters[0].SetActive(true);
+            cutscene[7].Play();
+            StartCoroutine(DialogueShow());
+        }
+
+        else
+        {
         foreach (GameObject sceneGo in storyScenes){
             sceneGo.SetActive(false);
         }
@@ -33,6 +72,7 @@ public class ANPDialogue : MonoBehaviour
         diaBox.SetActive(false);
         cutscene[0].Play();
         StartCoroutine(DialogueShow());
+        }
     }
 
     IEnumerator DialogueShow(){
@@ -44,6 +84,12 @@ public class ANPDialogue : MonoBehaviour
         textComponent.text = string.Empty;
         diaBox.SetActive(true);
         StartCoroutine(TypeLine());
+    }
+
+    public void SaveIndex(int newIndex)
+    {
+        PlayerPrefs.SetInt("SavedIndex", newIndex);
+        PlayerPrefs.Save();
     }
 
     public void NextButton(){
@@ -134,7 +180,21 @@ public class ANPDialogue : MonoBehaviour
             StartCoroutine(NextLine(6f));
         }
         else if (index == 12){
+            index++;
+            SaveIndex(index);
             SceneManager.LoadScene(13);
+        }
+        else if (index == 13){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            index++;
+            StartCoroutine(NextLine(1f));
+        }
+        else if (index == 14){
+            textComponent.text = string.Empty;
+            HideDialogue();
+            index++;
+            cutscene[8].Play();
         }
 
     }

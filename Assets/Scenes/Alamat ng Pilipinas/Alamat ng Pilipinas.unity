@@ -6751,6 +6751,7 @@ GameObject:
   - component: {fileID: 232789690}
   - component: {fileID: 232789689}
   - component: {fileID: 232789691}
+  - component: {fileID: 232789692}
   m_Layer: 0
   m_Name: Luz
   m_TagString: Untagged
@@ -6859,6 +6860,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterAnimatorShadow: {fileID: 1980478654}
+--- !u!114 &232789692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232789687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6f3e796a814b0439c942dcea5f1d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &241672416
 GameObject:
   m_ObjectHideFlags: 0
@@ -10311,6 +10324,65 @@ PlayableDirector:
     value: {fileID: 753567885}
   m_ExposedReferences:
     m_References: []
+--- !u!1 &439779941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 439779942}
+  - component: {fileID: 439779943}
+  m_Layer: 0
+  m_Name: Cave Rescue Scene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &439779942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439779941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1198493690}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &439779943
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439779941}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -5885838639758570752, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
+    value: {fileID: 323789628}
+  - key: {fileID: 2944583737737127038, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
+    value: {fileID: 1768299016}
+  - key: {fileID: -6994804126906719983, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
+    value: {fileID: 1329274505}
+  - key: {fileID: -2952089169926799733, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
+    value: {fileID: 232789689}
+  - key: {fileID: -1631127326307416042, guid: 5ca30481acf609a4bb4bb87338d61229, type: 2}
+    value: {fileID: 2064167399}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &441339723
 GameObject:
   m_ObjectHideFlags: 0
@@ -10868,6 +10940,8 @@ MonoBehaviour:
   - {fileID: 453717953}
   - {fileID: 930194781}
   - {fileID: 1583242004}
+  - {fileID: 439779943}
+  - {fileID: 1440360467}
   storyScenes:
   - {fileID: 2134790379}
   - {fileID: 1006930054}
@@ -10902,6 +10976,9 @@ MonoBehaviour:
   - 'Subalit hindi nila katulong sa paggawa si Minda. Hindi masunurin ito sa ama. '
   - Lumabas pala si Minda at namasyal sa may dagat. Hindi man lamang nagsabi sa mga
     kapatid.
+  - '"Si Minda, humihingi ng tulong!" sabi ni Lus na nanlalaki ang mga mata sa pagkagulat.'
+  - '"Oo nga. Halika na!" yaya ni Bisaya. "Bakit kaya?"'
+  index: 0
 --- !u!4 &519061052
 Transform:
   m_ObjectHideFlags: 0
@@ -20278,6 +20355,8 @@ Transform:
   - {fileID: 437083764}
   - {fileID: 1627609668}
   - {fileID: 1583242005}
+  - {fileID: 439779942}
+  - {fileID: 1440360468}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21414,6 +21493,7 @@ GameObject:
   - component: {fileID: 1329274506}
   - component: {fileID: 1329274505}
   - component: {fileID: 1329274507}
+  - component: {fileID: 1329274508}
   m_Layer: 0
   m_Name: Bisaya
   m_TagString: Untagged
@@ -21522,6 +21602,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterAnimatorShadow: {fileID: 680043246}
+--- !u!114 &1329274508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329274503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6f3e796a814b0439c942dcea5f1d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1336889363
 GameObject:
   m_ObjectHideFlags: 0
@@ -22146,6 +22238,61 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1440360466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1440360468}
+  - component: {fileID: 1440360467}
+  m_Layer: 0
+  m_Name: Cave Rescue Exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1440360467
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440360466}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: b690288fca3766e43b3a98876997acf1, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 188973632141671339, guid: b690288fca3766e43b3a98876997acf1, type: 2}
+    value: {fileID: 1329274505}
+  - key: {fileID: 4549994798862874930, guid: b690288fca3766e43b3a98876997acf1, type: 2}
+    value: {fileID: 232789689}
+  - key: {fileID: -7157938363592123056, guid: b690288fca3766e43b3a98876997acf1, type: 2}
+    value: {fileID: 2064167399}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &1440360468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440360466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1198493690}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1475432499
 GameObject:
   m_ObjectHideFlags: 0

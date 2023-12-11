@@ -21,6 +21,27 @@ public class ShoreScene : MonoBehaviour
     private float textSpeed = 0.02f;
     private int index;
 
+    private static ShoreScene SHOREinstance;
+
+    private void Awake()
+    {
+        if (SHOREinstance == null)
+        {
+
+            SHOREinstance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (SHOREinstance != this) {
+        
+        Destroy(SHOREinstance.gameObject);
+
+        SHOREinstance = this;
+
+        DontDestroyOnLoad(gameObject);
+
+        }
+    }
+
     void Start(){
         storyScenes[0].SetActive(true);
         cutscene[0].Play();
@@ -72,6 +93,7 @@ public class ShoreScene : MonoBehaviour
             textComponent.text = string.Empty;
             HideDialogue();
             cutscene[4].Play();
+            StartCoroutine(RescueScene());
         }
 
     }
@@ -90,6 +112,12 @@ public class ShoreScene : MonoBehaviour
         }
         buttons[0].interactable = true;
         sceneObjects[1].SetActive(true);
+    }
+
+    IEnumerator RescueScene(){
+        yield return new WaitForSeconds(2f);
+        ANPDialogue.instance.index = 13;
+        SceneManager.LoadScene(12);
     }
 
     public void HideDialogue(){
