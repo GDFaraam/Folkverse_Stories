@@ -9,13 +9,11 @@ public class MainMenuButton : MonoBehaviour
 
 
     public bool htpVisibility = false;
-    public GameObject button;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        button.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,12 +22,10 @@ public class MainMenuButton : MonoBehaviour
         if(htpVisibility == true)
         {
 
-            button.gameObject.SetActive(true);
         }
         else
         {
 
-            button.gameObject.SetActive(false);
         }
     }
 
