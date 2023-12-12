@@ -19,6 +19,7 @@ TagManager:
   - StonePedestal
   - player
   - Teacher
+  - UIDisabler
   layers:
   - Default
   - TransparentFX

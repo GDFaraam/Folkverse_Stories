@@ -17,12 +17,17 @@ public class PlayerMovement : MonoBehaviourPun
     [SerializeField] public Animator phoenixAnimator;
     [SerializeField] public GameObject PlayerUIPrefab;
     [SerializeField] public BoxCollider2D boxCollider2D;
-    [SerializeField] public Canvas UI;
+    [SerializeField] public GameObject UI;
     public float speed;
     private bool inTeacherForm = true;
     private bool inPhoenixform = false;
+    public bool outCut = true;
 
     
+    public GameObject UID;
+    public UIDisabler uIDisabler;
+
+
     [SerializeField] public GameObject teacherObj;
     [SerializeField] public GameObject phoenixObj;  
 
@@ -30,6 +35,8 @@ public class PlayerMovement : MonoBehaviourPun
     {
         
         rb = this.gameObject.GetComponent<Rigidbody2D>();
+
+        UI = gameObject.transform.GetChild(5).gameObject;
 
         CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
@@ -89,6 +96,27 @@ public class PlayerMovement : MonoBehaviourPun
             phoenixAnimator.SetFloat("Vertical", movement.y);
             phoenixAnimator.SetFloat("Speed", speed);
         
+
+
+        if(uIDisabler != null)
+        {
+            return;
+        }
+        else
+        {
+            UID = GameObject.FindGameObjectWithTag("UIDisabler");
+            uIDisabler = UID.GetComponent<UIDisabler>();
+
+        }
+
+
+
+
+        UI.SetActive(uIDisabler.CutOut);
+
+
+
+
     }
 
     private void Awake() 
@@ -124,6 +152,7 @@ public class PlayerMovement : MonoBehaviourPun
         inTeacherForm = false;
         teacherObj.SetActive(inTeacherForm);
         boxCollider2D.enabled = false;
+        moveSpeed = 6f;
     }
 
     public void teacherForm()
@@ -133,6 +162,7 @@ public class PlayerMovement : MonoBehaviourPun
         inTeacherForm = false;
         teacherObj.SetActive(inTeacherForm);
         boxCollider2D.enabled = true;
+        moveSpeed = 2f;
     }
 
 

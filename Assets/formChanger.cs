@@ -10,7 +10,7 @@ public class formChanger : MonoBehaviour
 
     void Start()
     {
-        
+            
         Teacher = GameObject.FindGameObjectWithTag("Teacher");
 
         PlayerMovement playerMovement = Teacher.GetComponent<PlayerMovement>();
