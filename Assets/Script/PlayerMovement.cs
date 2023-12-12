@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviourPun
     [SerializeField] public Animator phoenixAnimator;
     [SerializeField] public GameObject PlayerUIPrefab;
     [SerializeField] public BoxCollider2D boxCollider2D;
-    [SerializeField] public GameObject UI;
+    public GameObject UI;
     public float speed;
     private bool inTeacherForm = true;
     private bool inPhoenixform = false;

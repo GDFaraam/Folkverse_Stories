@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTransition: 0
+  view: {fileID: 0}
 --- !u!114 &814777721556749835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,6 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTransition: 0
+  view: {fileID: 0}
 --- !u!1001 &836352935330408962
 PrefabInstance:
   m_ObjectHideFlags: 0

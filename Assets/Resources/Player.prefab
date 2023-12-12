@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTransition: 0
+  view: {fileID: 0}
 --- !u!114 &814777721556749835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,8 +386,17 @@ MonoBehaviour:
   joystick: {fileID: 0}
   characterAnimator: {fileID: 1551107803963267735}
   characterAnimatorShadow: {fileID: 836352936124406481}
+  phoenix: {fileID: 0}
+  phoenixAnimator: {fileID: 0}
   PlayerUIPrefab: {fileID: 3929313086674736248, guid: 8e4ca6ca9fea3c54d903436116ced34d, type: 3}
+  boxCollider2D: {fileID: 0}
+  UI: {fileID: 7184559895323325490}
   speed: 0
+  outCut: 1
+  UID: {fileID: 0}
+  uIDisabler: {fileID: 0}
+  teacherObj: {fileID: 0}
+  phoenixObj: {fileID: 0}
 --- !u!114 &1420052529909304016
 MonoBehaviour:
   m_ObjectHideFlags: 0

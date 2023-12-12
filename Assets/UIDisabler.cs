@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIDisabler : MonoBehaviour
 {
 
+    public static UIDisabler Instance;
     public bool CutOut = true;
     public GameObject Teachers;
     public GameObject Students;
@@ -12,13 +13,21 @@ public class UIDisabler : MonoBehaviour
     void Start()
     {
 
-     
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void Awake()
+    {
+        if(Instance = null)
+        {
+            Instance = this;
+        }
     }
 
 

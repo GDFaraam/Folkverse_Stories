@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
+using Photon.Pun;
 
 public class SceneManigger : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class SceneManigger : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     public int index;
+    public PhotonView view;
 
     void Start(){
         sceneObjects[0].SetActive(false);
@@ -43,7 +45,15 @@ public class SceneManigger : MonoBehaviour
         sceneObjects[0].SetActive(false);
     }
 
-    public void NextButton(){
+
+    
+    public void NextButton()
+    {
+        NextButtonPun();
+    }
+
+    public void NextButtonPun()
+    {
         if (textComponent.text == lines[index]){
             if (textComponent.text == lines[0]){
                 HideDialogue();
