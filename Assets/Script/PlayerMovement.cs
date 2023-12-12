@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviourPun
     [SerializeField] public SpriteRenderer phoenix;
     [SerializeField] public Animator phoenixAnimator;
     [SerializeField] public GameObject PlayerUIPrefab;
+    [SerializeField] public BoxCollider2D boxCollider2D;
+    [SerializeField] public Canvas UI;
     public float speed;
     private bool inTeacherForm = true;
     private bool inPhoenixform = false;
@@ -121,6 +123,16 @@ public class PlayerMovement : MonoBehaviourPun
         phoenixObj.SetActive(inPhoenixform);
         inTeacherForm = false;
         teacherObj.SetActive(inTeacherForm);
+        boxCollider2D.enabled = false;
+    }
+
+    public void teacherForm()
+    {
+        inPhoenixform = true;
+        phoenixObj.SetActive(inPhoenixform);
+        inTeacherForm = false;
+        teacherObj.SetActive(inTeacherForm);
+        boxCollider2D.enabled = true;
     }
 
 
