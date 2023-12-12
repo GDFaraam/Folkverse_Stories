@@ -392,11 +392,7 @@ MonoBehaviour:
   phoenixAnimator: {fileID: 2239963707884582756}
   PlayerUIPrefab: {fileID: 3929313086674736248, guid: 8e4ca6ca9fea3c54d903436116ced34d, type: 3}
   boxCollider2D: {fileID: 836352935783689509}
-  UI: {fileID: 7184559895323325490}
   speed: 0
-  outCut: 1
-  UID: {fileID: 0}
-  uIDisabler: {fileID: 0}
   teacherObj: {fileID: 836352935105518693}
   phoenixObj: {fileID: 8657271458130068124}
 --- !u!114 &1420052529909304016
@@ -980,7 +976,7 @@ GameObject:
   - component: {fileID: 5400396961993371750}
   m_Layer: 8
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

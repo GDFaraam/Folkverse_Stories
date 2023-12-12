@@ -1,34 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIDisabler : MonoBehaviour
 {
 
-    public static UIDisabler Instance;
-    public bool CutOut = true;
-    public GameObject Teachers;
-    public GameObject Students;
-    // Start is called before the first frame update
+    public bool CutOut = false;
+
     void Start()
-    {
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         
     }
 
     void Awake()
     {
-        if(Instance = null)
+        
+    }
+
+    void Update()
+    {
+        DisableAllUITaggedCanvases();
+    }
+
+    void DisableAllUITaggedCanvases()
+    {
+        // Get all GameObjects in the scene
+        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+
+        foreach (GameObject obj in allObjects)
         {
-            Instance = this;
+            // Check if the GameObject has the "UI" tag and a Canvas component
+            if (obj.CompareTag("UI"))
+            {
+                Canvas canvas = obj.GetComponent<Canvas>();
+
+                if (canvas != null)
+                {
+                    // Disable the Canvas
+                    canvas.enabled = CutOut;
+                }
+            }
         }
     }
 
-
+    
 }

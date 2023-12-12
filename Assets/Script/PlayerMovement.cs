@@ -17,15 +17,12 @@ public class PlayerMovement : MonoBehaviourPun
     [SerializeField] public Animator phoenixAnimator;
     [SerializeField] public GameObject PlayerUIPrefab;
     [SerializeField] public BoxCollider2D boxCollider2D;
-    public GameObject UI;
+
     public float speed;
     private bool inTeacherForm = true;
     private bool inPhoenixform = false;
-    public bool outCut = true;
 
     
-    public GameObject UID;
-    public UIDisabler uIDisabler;
 
 
     [SerializeField] public GameObject teacherObj;
@@ -36,7 +33,7 @@ public class PlayerMovement : MonoBehaviourPun
         
         rb = this.gameObject.GetComponent<Rigidbody2D>();
 
-        UI = gameObject.transform.GetChild(5).gameObject;
+
 
         CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
@@ -95,24 +92,11 @@ public class PlayerMovement : MonoBehaviourPun
             phoenixAnimator.SetFloat("Horizontal", movement.x);
             phoenixAnimator.SetFloat("Vertical", movement.y);
             phoenixAnimator.SetFloat("Speed", speed);
-        
-
-
-        if(uIDisabler != null)
-        {
-            return;
-        }
-        else
-        {
-            UID = GameObject.FindGameObjectWithTag("UIDisabler");
-            uIDisabler = UID.GetComponent<UIDisabler>();
-
-        }
+    
 
 
 
 
-        UI.SetActive(uIDisabler.CutOut);
 
 
 
