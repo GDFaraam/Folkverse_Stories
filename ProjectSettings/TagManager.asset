@@ -17,6 +17,9 @@ TagManager:
   - Tree
   - Boy
   - StonePedestal
+  - player
+  - Teacher
+  - UIDisabler
   layers:
   - Default
   - TransparentFX
@@ -25,8 +28,8 @@ TagManager:
   - Water
   - UI
   - Bird
-  - 
-  - 
+  - Student
+  - Teacher
   - 
   - 
   - 

@@ -9,20 +9,34 @@ public class PlayerMovement : MonoBehaviourPun
     private Vector3 targetPosition;
     public Rigidbody2D rb;
     Vector2 movement;
-    public RoleChecker role;
-    public bool Teacher = false;
     [SerializeField] public Joystick joystick;
     public static GameObject LocalPlayerInstance;
-    public PhotonView view;
     [SerializeField]public Animator characterAnimator; 
     [SerializeField]public Animator characterAnimatorShadow;
+    [SerializeField] public SpriteRenderer phoenix;
+    [SerializeField] public Animator phoenixAnimator;
     [SerializeField] public GameObject PlayerUIPrefab;
+    [SerializeField] public BoxCollider2D boxCollider2D;
+    [SerializeField] public GameObject UI;
     public float speed;
+    private bool inTeacherForm = true;
+    private bool inPhoenixform = false;
+    public bool outCut = true;
+
+    
+    public GameObject UID;
+    public UIDisabler uIDisabler;
+
+
+    [SerializeField] public GameObject teacherObj;
+    [SerializeField] public GameObject phoenixObj;  
 
     void Start()
     {
         
         rb = this.gameObject.GetComponent<Rigidbody2D>();
+
+        UI = gameObject.transform.GetChild(5).gameObject;
 
         CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
@@ -78,15 +92,31 @@ public class PlayerMovement : MonoBehaviourPun
             characterAnimator.SetFloat("Vertical", movement.y);
             characterAnimator.SetFloat("speed", speed);
 
-
- 
-
-
-        Teacher = role;
-
-
+            phoenixAnimator.SetFloat("Horizontal", movement.x);
+            phoenixAnimator.SetFloat("Vertical", movement.y);
+            phoenixAnimator.SetFloat("Speed", speed);
         
-        
+
+
+        if(uIDisabler != null)
+        {
+            return;
+        }
+        else
+        {
+            UID = GameObject.FindGameObjectWithTag("UIDisabler");
+            uIDisabler = UID.GetComponent<UIDisabler>();
+
+        }
+
+
+
+
+        UI.SetActive(uIDisabler.CutOut);
+
+
+
+
     }
 
     private void Awake() 
@@ -110,40 +140,36 @@ public class PlayerMovement : MonoBehaviourPun
         _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    public void ToggleForm()
     {
-        if (other.gameObject.name == "TPStory")
-        {
-            if (Teacher)
-            {
-                view.RPC("RPC_TPStory", RpcTarget.All);
-                Debug.Log("Teleporting to Story Room");
-            }
-        }
 
-        if (other.gameObject.name == "TPLobby")
-        {
-            if (Teacher)
-            {
-                view.RPC("RPC_TPLobby", RpcTarget.All);
-                Debug.Log("Teleporting to Lobby");
-            }
-        }
     }
 
-    [PunRPC]
-    void RPC_TPStory()
+    public void phoenixForm()
     {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.LoadLevel("STORY ROOM");
+        inPhoenixform = true;
+        phoenixObj.SetActive(inPhoenixform);
+        inTeacherForm = false;
+        teacherObj.SetActive(inTeacherForm);
+        boxCollider2D.enabled = false;
+        moveSpeed = 6f;
     }
 
-    [PunRPC]
-    void RPC_TPLobby()
+    public void teacherForm()
     {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.LoadLevel("NEW LOBBY");
+        inPhoenixform = true;
+        phoenixObj.SetActive(inPhoenixform);
+        inTeacherForm = false;
+        teacherObj.SetActive(inTeacherForm);
+        boxCollider2D.enabled = true;
+        moveSpeed = 2f;
     }
+
+
+
+
+
+
 
 
 

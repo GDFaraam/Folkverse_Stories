@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class MainMenuButton : MonoBehaviour
 {
 
-    public GameObject htpImage;
+
     public bool htpVisibility = false;
     public GameObject button;
 
     // Start is called before the first frame update
     void Start()
     {
-        htpImage.gameObject.SetActive(false);
+
         button.gameObject.SetActive(false);
     }
 
@@ -23,12 +23,12 @@ public class MainMenuButton : MonoBehaviour
     {
         if(htpVisibility == true)
         {
-            htpImage.gameObject.SetActive(true);
+
             button.gameObject.SetActive(true);
         }
         else
         {
-            htpImage.gameObject.SetActive(false);
+
             button.gameObject.SetActive(false);
         }
     }

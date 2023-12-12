@@ -7,10 +7,26 @@ public class InteractStone : MonoBehaviour
 {
     public bool canTransition = false;
 
-    void OnTriggerEnter2D (Collider2D coll){
-        if (coll.gameObject.CompareTag("StonePedestal")){
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("StonePedestal"))
+        {
             canTransition = true;
         }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("StonePedestal"))
+        {
+            canTransition = false;
+        }
+    }
+
+    void Update()
+    {
+         
     }
 
     public void NextScene(){
@@ -20,15 +36,5 @@ public class InteractStone : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
         canTransition = false;
         }
-    }
-
-    void OnTriggerExit2D (Collider2D coll){
-        if (coll.gameObject.CompareTag("StonePedestal")){
-            canTransition = false;
-        }
-    }
-
-    public void ToggleOutroScene(){
-        SceneManager.LoadScene(11);
     }
 }
