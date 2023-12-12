@@ -7,6 +7,7 @@ using Photon.Pun;
 public class InteractStone : MonoBehaviour
 {
     public bool canTransition = false;
+    public bool canANP = false;
     public PhotonView view;
 
     void Start()
@@ -21,6 +22,11 @@ public class InteractStone : MonoBehaviour
         {
             canTransition = true;
         }
+
+        if (other.gameObject.CompareTag("Longer Pole"))
+        {
+            canANP = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -28,6 +34,11 @@ public class InteractStone : MonoBehaviour
         if (other.gameObject.CompareTag("StonePedestal"))
         {
             canTransition = false;
+        }
+
+        if (other.gameObject.CompareTag("Longer Pole"))
+        {
+            canANP = false;
         }
     }
 
@@ -43,6 +54,25 @@ public class InteractStone : MonoBehaviour
         {
             view.RPC("NextScenePun", RpcTarget.All);
         }
+        if (canANP){
+            ANPScene();
+        }
+    }
+
+    public void ANPScene()
+    {
+        if(canANP)
+        {
+            view.RPC("ANPcut", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+     void ANPcut()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.LoadLevel(12);
+        canANP = false;
     }
 
     [PunRPC]

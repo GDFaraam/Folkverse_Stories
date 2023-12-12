@@ -19,10 +19,13 @@ public class CutsceneBehavior : MonoBehaviour
     public bool OnBambooScene = false;
     public bool OnFolkverseScene = false;
 
+    public UIDisabler uiDisabler;
+
     public bool onOutro = false;
 
     void Start()
     {
+        uiDisabler.CutOut = false;
         sceneObjects[0].SetActive(false);
         StartCoroutine(DialogueShow());
     }
@@ -59,6 +62,7 @@ public class CutsceneBehavior : MonoBehaviour
             if (textComponent.text == lines[0]){
                 HideDialogue();
                 OnBambooScene = true;
+                uiDisabler.EnableAllUITaggedCanvases();
                 }
             }
         }
@@ -79,6 +83,7 @@ public class CutsceneBehavior : MonoBehaviour
             if (index == 3){
                 HideDialogue();
                 textComponent.text = string.Empty;
+                uiDisabler.EnableAllUITaggedCanvases();
             }
         }
 

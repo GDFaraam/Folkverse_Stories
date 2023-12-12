@@ -41,5 +41,10 @@ public class UIDisabler : MonoBehaviour
         }
     }
 
+    public void EnableAllUITaggedCanvases()
+    {
+        CutOut = true;
+    }
+
     
 }

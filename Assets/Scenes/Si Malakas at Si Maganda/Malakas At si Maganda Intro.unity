@@ -1051,7 +1051,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -2
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -2319,8 +2319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CutOut: 0
-  Teachers: {fileID: 0}
-  Students: {fileID: 0}
 --- !u!4 &723602518
 Transform:
   m_ObjectHideFlags: 0

@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTransition: 0
+  canANP: 0
   view: {fileID: 0}
 --- !u!114 &814777721556749835
 MonoBehaviour:
@@ -1199,6 +1200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTransition: 0
+  canANP: 0
   view: {fileID: 0}
 --- !u!1001 &836352935330408962
 PrefabInstance:
