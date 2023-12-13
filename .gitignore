@@ -71,6 +71,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 <<<<<<< HEAD
+<<<<<<< HEAD
 Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_6_0.dll
 Assets/StreamingAssets.meta
 Assets/Scenes/SIGNUP TEACHER.unity
@@ -437,5 +438,7 @@ Assets/StreamingAssets/google-services.json.meta
 Assets/User.cs
 Assets/User.cs.meta
 ProjectSettings/GvhProjectSettings.xml
+=======
+>>>>>>> parent of c53bbb6 (database)
 =======
 >>>>>>> parent of c53bbb6 (database)
