@@ -421,7 +421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Password
+  m_Text: Confirm Password
 --- !u!222 &132690014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4317,6 +4317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signupanim: {fileID: 1797973278}
+  inputField: {fileID: 895875065}
 --- !u!95 &1797973278
 Animator:
   serializedVersion: 5
@@ -4710,7 +4711,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Email
+  m_Text: Password
 --- !u!222 &1849906190
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviourPun
     [SerializeField]public Animator characterAnimatorShadow;
     [SerializeField] public SpriteRenderer phoenix;
     [SerializeField] public Animator phoenixAnimator;
+    [SerializeField] public Animator phoenixAnimatorShadow;
     [SerializeField] public GameObject PlayerUIPrefab;
     [SerializeField] public BoxCollider2D boxCollider2D;
 
@@ -82,25 +83,22 @@ public class PlayerMovement : MonoBehaviourPun
 
             movement.x = joystick.Horizontal;
             movement.y = joystick.Vertical;
-        
         }
         
             characterAnimator.SetFloat("Horizontal", movement.x);
             characterAnimator.SetFloat("Vertical", movement.y);
             characterAnimator.SetFloat("speed", speed);
+            characterAnimatorShadow.SetFloat("Horizontal", movement.x);
+            characterAnimatorShadow.SetFloat("Vertical", movement.y);
+            characterAnimatorShadow.SetFloat("speed", speed);
 
             phoenixAnimator.SetFloat("Horizontal", movement.x);
             phoenixAnimator.SetFloat("Vertical", movement.y);
             phoenixAnimator.SetFloat("Speed", speed);
+            phoenixAnimatorShadow.SetFloat("Horizontal", movement.x);
+            phoenixAnimatorShadow.SetFloat("Vertical", movement.y);
+            phoenixAnimatorShadow.SetFloat("Speed", speed);
     
-
-
-
-
-
-
-
-
     }
 
     private void Awake() 

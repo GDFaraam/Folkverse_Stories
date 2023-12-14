@@ -13154,7 +13154,7 @@ Animator:
   m_GameObject: {fileID: 633593446}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 488d50e229e669145b00fd6d717f5405, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5faa5c37d818e7c41a4119f12934a82c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -58734,8 +58734,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -58870,6 +58870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players:
   - {fileID: 836352935783689505, guid: d35aab55d49752c41b28a29a5bdc81d0, type: 3}
+  - {fileID: 836352935783689505, guid: 998a7140abf16a84394400aa76d52ac1, type: 3}
 --- !u!4 &2801998666414892914
 Transform:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
 using Photon.Pun;
 
-public class SceneManigger : MonoBehaviour
+public class SceneManigger : MonoBehaviourPunCallbacks
 {
     public PlayableDirector[] cutscene;
     public GameObject[] sceneObjects;
@@ -49,7 +49,14 @@ public class SceneManigger : MonoBehaviour
     
     public void NextButton()
     {
-        NextButtonPun();
+        if (photonView.IsMine)
+        {
+            string role = (string)photonView.Owner.CustomProperties["Role"];
+
+                if (role == "Teacher"){
+                NextButtonPun();
+                }
+        }
     }
 
     public void NextButtonPun()

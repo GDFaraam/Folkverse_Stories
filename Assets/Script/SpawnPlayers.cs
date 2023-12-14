@@ -19,9 +19,6 @@ public class SpawnPlayers : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {   
-
-
-
         if(PlayerMovement.LocalPlayerInstance == null)
         {
 
@@ -85,9 +82,4 @@ public class SpawnPlayers : MonoBehaviour
     {
 
     }
-
-
-    
-
-
 }

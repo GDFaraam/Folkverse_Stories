@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class signUpAnim : MonoBehaviour
 {
 
     public Animator signupanim;
-    
+    public InputField inputField;    
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,8 @@ public class signUpAnim : MonoBehaviour
 
     public void loginStudent()
     {
+        string nickname = inputField.text;
+        PlayerPrefs.SetString("PlayerNickname", nickname);
         SceneManager.LoadScene("LOADING TO MAIN STUD");
     }
 
