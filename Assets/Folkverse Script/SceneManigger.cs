@@ -47,10 +47,7 @@ public class SceneManigger : MonoBehaviourPunCallbacks
 
     public void NextButton()
     {
-        string role = (string)photonView.Owner.CustomProperties["Role"];
 
-        if (role == "Teacher")
-        {
             if (textComponent.text == lines[index])
             {
                 if (textComponent.text == lines[0])
@@ -84,7 +81,7 @@ public class SceneManigger : MonoBehaviourPunCallbacks
                 cutscene[0].Play();
                 StartCoroutine(NextDialogue());
             }
-        }
+        
     }
 
 
