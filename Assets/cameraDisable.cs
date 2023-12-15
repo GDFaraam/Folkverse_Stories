@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class cameraDisable : MonoBehaviour
 {
@@ -67,6 +68,11 @@ public class cameraDisable : MonoBehaviour
     public void EnableAllUITaggedCanvases()
     {
         CutOut = true;
+    }
+
+    public void ExitStory(){
+        CutOut = false;
+        SceneManager.LoadScene(1);
     }
 
     

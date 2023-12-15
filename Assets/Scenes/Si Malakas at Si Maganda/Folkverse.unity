@@ -16416,9 +16416,17 @@ PrefabInstance:
       value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 2613396661711055290, guid: 62abb16608cbf6e40b98ce66b72b0b9a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 2613396661711055290, guid: 62abb16608cbf6e40b98ce66b72b0b9a, type: 3}
       propertyPath: m_fontSizeBase
       value: 700
       objectReference: {fileID: 0}
+    - target: {fileID: 2613396661711055290, guid: 62abb16608cbf6e40b98ce66b72b0b9a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2613396661711055293, guid: 62abb16608cbf6e40b98ce66b72b0b9a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 14828.629
@@ -24822,7 +24830,7 @@ MonoBehaviour:
   lines:
   - Dito nag sisimula ang storya.
   bambooLines: []
-  textSpeed: 0.02
+  textSpeed: 0.015
   index: 0
   bambooLinesIndex: 0
   OnBambooScene: 0

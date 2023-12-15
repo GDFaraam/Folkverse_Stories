@@ -55,36 +55,41 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
         StartCoroutine(TypeLineBamboo());
     }
 
-    public void NextButton(){
-        if (photonView.IsMine){
+    public void NextButton()
+{
+    if (photonView.IsMine)
+    {
         string role = (string)photonView.Owner.CustomProperties["Role"];
 
         if (role == "Teacher")
-            if (lines.Length == 1){
-            if (OnFolkverseScene){
-                if (textComponent.text == lines[index]){
-                if (textComponent.text == lines[0]){
-                    HideDialogue();
-                    OnBambooScene = true;
-                    uiDisabler.EnableAllUITaggedCanvases();
+        {
+            if (lines.Length == 1)
+            {
+                if (OnFolkverseScene)
+                {
+                    if (textComponent.text == lines[index])
+                    {
+                        if (textComponent.text == lines[0])
+                        {
+                            HideDialogue();
+                            if (!OnBambooScene)
+                            {
+                                StartCoroutine(BambooLines(2f));
+                                uiDisabler.EnableAllUITaggedCanvases();
+                                OnBambooScene = true;
+                            }
+                        }
                     }
                 }
             }
-            if (!OnBambooScene){
-                if (textComponent.text == lines[index]){
-                if (textComponent.text == lines[0]){
-                    HideDialogue();
-                    StartCoroutine(BambooLines(2f));
-                    OnBambooScene = true;
-                    }
-                }
-            }
-            }
-            else if (lines.Length > 1){
+
+            else if (lines.Length > 1)
+            {
                 index++;
                 textComponent.text = string.Empty;
                 StartCoroutine(TypeLine());
-                if (index == 3){
+                if (index == 3)
+                {
                     HideDialogue();
                     textComponent.text = string.Empty;
                     uiDisabler.EnableAllUITaggedCanvases();
@@ -195,7 +200,9 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
                 StartCoroutine(BambooLines(2f));
                 HideDialogue();
             }
-            else if (bambooLinesIndex == 15){
+
+            else if (bambooLinesIndex == 15)
+            {
                 textComponent.text = string.Empty;
                 bambooLinesIndex++;
                 cutscene[3].Play();
@@ -203,6 +210,8 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
             }
         }
     }
+}
+
 
     public void HideDialogue(){
         sceneObjects[0].SetActive(false);

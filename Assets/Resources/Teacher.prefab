@@ -450,7 +450,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836352935783689505}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b38a75f15ff85d748bc235ee81d916bb, type: 3}
   m_Name: 
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe33380142fb8ea4e84b817af83b8734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  role: Teacher
+  role: 
 --- !u!1 &2025939131013792163
 GameObject:
   m_ObjectHideFlags: 0

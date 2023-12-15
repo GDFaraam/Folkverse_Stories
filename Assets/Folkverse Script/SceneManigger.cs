@@ -17,7 +17,6 @@ public class SceneManigger : MonoBehaviourPunCallbacks
     public string[] lines;
     public float textSpeed;
     public int index;
-    public PhotonView view;
 
     void Start(){
         sceneObjects[0].SetActive(false);
@@ -46,49 +45,48 @@ public class SceneManigger : MonoBehaviourPunCallbacks
     }
 
 
-    
     public void NextButton()
     {
-        if (photonView.IsMine)
+        string role = (string)photonView.Owner.CustomProperties["Role"];
+
+        if (role == "Teacher")
         {
-            string role = (string)photonView.Owner.CustomProperties["Role"];
-
-                if (role == "Teacher"){
-                NextButtonPun();
+            if (textComponent.text == lines[index])
+            {
+                if (textComponent.text == lines[0])
+                {
+                    HideDialogue();
                 }
-        }
-    }
-
-    public void NextButtonPun()
-    {
-        if (textComponent.text == lines[index]){
-            if (textComponent.text == lines[0]){
-                HideDialogue();
+                else if (textComponent.text == lines[1])
+                {
+                    HideDialogue();
+                    sceneObjects[2].SetActive(true);
+                    sceneObjects[3].SetActive(true);
+                    cutscene[2].Play();
+                    StartCoroutine(NextDialogue());
+                }
+                else if (textComponent.text == lines[5])
+                {
+                    HideDialogue();
+                    cutscene[3].Play();
+                    StartCoroutine(NextScene());
+                }
+                else
+                {
+                    index++;
+                    textComponent.text = string.Empty;
+                    StartCoroutine(TypeLine());
+                }
             }
-            else if (textComponent.text == lines[1]){
-                HideDialogue();
-                sceneObjects[2].SetActive(true);
-                sceneObjects[3].SetActive(true);
-                cutscene[2].Play();
+
+            if (index == 0)
+            {
+                cutscene[0].Play();
                 StartCoroutine(NextDialogue());
             }
-            else if (textComponent.text == lines[5]){
-                HideDialogue();
-                cutscene[3].Play();
-                StartCoroutine(NextScene());
-            }
-            else{
-            index++;
-            textComponent.text = string.Empty;
-            StartCoroutine(TypeLine());
-            }
-        }
-
-        if (index == 0){
-            cutscene[0].Play();
-            StartCoroutine(NextDialogue());
         }
     }
+
 
     IEnumerator TypeLine(){
         buttons[0].interactable = false;
