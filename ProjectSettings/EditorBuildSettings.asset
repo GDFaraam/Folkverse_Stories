@@ -32,9 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MAIN MENU TEACHER.unity
     guid: 6263d16bce7dc0b41adb7ca181062a2c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/STORY ROOM.unity
     guid: 8751baedfaa93dd4c9dc0f6ef6cce166
