@@ -14,24 +14,30 @@ public class SpawnPlayers : MonoBehaviour
     public float minY;
     public float maxY;
 
+    public GameObject[] spawnPoint;
+
 
     [PunRPC]
     // Start is called before the first frame update
     private void Start()
     {   
-        if(PlayerMovement.LocalPlayerInstance == null)
+        if (PlayerMovement.LocalPlayerInstance == null)
         {
-
             string role = DeterminePlayerRole();
-            
-            Vector2 randomposition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+
+            int randomSpawnpoint = Random.Range(0, 5);
+
+            Transform spawnTransform = spawnPoint[randomSpawnpoint].transform;
+            Vector3 randomPosition = spawnTransform.position;
 
             GameObject playerPrefab = GetPlayerPrefab(role);
 
-            PhotonNetwork.Instantiate(playerPrefab.name, randomposition, Quaternion.identity);
+            PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
 
-            Debug.Log("spawned players with role: " + role);
+            Debug.Log("Spawned player with role: " + role);
         }
+
+
         else
         {
             GameObject.FindWithTag("Player").transform.position = this.gameObject.transform.position;

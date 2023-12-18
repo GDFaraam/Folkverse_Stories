@@ -580,12 +580,24 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5259a1289abe26149bdf7207a8afc7f6, type: 3}
   - {fileID: 21300000, guid: 94db7b98b4f14524bb3e200cebe8155f, type: 3}
   - {fileID: 21300000, guid: 94620cb93ab8f2545996c10d90d1fb25, type: 3}
+  - {fileID: 1538414485, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: -1204291821, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: -866262955, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: 1348322074, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: 630361391, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: 2054411706, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: 828206531, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: 956910243, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: 601198425, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: 1281706272, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
+  - {fileID: -133599283, guid: 2b07508ad6cdc9f469b8cdcf05361b84, type: 3}
   - {fileID: 21300000, guid: 08f1768b235ecd94d9b47bd311bab141, type: 3}
   - {fileID: 21300000, guid: f5e66adb06be24349bc7591ff63b2df9, type: 3}
   - {fileID: -1177715634, guid: 2083d6eb086efb5439e7d535bcee67ef, type: 3}
   - {fileID: -1809224601, guid: 2083d6eb086efb5439e7d535bcee67ef, type: 3}
   - {fileID: -269492732, guid: 2083d6eb086efb5439e7d535bcee67ef, type: 3}
   - {fileID: 1116030100, guid: 2083d6eb086efb5439e7d535bcee67ef, type: 3}
+  - {fileID: 21300000, guid: 43acdced1efd80146882cf15632b0beb, type: 3}
   - {fileID: -881515630, guid: b3b7540ff9a9e3743a1f1a2dac9776fb, type: 3}
   - {fileID: 1136297681, guid: b3b7540ff9a9e3743a1f1a2dac9776fb, type: 3}
   - {fileID: 907540113, guid: b3b7540ff9a9e3743a1f1a2dac9776fb, type: 3}
@@ -1093,12 +1105,24 @@ SpriteAtlas:
   - Godray2
   - Leaf
   - Sun
+  - decoration1-export_10
+  - decoration1-export_8
+  - decoration1-export_9
+  - decoration1-export_0
+  - decoration1-export_1
+  - decoration1-export_2
+  - decoration1-export_3
+  - decoration1-export_4
+  - decoration1-export_5
+  - decoration1-export_6
+  - decoration1-export_7
   - island
   - Cloud
   - Wave_1
   - Wave_0
   - Wave_3
   - Wave_2
+  - fountain
   - trees_0
   - trees_7
   - trees_6

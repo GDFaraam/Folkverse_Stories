@@ -24,8 +24,14 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
 
     public bool onOutro = false;
 
+    private PhotonView view;
+    private PlayerRole playerRole;
+
     void Start()
     {
+        view = this.gameObject.GetComponent<PhotonView>();
+        GameObject teacher = GameObject.FindWithTag("Teacher");
+        playerRole = teacher.gameObject.GetComponent<PlayerRole>();
         uiDisabler.CutOut = false;
         sceneObjects[0].SetActive(false);
         StartCoroutine(DialogueShow());
@@ -55,162 +61,163 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
         StartCoroutine(TypeLineBamboo());
     }
 
-    public void NextButton()
-{
-    if (photonView.IsMine)
+    public void NextButtonAll()
     {
-        string role = (string)photonView.Owner.CustomProperties["Role"];
-
-        if (role == "Teacher")
+        if (view.IsMine && playerRole.role == "Teacher")
         {
+            view.RPC("NextButton", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    public void NextButton()
+    {
             if (lines.Length == 1)
-            {
-                if (OnFolkverseScene)
                 {
-                    if (textComponent.text == lines[index])
+                    if (OnFolkverseScene)
                     {
-                        if (textComponent.text == lines[0])
+                        if (textComponent.text == lines[index])
                         {
-                            HideDialogue();
-                            if (!OnBambooScene)
+                            if (textComponent.text == lines[0])
                             {
-                                StartCoroutine(BambooLines(2f));
-                                uiDisabler.EnableAllUITaggedCanvases();
-                                OnBambooScene = true;
+                                HideDialogue();
+                                if (!OnBambooScene)
+                                {
+                                    StartCoroutine(BambooLines(2f));
+                                    uiDisabler.EnableAllUITaggedCanvases();
+                                    OnBambooScene = true;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            else if (lines.Length > 1)
-            {
-                index++;
-                textComponent.text = string.Empty;
-                StartCoroutine(TypeLine());
-                if (index == 3)
+                else if (lines.Length > 1)
                 {
-                    HideDialogue();
+                    index++;
                     textComponent.text = string.Empty;
-                    uiDisabler.EnableAllUITaggedCanvases();
+                    StartCoroutine(TypeLine());
+                    if (index == 3)
+                    {
+                        HideDialogue();
+                        textComponent.text = string.Empty;
+                        uiDisabler.EnableAllUITaggedCanvases();
+                    }
+                }
+
+                if (textComponent.text == bambooLines[0]){
+                    bambooLinesIndex++;
+                    textComponent.text = string.Empty;
+                    HideDialogue();
+                    StartCoroutine(BambooLines(2f));
+                }
+                if (bambooLinesIndex == 1){
+                    textComponent.text = string.Empty;
+                    HideDialogue();
+                    bambooLinesIndex++;
+                }
+
+                else if (bambooLinesIndex == 2){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(BambooLines(1.5f));
+                    HideDialogue();
+                }
+
+                else if (bambooLinesIndex == 3){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    if(!onOutro){
+                    StartCoroutine(BambooLines(2f));
+                    HideDialogue();
+                    }
+                    else{
+                    HideDialogue();
+                    }
+                }
+
+                else if (bambooLinesIndex == 4){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(BambooLines(2f));
+                    HideDialogue();
+                }
+
+                else if (bambooLinesIndex == 5){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    cutscene[1].Play();
+                    StartCoroutine(BambooLines(2f));
+                    HideDialogue();
+                }
+
+                else if (bambooLinesIndex == 6){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(BambooLines(4f));
+                    HideDialogue();
+                }
+
+                if (textComponent.text == bambooLines[7]){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(BambooLines(3f));
+                    HideDialogue();
+                }
+
+                else if (bambooLinesIndex == 8){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    cutscene[2].Play();
+                    StartCoroutine(BambooLines(7f));
+                    HideDialogue();
+                }
+
+                else if (bambooLinesIndex == 9){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(BambooLines(3f));
+                    HideDialogue();
+                }
+
+                else if (bambooLinesIndex == 10){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(BambooLines(2f));
+                    HideDialogue();
+                }
+
+                else if (bambooLinesIndex == 11){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(BambooLines(2f));
+                    HideDialogue();
+                }
+                else if (bambooLinesIndex == 12){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(TypeLineBamboo());
+                }
+                else if (bambooLinesIndex == 13){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(TypeLineBamboo());
+                }
+                else if (bambooLinesIndex == 14){
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    StartCoroutine(BambooLines(2f));
+                    HideDialogue();
+                }
+
+                else if (bambooLinesIndex == 15)
+                {
+                    textComponent.text = string.Empty;
+                    bambooLinesIndex++;
+                    cutscene[3].Play();
+                    HideDialogue();
                 }
             }
-
-            if (textComponent.text == bambooLines[0]){
-                bambooLinesIndex++;
-                textComponent.text = string.Empty;
-                HideDialogue();
-                StartCoroutine(BambooLines(2f));
-            }
-            if (bambooLinesIndex == 1){
-                textComponent.text = string.Empty;
-                HideDialogue();
-                bambooLinesIndex++;
-            }
-
-            else if (bambooLinesIndex == 2){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(BambooLines(1.5f));
-                HideDialogue();
-            }
-
-            else if (bambooLinesIndex == 3){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                if(!onOutro){
-                StartCoroutine(BambooLines(2f));
-                HideDialogue();
-                }
-                else{
-                HideDialogue();
-                }
-            }
-
-            else if (bambooLinesIndex == 4){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(BambooLines(2f));
-                HideDialogue();
-            }
-
-            else if (bambooLinesIndex == 5){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                cutscene[1].Play();
-                StartCoroutine(BambooLines(2f));
-                HideDialogue();
-            }
-
-            else if (bambooLinesIndex == 6){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(BambooLines(4f));
-                HideDialogue();
-            }
-
-            if (textComponent.text == bambooLines[7]){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(BambooLines(3f));
-                HideDialogue();
-            }
-
-            else if (bambooLinesIndex == 8){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                cutscene[2].Play();
-                StartCoroutine(BambooLines(7f));
-                HideDialogue();
-            }
-
-            else if (bambooLinesIndex == 9){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(BambooLines(3f));
-                HideDialogue();
-            }
-
-            else if (bambooLinesIndex == 10){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(BambooLines(2f));
-                HideDialogue();
-            }
-
-            else if (bambooLinesIndex == 11){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(BambooLines(2f));
-                HideDialogue();
-            }
-            else if (bambooLinesIndex == 12){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(TypeLineBamboo());
-            }
-            else if (bambooLinesIndex == 13){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(TypeLineBamboo());
-            }
-            else if (bambooLinesIndex == 14){
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                StartCoroutine(BambooLines(2f));
-                HideDialogue();
-            }
-
-            else if (bambooLinesIndex == 15)
-            {
-                textComponent.text = string.Empty;
-                bambooLinesIndex++;
-                cutscene[3].Play();
-                HideDialogue();
-            }
-        }
-    }
-}
 
 
     public void HideDialogue(){

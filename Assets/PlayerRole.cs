@@ -1,4 +1,5 @@
 using Photon.Pun;
+using UnityEngine;
 
 public class PlayerRole : MonoBehaviourPunCallbacks
 {
@@ -14,5 +15,8 @@ public class PlayerRole : MonoBehaviourPunCallbacks
                 { "Role", role }
             });
         }
+        Debug.Log("Role is: " + role);
+        Debug.Log("Player count: " + PhotonNetwork.PlayerList.Length);
+        Debug.Log("Room name: " + PhotonNetwork.CurrentRoom.Name);
     }
 }

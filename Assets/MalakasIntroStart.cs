@@ -6,7 +6,6 @@ public class MalakasIntroStart : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject[] players;
 
     void Start()
     {
