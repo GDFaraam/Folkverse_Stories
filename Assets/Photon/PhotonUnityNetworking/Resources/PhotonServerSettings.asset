@@ -50,6 +50,14 @@ MonoBehaviour:
   - ANPcut
   - HandleButtonClickRPC
   - ToggleButtonVisibility
+  - SyncInteractStone
+  - SyncRequiredPlayers
+  - ToggleCount
+  - GetCurrentCount
+  - ToggleANPCanvas
+  - ToggleMAMCanvas
+  - AddCurrentCount
+  - SubCurrentCount
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

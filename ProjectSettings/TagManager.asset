@@ -22,6 +22,7 @@ TagManager:
   - UIDisabler
   - SceneChanger
   - UI
+  - Playercount
   layers:
   - Default
   - TransparentFX

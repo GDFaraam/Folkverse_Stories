@@ -23,6 +23,6 @@ public class buttonComponent : MonoBehaviour
 
     public void Next()
     {
-        interactStone.NextScene();
+        interactStone.ToggleCount();
     }
 }

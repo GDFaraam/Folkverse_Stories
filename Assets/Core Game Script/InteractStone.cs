@@ -1,31 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Photon.Pun;
 
 public class InteractStone : MonoBehaviour
 {
-    public bool canTransition = false;
-    public bool canANP = false;
-    public PhotonView view;
+    public RequiredPlayers reqPlayers;
+    private bool interactPedestal = false;
+    private bool MalakasAtM = false;
+    private bool AlamatNgP = false;
+    private bool addedOne = false;
+    private PhotonView view;
 
-    void Start()
-    {
+    void Start(){
         view = this.gameObject.GetComponent<PhotonView>();
     }
 
+    void Update()
+    {
+        GameObject CountManager = GameObject.FindWithTag("Playercount");
+
+        if (CountManager != null)
+        {
+            reqPlayers = CountManager.GetComponent<RequiredPlayers>();
+
+            if (reqPlayers == null)
+            {
+                Debug.LogError("RequiredPlayers script not found on the object with the 'Playercount' tag.");
+            }
+        }
+        else
+        {
+            Debug.LogError("GameObject with tag 'Playercount' not found in the scene.");
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("StonePedestal"))
         {
-            canTransition = true;
+            interactPedestal = true;
+            MalakasAtM = true;
         }
 
         if (other.gameObject.CompareTag("Longer Pole"))
         {
-            canANP = true;
+            interactPedestal = true;
+            AlamatNgP = true;
         }
     }
 
@@ -33,55 +55,64 @@ public class InteractStone : MonoBehaviour
     {
         if (other.gameObject.CompareTag("StonePedestal"))
         {
-            canTransition = false;
+            interactPedestal = false;
         }
 
         if (other.gameObject.CompareTag("Longer Pole"))
         {
-            canANP = false;
+            interactPedestal = false;
         }
     }
 
-    void Update()
-    {
-         
+    public void ToggleCountAll(){
+        view.RPC("ToggleCount", RpcTarget.All);
     }
 
-    
-    public void NextScene()
+    [PunRPC]
+    public void ToggleCount()
     {
-        if(canTransition)
+        if (MalakasAtM){
+            view.RPC("ToggleMAMCanvas", RpcTarget.All);
+        }
+        else if (AlamatNgP){
+            view.RPC("ToggleANPCanvas", RpcTarget.All);
+        }
+        if (interactPedestal && !addedOne)
         {
-            view.RPC("NextScenePun", RpcTarget.All);
+            view.RPC("AddCurrentCount", RpcTarget.All);
+            addedOne = true;
         }
-        if (canANP){
-            ANPScene();
-        }
-    }
-
-    public void ANPScene()
-    {
-        if(canANP)
+        else if (interactPedestal && addedOne)
         {
-            view.RPC("ANPcut", RpcTarget.All);
+            view.RPC("SubCurrentCount", RpcTarget.All);
+            addedOne = false;
         }
     }
 
     [PunRPC]
-     void ANPcut()
-    {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.LoadLevel(12);
-        canANP = false;
+    public void ToggleMAMCanvas(){
+        reqPlayers.indicators[0].SetActive(true);
     }
 
     [PunRPC]
-     void NextScenePun()
-    {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-        PhotonNetwork.LoadLevel(nextSceneIndex);
-        canTransition = false;
+    public void ToggleANPCanvas(){
+        reqPlayers.indicators[1].SetActive(true);
     }
+
+    [PunRPC]
+    public void AddCurrentCount(){
+        reqPlayers.requiredCount++;
+        if (reqPlayers.requiredCount == 0){
+            addedOne = false;
+        }
+    }
+
+    [PunRPC]
+    public void SubCurrentCount(){
+        reqPlayers.requiredCount--;
+        if (reqPlayers.requiredCount == 0){
+            addedOne = false;
+        }
+    }
+
 }

@@ -10,17 +10,11 @@ public class MalakasIntroStart : MonoBehaviour
     void Start()
     {
         GameObject.FindWithTag("Teacher").transform.position = this.gameObject.transform.position;
-        GameObject.FindWithTag("Player").transform.position = this.gameObject.transform.position;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject playerGo in players)
+        {
+            playerGo.transform.position = this.gameObject.transform.position;
+        }
     }
 
-    void Awake()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

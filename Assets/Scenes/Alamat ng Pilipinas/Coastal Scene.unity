@@ -13806,8 +13806,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14006,13 +14006,15 @@ PlayableDirector:
   m_GameObject: {fileID: 5491728781826008287}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: ab6583a9918221f42922dfc88f6f50d7, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: a1ef31b03df8979488691ad7cb010c54, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 9028033123917414598, guid: ab6583a9918221f42922dfc88f6f50d7, type: 2}
+    value: {fileID: 5491728781826008272}
+  - key: {fileID: 9028033123917414598, guid: a1ef31b03df8979488691ad7cb010c54, type: 2}
     value: {fileID: 5491728781826008272}
   m_ExposedReferences:
     m_References: []
