@@ -10,7 +10,7 @@ public class InteractStone : MonoBehaviour
     private bool interactPedestal = false;
     private bool MalakasAtM = false;
     private bool AlamatNgP = false;
-    private bool addedOne = false;
+    public bool addedOne = false;
     private PhotonView view;
 
     void Start(){
@@ -102,17 +102,11 @@ public class InteractStone : MonoBehaviour
     [PunRPC]
     public void AddCurrentCount(){
         reqPlayers.requiredCount++;
-        if (reqPlayers.requiredCount == 0){
-            addedOne = false;
-        }
     }
 
     [PunRPC]
     public void SubCurrentCount(){
         reqPlayers.requiredCount--;
-        if (reqPlayers.requiredCount == 0){
-            addedOne = false;
-        }
     }
 
 }

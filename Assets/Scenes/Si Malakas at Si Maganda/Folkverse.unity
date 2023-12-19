@@ -24629,8 +24629,8 @@ MonoBehaviour:
   textSpeed: 0.015
   index: 0
   bambooLinesIndex: 0
-  OnBambooScene: 0
-  OnFolkverseScene: 0
+  OnBambooScene: 1
+  OnFolkverseScene: 1
   uiDisabler: {fileID: 1578281189}
   onOutro: 0
 --- !u!4 &683329092

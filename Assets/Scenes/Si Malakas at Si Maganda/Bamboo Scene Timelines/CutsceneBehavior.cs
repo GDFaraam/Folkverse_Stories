@@ -81,10 +81,10 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
                             if (textComponent.text == lines[0])
                             {
                                 HideDialogue();
+                                uiDisabler.EnableAllUITaggedCanvases();
                                 if (!OnBambooScene)
                                 {
                                     StartCoroutine(BambooLines(2f));
-                                    uiDisabler.EnableAllUITaggedCanvases();
                                     OnBambooScene = true;
                                 }
                             }
