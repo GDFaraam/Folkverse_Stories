@@ -66,6 +66,13 @@ public class RequiredPlayers : MonoBehaviour
         }
     }
 
+    public void RunStoryRoom(){
+        if (view.IsMine && playerRole.role == "Teacher")
+        {
+            view.RPC("StoryRoom", RpcTarget.All);
+        }
+    }
+
     [PunRPC]
     void ANPcut()
     {
@@ -81,6 +88,14 @@ public class RequiredPlayers : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
         PhotonNetwork.LoadLevel(nextSceneIndex);
+        requiredCount = 0;
+    }
+
+    [PunRPC]
+    void StoryRoom()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.LoadLevel(9);
         requiredCount = 0;
     }
 }

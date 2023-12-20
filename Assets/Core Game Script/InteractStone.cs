@@ -10,6 +10,7 @@ public class InteractStone : MonoBehaviour
     private bool interactPedestal = false;
     private bool MalakasAtM = false;
     private bool AlamatNgP = false;
+    private bool StoryRoom = false;
     public bool addedOne = false;
     private PhotonView view;
 
@@ -49,6 +50,12 @@ public class InteractStone : MonoBehaviour
             interactPedestal = true;
             AlamatNgP = true;
         }
+
+        if (other.gameObject.CompareTag("StoryRoom"))
+        {
+            interactPedestal = true;
+            StoryRoom = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -63,6 +70,11 @@ public class InteractStone : MonoBehaviour
         {
             interactPedestal = false;
             AlamatNgP = false;
+        }
+        if (other.gameObject.CompareTag("StoryRoom"))
+        {
+            interactPedestal = false;
+            StoryRoom = false;
         }
     }
 
@@ -79,15 +91,13 @@ public class InteractStone : MonoBehaviour
         else if (AlamatNgP){
             view.RPC("ToggleANPCanvas", RpcTarget.All);
         }
+        else if (StoryRoom){
+            view.RPC("SetStoryRoom", RpcTarget.All);
+        }
         if (interactPedestal && !addedOne)
         {
             view.RPC("AddCurrentCount", RpcTarget.All);
             addedOne = true;
-        }
-        else if (interactPedestal && addedOne)
-        {
-            view.RPC("SubCurrentCount", RpcTarget.All);
-            addedOne = false;
         }
     }
 
@@ -119,6 +129,11 @@ public class InteractStone : MonoBehaviour
     [PunRPC]
     public void SubCurrentCount(){
         reqPlayers.requiredCount--;
+    }
+
+    [PunRPC]
+    public void SetStoryRoom(){
+        reqPlayers.RunStoryRoom();
     }
 
 }
