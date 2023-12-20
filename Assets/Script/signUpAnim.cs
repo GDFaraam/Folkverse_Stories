@@ -63,4 +63,17 @@ public class signUpAnim : MonoBehaviour
         SceneManager.LoadScene("LOADING TO MAIN");
     }
 
+    public void signInitial()
+    {
+        signupanim.SetBool("signIsOpen", true);
+    }
+
+    public void logInitial()
+    {
+        signupanim.SetBool("logIsOpenInitial", true);
+        signupanim.SetBool("logIsOpen", true);
+    }
+
+
+
 }
