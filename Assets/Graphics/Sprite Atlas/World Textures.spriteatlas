@@ -598,6 +598,16 @@ SpriteAtlas:
   - {fileID: -269492732, guid: 2083d6eb086efb5439e7d535bcee67ef, type: 3}
   - {fileID: 1116030100, guid: 2083d6eb086efb5439e7d535bcee67ef, type: 3}
   - {fileID: 21300000, guid: 43acdced1efd80146882cf15632b0beb, type: 3}
+  - {fileID: -507003798, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: -754402476, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: -561010630, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: 1677826992, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: -217479079, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: 1427722957, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: -1311701538, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: -1629775815, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: -207952065, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
+  - {fileID: -1373772769, guid: fbe7eaeee9ccda343a8f8da0cfcebbec, type: 3}
   - {fileID: -881515630, guid: b3b7540ff9a9e3743a1f1a2dac9776fb, type: 3}
   - {fileID: 1136297681, guid: b3b7540ff9a9e3743a1f1a2dac9776fb, type: 3}
   - {fileID: 907540113, guid: b3b7540ff9a9e3743a1f1a2dac9776fb, type: 3}
@@ -1123,6 +1133,16 @@ SpriteAtlas:
   - Wave_3
   - Wave_2
   - fountain
+  - decoration2_4
+  - decoration2_5
+  - decoration2_6
+  - decoration2_7
+  - decoration2_0
+  - decoration2_1
+  - decoration2_2
+  - decoration2_3
+  - decoration2_8
+  - decoration2_9
   - trees_0
   - trees_7
   - trees_6
