@@ -110,6 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2d4a7e03be65642ae5eb557ccb0e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  joystick: {fileID: 0}
+  button: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &2929252285020697097
 GameObject:
   m_ObjectHideFlags: 0

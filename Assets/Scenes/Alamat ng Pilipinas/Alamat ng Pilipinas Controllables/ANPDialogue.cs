@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 using UnityEngine.UI;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,8 @@ public class ANPDialogue : MonoBehaviour
     public int index;
 
     public static ANPDialogue instance;
+    private PhotonView view;
+    private PlayerRole playerRole;
 
     private void Awake()
     {
@@ -44,6 +47,9 @@ public class ANPDialogue : MonoBehaviour
     }
 
     void Start(){
+        view = this.GetComponent<PhotonView>();
+        GameObject teacher = GameObject.FindWithTag("Teacher");
+        playerRole = teacher.gameObject.GetComponent<PlayerRole>();
         if (index == 13){
             foreach (GameObject sceneGo in storyScenes){
             sceneGo.SetActive(false);
@@ -52,11 +58,11 @@ public class ANPDialogue : MonoBehaviour
             charactersGo.SetActive(false);
         }
         diaBox.SetActive(false);
-            buttons[1].gameObject.SetActive(false);
-            storyScenes[2].SetActive(true);
-            characters[0].SetActive(true);
-            cutscene[7].Play();
-            StartCoroutine(DialogueShow());
+        buttons[1].gameObject.SetActive(false);
+        storyScenes[2].SetActive(true);
+        characters[0].SetActive(true);
+        cutscene[7].Play();
+        StartCoroutine(DialogueShow());
         }
 
         else
@@ -92,6 +98,15 @@ public class ANPDialogue : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void NextButtonAll()
+    {
+        if (view.IsMine && playerRole.role == "Teacher")
+        {
+            view.RPC("NextButton", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
     public void NextButton(){
         if (index == 0){
             textComponent.text = string.Empty;

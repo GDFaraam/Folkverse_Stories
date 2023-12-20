@@ -878,6 +878,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 836352935783689504}
     m_Modifications:
+    - target: {fileID: 1578150088911108737, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 322.6315
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578150088911108737, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -965.174
+      objectReference: {fileID: 0}
     - target: {fileID: 3143079629164503650, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
       propertyPath: m_Name
       value: nicknameCanvas

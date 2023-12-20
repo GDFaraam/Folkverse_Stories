@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 using UnityEngine.UI;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -19,9 +20,11 @@ public class ShoreScene : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     private float textSpeed = 0.02f;
-    private int index;
+    public int index;
 
     private static ShoreScene SHOREinstance;
+    private PhotonView view;
+    private PlayerRole playerRole;
 
     private void Awake()
     {
@@ -43,10 +46,20 @@ public class ShoreScene : MonoBehaviour
     }
 
     void Start(){
+        view = this.GetComponent<PhotonView>();
+        GameObject teacher = GameObject.FindWithTag("Teacher");
+        playerRole = teacher.gameObject.GetComponent<PlayerRole>();
+        if (index == 5){
+            diaBox.SetActive(false);
+            StartCoroutine(DialogueShow());
+            cutscene[5].Play();
+        }
+        else{
         storyScenes[0].SetActive(true);
         cutscene[0].Play();
         diaBox.SetActive(false);
         StartCoroutine(DialogueShow());
+        }
     }
 
     IEnumerator DialogueShow(){
@@ -60,6 +73,15 @@ public class ShoreScene : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
+    public void NextButtonAll()
+    {
+        if (view.IsMine && playerRole.role == "Teacher")
+        {
+            view.RPC("NextButton", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
     public void NextButton(){
         if (index == 0){
             textComponent.text = string.Empty;

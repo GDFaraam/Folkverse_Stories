@@ -10,10 +10,11 @@ public class RequiredPlayers : MonoBehaviour
     public int requiredCount;
     public int totalPlayerCount;
     private PhotonView view;
-    public TextMeshProUGUI malakasAtMComponent;
+    public TextMeshProUGUI[] textList;
 
     public GameObject[] indicators;
     private bool isMAMRunning = false;
+    private bool isAMPRunning = false;
 
     public PlayerRole playerRole;
     public InteractStone interactStone;
@@ -27,16 +28,25 @@ public class RequiredPlayers : MonoBehaviour
             indicatorsGo.SetActive(false);
         }
         isMAMRunning = false;
+        isAMPRunning = false;
         view = this.gameObject.GetComponent<PhotonView>();
     }
 
     void Update(){
         totalPlayerCount = PhotonNetwork.CurrentRoom.PlayerCount;
-        malakasAtMComponent.text = $"{requiredCount} / {totalPlayerCount} players are required to start";
+        foreach (TextMeshProUGUI TextMeshAll in textList){
+            if (TextMeshAll != null){
+            TextMeshAll.text = $"{requiredCount} / {totalPlayerCount} players are required to start";
+            }
+        }
         if (requiredCount == totalPlayerCount){
             if (indicators[0].activeSelf && !isMAMRunning){
             RunMalakasAtM();
             isMAMRunning = true;
+            }
+            else if (indicators[1].activeSelf && !isAMPRunning){
+            RunAlamatNgP();
+            isAMPRunning = true;
             }
         }
     }
@@ -52,19 +62,20 @@ public class RequiredPlayers : MonoBehaviour
     public void RunAlamatNgP(){
         if (view.IsMine && playerRole.role == "Teacher")
         {
-            view.RPC("ANPCut", RpcTarget.All);
+            view.RPC("ANPcut", RpcTarget.All);
         }
     }
 
     [PunRPC]
-     void ANPcut()
+    void ANPcut()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.LoadLevel(12);
+        requiredCount = 0;
     }
 
     [PunRPC]
-     void NextScenePun()
+    void NextScenePun()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

@@ -233,11 +233,11 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        StartCoroutine(EnableButton());
+        StartCoroutine(EnableButton(2f));
     }
 
-    IEnumerator EnableButton(){
-        yield return new WaitForSeconds(2f);
+    IEnumerator EnableButton(float duration){
+        yield return new WaitForSeconds(duration);
         buttons[0].interactable = true;
         sceneObjects[1].SetActive(true);
     }
@@ -249,8 +249,7 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        buttons[0].interactable = true;
-        sceneObjects[1].SetActive(true);
+        StartCoroutine(EnableButton(1f));
     }
 
     public void CallOnOutro(){

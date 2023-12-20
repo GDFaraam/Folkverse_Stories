@@ -98777,17 +98777,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5345045005263280024, guid: 5177a09b1ed4d1541954868a1745c02e, type: 3}
+      propertyPath: textIndicator
+      value: 
+      objectReference: {fileID: 2045239243}
+    - target: {fileID: 5345045005263280024, guid: 5177a09b1ed4d1541954868a1745c02e, type: 3}
       propertyPath: malakasAtMComponent
       value: 
       objectReference: {fileID: 2045239243}
     - target: {fileID: 5345045005263280024, guid: 5177a09b1ed4d1541954868a1745c02e, type: 3}
-      propertyPath: indicators.Array.size
+      propertyPath: textList.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5345045005263280024, guid: 5177a09b1ed4d1541954868a1745c02e, type: 3}
+      propertyPath: indicators.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345045005263280024, guid: 5177a09b1ed4d1541954868a1745c02e, type: 3}
+      propertyPath: textList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2045239243}
     - target: {fileID: 5345045005263280024, guid: 5177a09b1ed4d1541954868a1745c02e, type: 3}
       propertyPath: indicators.Array.data[0]
       value: 
       objectReference: {fileID: 2045239244}
+    - target: {fileID: 5345045005263280024, guid: 5177a09b1ed4d1541954868a1745c02e, type: 3}
+      propertyPath: indicators.Array.data[1]
+      value: 
+      objectReference: {fileID: 1492569169}
     - target: {fileID: 5345045005263280026, guid: 5177a09b1ed4d1541954868a1745c02e, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -101023,6 +101039,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3159525591699580737, guid: ec0befe00de043749a04621ce5c1f9d9, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3159525591699580764, guid: ec0befe00de043749a04621ce5c1f9d9, type: 3}
       propertyPath: m_Name
       value: Players Required

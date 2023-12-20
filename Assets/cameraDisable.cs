@@ -9,10 +9,13 @@ public class cameraDisable : MonoBehaviour
     public CameraFix cameraFix;
     public UIDisabler uiDisabler;
     private PhotonView view;
+    private PlayerRole playerRole;
 
     void Start()
     {
         view = this.GetComponent<PhotonView>();
+        GameObject teacher = GameObject.FindWithTag("Teacher");
+        playerRole = teacher.gameObject.GetComponent<PlayerRole>();
     }
 
     void Awake()
@@ -64,7 +67,7 @@ public class cameraDisable : MonoBehaviour
     }
 
     public void ExitToLobby(){
-        if (view.IsMine)
+        if (view.IsMine && playerRole.role == "Teacher")
         {
             view.RPC("ExitStory", RpcTarget.All);
         }

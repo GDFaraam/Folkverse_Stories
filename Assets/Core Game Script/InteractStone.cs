@@ -56,11 +56,13 @@ public class InteractStone : MonoBehaviour
         if (other.gameObject.CompareTag("StonePedestal"))
         {
             interactPedestal = false;
+            MalakasAtM = false;
         }
 
         if (other.gameObject.CompareTag("Longer Pole"))
         {
             interactPedestal = false;
+            AlamatNgP = false;
         }
     }
 
@@ -91,12 +93,22 @@ public class InteractStone : MonoBehaviour
 
     [PunRPC]
     public void ToggleMAMCanvas(){
+        if (reqPlayers.indicators[0] != null){
         reqPlayers.indicators[0].SetActive(true);
+        }
+        if (reqPlayers.indicators[1] != null){
+        reqPlayers.indicators[1].SetActive(false);
+        }
     }
 
     [PunRPC]
     public void ToggleANPCanvas(){
+        if (reqPlayers.indicators[0] != null){
+        reqPlayers.indicators[0].SetActive(false);
+        }
+        if (reqPlayers.indicators[1] != null){
         reqPlayers.indicators[1].SetActive(true);
+        }
     }
 
     [PunRPC]
