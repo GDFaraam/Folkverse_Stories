@@ -58,6 +58,10 @@ MonoBehaviour:
   - ToggleMAMCanvas
   - AddCurrentCount
   - SubCurrentCount
+  - ExitStory
+  - UpdateNameToAll
+  - UpdateNickname
+  - SetPlayerNickname
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -24629,7 +24629,7 @@ MonoBehaviour:
   textSpeed: 0.015
   index: 0
   bambooLinesIndex: 0
-  OnBambooScene: 1
+  OnBambooScene: 0
   OnFolkverseScene: 1
   uiDisabler: {fileID: 1578281189}
   onOutro: 0
@@ -106785,6 +106785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708c73b32e2ccb4498c588e11f4b72d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyPosition: {fileID: 0}
 --- !u!1 &1781918658736824151
 GameObject:
   m_ObjectHideFlags: 0

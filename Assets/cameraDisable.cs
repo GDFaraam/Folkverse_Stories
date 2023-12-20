@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Collections;
+using System.Collections.Generic;
+using Photon.Pun;
 public class cameraDisable : MonoBehaviour
 {
-
     public bool CutOut = false;
+    public CameraFix cameraFix;
+    public UIDisabler uiDisabler;
+    private PhotonView view;
 
     void Start()
     {
-        
+        view = this.GetComponent<PhotonView>();
     }
 
     void Awake()
@@ -25,41 +29,30 @@ public class cameraDisable : MonoBehaviour
     void DisableCameraFollowTeacher()
     {
         // Get all GameObjects in the scene
-        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+        GameObject[] teacherObjects = GameObject.FindGameObjectsWithTag("Teacher");
 
-        foreach (GameObject obj in allObjects)
+        foreach (GameObject obj in teacherObjects)
         {
-            // Check if the GameObject has the "UI" tag and a Canvas component
-            if (obj.CompareTag("Teacher"))
-            {
-                CameraWork cameraWork = obj.GetComponent<CameraWork>();
+            CameraWork cameraWork = obj.GetComponent<CameraWork>();
 
-                if (cameraWork != null)
-                {
-                    // Disable the Canvas
-                    cameraWork.enabled = CutOut;
-                }
+            if (cameraWork != null)
+            {
+                cameraWork.enabled = CutOut;
             }
         }
     }
 
     void DisableCameraFollowStudent()
     {
-        // Get all GameObjects in the scene
-        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject obj in allObjects)
         {
-            // Check if the GameObject has the "UI" tag and a Canvas component
-            if (obj.CompareTag("Player"))
-            {
-                CameraWork cameraWork = obj.GetComponent<CameraWork>();
+            CameraWork cameraWork = obj.GetComponent<CameraWork>();
 
-                if (cameraWork != null)
-                {
-                    // Disable the Canvas
-                    cameraWork.enabled = CutOut;
-                }
+            if (cameraWork != null)
+            {
+                cameraWork.enabled = CutOut;
             }
         }
     }
@@ -70,10 +63,20 @@ public class cameraDisable : MonoBehaviour
         CutOut = true;
     }
 
-    public void ExitStory(){
-        CutOut = false;
-        SceneManager.LoadScene(1);
+    public void ExitToLobby(){
+        if (view.IsMine)
+        {
+            view.RPC("ExitStory", RpcTarget.All);
+        }
     }
 
+    [PunRPC]
+    public void ExitStory(){
+        CutOut = true;
+        uiDisabler.CutOut = true;
+        cameraFix.PositionToLobby();
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.LoadLevel(1);
+    }
     
 }

@@ -75,11 +75,11 @@ public class PlayerMovement : MonoBehaviourPun
 
         if(this.gameObject.tag == "Player")
         {
-            joystick = this.gameObject.transform.GetChild(4).gameObject.transform.GetChild(0).gameObject.GetComponent<Joystick>();
+            joystick = this.gameObject.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject.GetComponent<Joystick>();
         }
         else if(this.gameObject.tag == "Teacher")
         {
-            joystick = this.gameObject.transform.GetChild(5).gameObject.transform.GetChild(0).gameObject.GetComponent<Joystick>();
+            joystick = this.gameObject.transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.GetComponent<Joystick>();
         }
         
 
@@ -129,11 +129,6 @@ public class PlayerMovement : MonoBehaviourPun
         _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
     }
 
-    public void ToggleForm()
-    {
-
-    }
-
     public void phoenixForm()
     {
         inPhoenixform = true;
@@ -146,20 +141,11 @@ public class PlayerMovement : MonoBehaviourPun
 
     public void teacherForm()
     {
-        inPhoenixform = true;
+        inPhoenixform = false;
         phoenixObj.SetActive(inPhoenixform);
-        inTeacherForm = false;
+        inTeacherForm = true;
         teacherObj.SetActive(inTeacherForm);
         boxCollider2D.enabled = true;
         moveSpeed = 2f;
     }
-
-
-
-
-
-
-
-
-
 }

@@ -2981,6 +2981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708c73b32e2ccb4498c588e11f4b72d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyPosition: {fileID: 0}
 --- !u!4 &886019703
 Transform:
   m_ObjectHideFlags: 0
@@ -7309,7 +7310,7 @@ MonoBehaviour:
     mga bituin.
   - Iniangat ng Diyos ang kanyang kamay at ito'y itinurong pababa.
   - Sa isang iglap ay nalalang ang mundo.
-  textSpeed: 0.015
+  textSpeed: 0.01
   index: 0
 --- !u!4 &2137588291
 Transform:

@@ -1,48 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Photon.Pun;
 
-public class InGamNickName : MonoBehaviourPunCallbacks
+public class InGamNickName : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback
 {
     private TextMeshProUGUI nicknameGame;
 
     void Start()
     {
         nicknameGame = GetComponent<TextMeshProUGUI>();
+        
+        Debug.Log("current Nickname is: " + photonView.Owner.NickName);
 
-        UpdateNickname();
-    }
-
-    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
-
-    {
-        UpdateNickname();
-    }
-
-    public override void OnPlayerPropertiesUpdate(Photon.Realtime.Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
-    {
-        if (changedProps.ContainsKey("NickName"))
-        {
-            UpdateNickname();
-        }
-    }
-
-    void UpdateNickname()
-    {
         if (photonView.IsMine)
         {
-            nicknameGame.text = PhotonNetwork.LocalPlayer.NickName;
+            SetPlayerNickname(PhotonNetwork.LocalPlayer.NickName);
         }
         else
         {
-            PhotonView parentPhotonView = transform.parent.GetComponent<PhotonView>();
-
-            if (parentPhotonView != null && parentPhotonView.Owner.CustomProperties.ContainsKey("NickName"))
-            {
-                nicknameGame.text = (string)parentPhotonView.Owner.CustomProperties["NickName"];
-            }
+            SetPlayerNickname(photonView.Owner.NickName);
         }
+    }
+
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        if (!photonView.IsMine)
+        {
+            SetPlayerNickname(photonView.Owner.NickName);
+        }
+    }
+
+    [PunRPC]
+    void SetPlayerNickname(string newNickname)
+    {
+        nicknameGame.text = newNickname;
     }
 }

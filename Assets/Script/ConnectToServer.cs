@@ -6,14 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
     private void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
+        string savedNickname = PlayerPrefs.GetString("PlayerNickname", "No_Name");
+        PhotonNetwork.NickName = savedNickname;
     }
-
-
-
 
     public override void OnConnectedToMaster()
     {

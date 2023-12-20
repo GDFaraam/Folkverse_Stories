@@ -1,10 +1,11 @@
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerVisibility : MonoBehaviourPunCallbacks, IPunObservable
 {
     [SerializeField]
-    public string role; // Expose the role as a public field
+    public string role;
 
     private SpriteRenderer spriteRenderer;
     private PlayerMovement playerMovement;
@@ -16,8 +17,7 @@ public class PlayerVisibility : MonoBehaviourPunCallbacks, IPunObservable
 
         if (photonView.IsMine)
         {
-            // Set the role as a custom property for the local player
-            photonView.Owner.SetCustomProperties(new ExitGames.Client.Photon.Hashtable
+            PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable
             {
                 { "Role", role }
             });
@@ -30,14 +30,12 @@ public class PlayerVisibility : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (stream.IsWriting)
         {
-            // Send data to others (including role information)
-            stream.SendNext(photonView.Owner.CustomProperties["Role"]);
+            stream.SendNext(PhotonNetwork.LocalPlayer.CustomProperties["Role"]);
         }
         else
         {
-            // Receive data (including role information)
             string receivedRole = (string)stream.ReceiveNext();
-            photonView.Owner.SetCustomProperties(new ExitGames.Client.Photon.Hashtable
+            PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable
             {
                 { "Role", receivedRole }
             });
@@ -47,28 +45,31 @@ public class PlayerVisibility : MonoBehaviourPunCallbacks, IPunObservable
 
     void UpdateVisibility()
     {
-        string role = (string)photonView.Owner.CustomProperties["Role"];
+        string localPlayerRole = (string)PhotonNetwork.LocalPlayer.CustomProperties["Role"];
 
-        // Enable rendering and interactions for all players if it's the teacher (local or remote)
-        if (role == "Teacher")
+        if (SceneManager.GetActiveScene().name == "Lobby World Map")
         {
             EnableVisibility();
         }
-        // Enable rendering and interactions for themselves and the teacher for students (local)
-        else if (role == "Student" && photonView.IsMine)
+        else
         {
-            EnableVisibility();
-        }
-        // Disable rendering and interactions for students (remote)
-        else if (role == "Student" && !photonView.IsMine)
-        {
-            DisableVisibility();
+            if (localPlayerRole == "Teacher")
+            {
+                EnableVisibility();
+            }
+            else if (localPlayerRole == "Student" && photonView.IsMine)
+            {
+                EnableVisibility();
+            }
+            else if (localPlayerRole == "Student" && !photonView.IsMine)
+            {
+                DisableVisibility();
+            }
         }
     }
 
     private void EnableVisibility()
     {
-        // Enable rendering and interactions for all players
         if (spriteRenderer != null)
         {
             spriteRenderer.enabled = true;
@@ -82,7 +83,6 @@ public class PlayerVisibility : MonoBehaviourPunCallbacks, IPunObservable
 
     private void DisableVisibility()
     {
-        // Disable rendering and interactions for students if it's not the local player
         if (spriteRenderer != null)
         {
             spriteRenderer.enabled = false;

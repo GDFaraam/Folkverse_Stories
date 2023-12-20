@@ -9832,6 +9832,8 @@ GameObject:
   - component: {fileID: 500314863}
   - component: {fileID: 500314862}
   - component: {fileID: 500314865}
+  - component: {fileID: 500314867}
+  - component: {fileID: 500314866}
   m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
@@ -9939,6 +9941,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reqPlayers: {fileID: 0}
+  addedOne: 0
+--- !u!114 &500314866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500314861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &500314867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500314861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47597429b0a48984590ac2d151105e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredCount: 0
+  totalPlayerCount: 0
+  malakasAtMComponent: {fileID: 0}
+  indicators: []
+  playerRole: {fileID: 0}
+  interactStone: {fileID: 0}
 --- !u!1001 &501776694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16822,7 +16865,7 @@ MonoBehaviour:
   textSpeed: 0.015
   index: 0
   bambooLinesIndex: 0
-  OnBambooScene: 0
+  OnBambooScene: 1
   OnFolkverseScene: 1
   uiDisabler: {fileID: 155658815}
   onOutro: 0
@@ -60069,6 +60112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708c73b32e2ccb4498c588e11f4b72d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbyPosition: {fileID: 0}
 --- !u!4 &2801998666414892914
 Transform:
   m_ObjectHideFlags: 0
@@ -60077,7 +60121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2801998666414892912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52, y: 0.03, z: -10}
+  m_LocalPosition: {x: -5.6, y: -7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

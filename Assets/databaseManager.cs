@@ -33,6 +33,8 @@ public class databaseManager : MonoBehaviour
 
     public void signUp()
     {
+        string nickname = username.text;
+        PlayerPrefs.SetString("PlayerNickname", nickname);
         StartCoroutine(GetUsername((string uN) => 
         {
             if(uN != username.text)
@@ -113,6 +115,8 @@ public class databaseManager : MonoBehaviour
 
     public void authenticatePassword()
     {
+        string nickname = loginUsername.text;
+        PlayerPrefs.SetString("PlayerNickname", nickname);
         StartCoroutine(GetPassword((string name) => 
         {
             if(name == loginPassword.text)
