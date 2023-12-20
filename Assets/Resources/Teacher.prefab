@@ -1322,10 +1322,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7074128284138027618, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074128284138027618, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.94763035
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074128284138027618, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278252287
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8250716264316009107, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
 --- !u!224 &782625156911514202 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4374148726885339821, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
   m_PrefabInstance: {fileID: 3920498342400135415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7967429484973646499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6411321157430506068, guid: 4a41b3e9049a06f44838ff1d2d51ac80, type: 3}
+  m_PrefabInstance: {fileID: 3920498342400135415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4902761679574372261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7967429484973646499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14c8bf8ab01a534785b63d7c79fc5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
