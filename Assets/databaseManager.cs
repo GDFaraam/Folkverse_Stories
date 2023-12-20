@@ -6,10 +6,8 @@ using Firebase.Database;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class databaseManager : MonoBehaviour
 {
-
     public InputField username;
     public InputField password;
     public InputField confirmPass;
@@ -17,22 +15,29 @@ public class databaseManager : MonoBehaviour
     public InputField loginPassword;
     private string userID;
     private DatabaseReference reference;
-    // Start is called before the first frame update
+
     void Start()
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference; 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
-
     public void signUp()
     {
+        if (string.IsNullOrEmpty(username.text) || string.IsNullOrEmpty(password.text) || string.IsNullOrEmpty(confirmPass.text))
+        {
+            Debug.Log("Please fill in all fields");
+            return;
+        }
+
+        if (password.text != confirmPass.text)
+        {
+            Debug.Log("Password and confirm password do not match");
+            username.text = "";
+            password.text = "";
+            confirmPass.text = "";
+            return;
+        }
+
         string nickname = username.text;
         PlayerPrefs.SetString("PlayerNickname", nickname);
         StartCoroutine(GetUsername((string uN) => 
@@ -42,15 +47,17 @@ public class databaseManager : MonoBehaviour
                 username.text = "";
                 password.text = "";
                 confirmPass.text = "";
-                Debug.Log("user already registered");
+                Debug.Log("User already registered");
             }
         })); 
-        
-        
     }
 
+    // Other methods remain unchanged...
+
+
+
     public IEnumerator GetUsername(System.Action<string> onCallback)
-    {
+    { 
         var userName = reference.Child("users").Child(username.text).
         GetValueAsync();
         yield return new WaitUntil(predicate: () => userName.IsCompleted);
