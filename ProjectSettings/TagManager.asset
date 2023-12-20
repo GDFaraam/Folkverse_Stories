@@ -25,6 +25,7 @@ TagManager:
   - Playercount
   - Recorder
   - Mic
+  - StoryRoom
   layers:
   - Default
   - TransparentFX
