@@ -104,6 +104,11 @@ public class SceneManigger : MonoBehaviourPunCallbacks
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+        StartCoroutine(EnableButton());
+    }
+
+    IEnumerator EnableButton(){
+        yield return new WaitForSeconds(2f);
         buttons[0].interactable = true;
         sceneObjects[6].SetActive(true);
     }
