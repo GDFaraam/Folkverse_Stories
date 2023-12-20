@@ -2,41 +2,42 @@ using UnityEngine;
 
 public class UIDisabler : MonoBehaviour
 {
-
     public bool CutOut = false;
-
-    void Start()
-    {
-        
-    }
-
-    void Awake()
-    {
-        
-    }
 
     void Update()
     {
-        DisableAllUITaggedCanvases();
+        DisableSpecificChildrenInUITaggedCanvases();
     }
 
-    void DisableAllUITaggedCanvases()
+    void DisableSpecificChildrenInUITaggedCanvases()
     {
-        // Get all GameObjects in the scene
-        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
-
-        foreach (GameObject obj in allObjects)
+        // Find all Canvas objects with the "UI" tag
+        Canvas[] uiCanvases = GameObject.FindObjectsOfType<Canvas>();
+        foreach (Canvas canvas in uiCanvases)
         {
-            // Check if the GameObject has the "UI" tag and a Canvas component
-            if (obj.CompareTag("UI"))
+            if (canvas.CompareTag("UI"))
             {
-                Canvas canvas = obj.GetComponent<Canvas>();
+                DisableSpecificChildren(canvas.transform);
+            }
+        }
+    }
 
-                if (canvas != null)
-                {
-                    // Disable the Canvas
-                    canvas.enabled = CutOut;
-                }
+    // Disable specific children of a parent Transform
+    void DisableSpecificChildren(Transform parent)
+    {
+        // Example: Disable children at specific indices
+        int[] childIndicesToDisable = { 0, 1 }; // Adjust these indices as needed
+
+        foreach (int index in childIndicesToDisable)
+        {
+            if (index >= 0 && index < parent.GetChild(0).gameObject.transform.childCount)
+            {
+                Transform child = parent.GetChild(0).gameObject.transform.GetChild(index);
+                child.gameObject.SetActive(CutOut);
+            }
+            else
+            {
+                Debug.LogWarning("Index out of range: " + index);
             }
         }
     }
@@ -45,6 +46,4 @@ public class UIDisabler : MonoBehaviour
     {
         CutOut = true;
     }
-
-    
 }

@@ -24,6 +24,7 @@ TagManager:
   - UI
   - Playercount
   - Recorder
+  - Mic
   layers:
   - Default
   - TransparentFX

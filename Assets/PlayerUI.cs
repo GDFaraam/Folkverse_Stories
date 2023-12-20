@@ -11,6 +11,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] public Joystick joystick;
     [SerializeField] public Button button;
     [SerializeField] public Image image;
+    [SerializeField] public Button mic;
 
     // Start is called before the first frame update
     void Start()
