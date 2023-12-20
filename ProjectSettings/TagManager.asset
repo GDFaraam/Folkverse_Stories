@@ -23,6 +23,7 @@ TagManager:
   - SceneChanger
   - UI
   - Playercount
+  - Recorder
   layers:
   - Default
   - TransparentFX
