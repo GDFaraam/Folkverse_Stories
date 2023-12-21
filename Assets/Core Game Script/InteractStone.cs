@@ -105,9 +105,11 @@ public class InteractStone : MonoBehaviour
     public void ToggleMAMCanvas(){
         if (reqPlayers.indicators[0] != null){
         reqPlayers.indicators[0].SetActive(true);
+        reqPlayers.StartTimer();
         }
         if (reqPlayers.indicators[1] != null){
         reqPlayers.indicators[1].SetActive(false);
+        reqPlayers.StartTimer();
         }
     }
 
@@ -118,6 +120,7 @@ public class InteractStone : MonoBehaviour
         }
         if (reqPlayers.indicators[1] != null){
         reqPlayers.indicators[1].SetActive(true);
+        reqPlayers.StartTimerANP();
         }
     }
 

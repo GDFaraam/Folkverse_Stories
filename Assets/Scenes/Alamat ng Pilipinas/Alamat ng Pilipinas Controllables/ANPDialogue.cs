@@ -19,32 +19,38 @@ public class ANPDialogue : MonoBehaviour
     
     public TextMeshProUGUI textComponent;
     public string[] lines;
-    private float textSpeed = 0.02f;
+    private float textSpeed = 0.01f;
     public int index;
 
     public static ANPDialogue instance;
     private PhotonView view;
     private PlayerRole playerRole;
 
+    private bool rescueSceneDone = false;
+
     private void Awake()
     {
         if (instance == null)
         {
+
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-
         else if (instance != this) {
         
         Destroy(instance.gameObject);
 
         instance = this;
         index = 13;
+        if(rescueSceneDone){
+            index = 0;
+        }
 
         DontDestroyOnLoad(gameObject);
 
         }
     }
+
 
     void Start(){
         view = this.GetComponent<PhotonView>();
@@ -63,6 +69,7 @@ public class ANPDialogue : MonoBehaviour
         characters[0].SetActive(true);
         cutscene[7].Play();
         StartCoroutine(DialogueShow());
+        rescueSceneDone = true;
         }
 
         else
@@ -196,8 +203,8 @@ public class ANPDialogue : MonoBehaviour
         }
         else if (index == 12){
             index++;
-            SaveIndex(index);
-            SceneManager.LoadScene(13);
+            PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.LoadLevel(13);
         }
         else if (index == 13){
             textComponent.text = string.Empty;

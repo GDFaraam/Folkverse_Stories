@@ -10995,7 +10995,7 @@ GameObject:
   - component: {fileID: 519061053}
   - component: {fileID: 519061054}
   m_Layer: 0
-  m_Name: DialogueSystem
+  m_Name: DialogueSystemIsland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11060,6 +11060,7 @@ MonoBehaviour:
   - '"Si Minda, humihingi ng tulong!" sabi ni Lus na nanlalaki ang mga mata sa pagkagulat.'
   - '"Oo nga. Halika na!" yaya ni Bisaya. "Bakit kaya?"'
   index: 0
+  onShoreScene: 0
 --- !u!4 &519061052
 Transform:
   m_ObjectHideFlags: 0
@@ -19635,7 +19636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1006930055
 Transform:
   m_ObjectHideFlags: 0
@@ -20894,7 +20895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1198493690
 Transform:
   m_ObjectHideFlags: 0
@@ -25908,7 +25909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1841048526
 Transform:
   m_ObjectHideFlags: 0
@@ -27852,7 +27853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2134790380
 Transform:
   m_ObjectHideFlags: 0

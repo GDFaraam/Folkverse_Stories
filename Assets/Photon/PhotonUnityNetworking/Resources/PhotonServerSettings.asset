@@ -65,6 +65,7 @@ MonoBehaviour:
   - ToggleTransmissionRPC
   - SetStoryRoom
   - StoryRoom
+  - BackToIsland
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
