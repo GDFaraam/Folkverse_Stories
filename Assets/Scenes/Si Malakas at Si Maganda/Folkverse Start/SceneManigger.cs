@@ -22,6 +22,7 @@ public class SceneManigger : MonoBehaviourPunCallbacks
     private PlayerRole playerRole;
 
     void Start(){
+        AudioController.ACinstance.PlayAudioClip(2);
         view = this.gameObject.GetComponent<PhotonView>();
         GameObject teacher = GameObject.FindWithTag("Teacher");
         playerRole = teacher.gameObject.GetComponent<PlayerRole>();

@@ -11,6 +11,7 @@ public class RequiredPlayers : MonoBehaviour
     public int totalPlayerCount;
     private PhotonView view;
     public TextMeshProUGUI[] textList;
+    public TextMeshProUGUI[] countDownText;
 
     public GameObject[] indicators;
     private bool isMAMRunning = false;
@@ -50,6 +51,58 @@ public class RequiredPlayers : MonoBehaviour
             }
         }
     }
+
+    public void StartTimer()
+    {
+        StartCoroutine(CountdownTimer());
+    }
+
+    private IEnumerator CountdownTimer()
+    {
+        float countdownTime = 120f;
+
+        while (countdownTime > 0f)
+        {
+            yield return new WaitForSeconds(1f);
+            countdownTime--;
+
+            // Update the countdown text with the remaining minutes
+            int minutes = Mathf.FloorToInt(countdownTime / 60f);
+            int seconds = Mathf.FloorToInt(countdownTime % 60f);
+
+            countDownText[0].text = "Minutes: " + minutes.ToString("D2") + " Seconds: " + seconds.ToString("D2");
+        }
+
+        // The timer has reached 0, call the method
+        RunMalakasAtM();
+    }
+
+    public void StartTimerANP()
+    {
+        StartCoroutine(CountdownTimerANP());
+    }
+
+    private IEnumerator CountdownTimerANP()
+    {
+        float countdownTime = 120f;
+
+        while (countdownTime > 0f)
+        {
+            yield return new WaitForSeconds(1f);
+            countdownTime--;
+
+            // Update the countdown text with the remaining minutes
+            int minutes = Mathf.FloorToInt(countdownTime / 60f);
+            int seconds = Mathf.FloorToInt(countdownTime % 60f);
+
+            countDownText[1].text = "Minutes: " + minutes.ToString("D2") + " Seconds: " + seconds.ToString("D2");
+        }
+
+        // The timer has reached 0, call the method
+        RunAlamatNgP();
+    }
+
+
 
 
     public void RunMalakasAtM(){

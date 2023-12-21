@@ -20,7 +20,8 @@ public class SpawnPlayers : MonoBehaviour
     [PunRPC]
     // Start is called before the first frame update
     private void Start()
-    {   
+    {
+        AudioController.ACinstance.PlayAudioClip(1); 
         if (PlayerMovement.LocalPlayerInstance == null)
         {
             string role = DeterminePlayerRole();

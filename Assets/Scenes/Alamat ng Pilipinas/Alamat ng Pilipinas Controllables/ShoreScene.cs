@@ -19,7 +19,7 @@ public class ShoreScene : MonoBehaviour
     
     public TextMeshProUGUI textComponent;
     public string[] lines;
-    private float textSpeed = 0.02f;
+    private float textSpeed = 0.01f;
     public int index;
 
     private static ShoreScene SHOREinstance;
@@ -115,10 +115,18 @@ public class ShoreScene : MonoBehaviour
             textComponent.text = string.Empty;
             HideDialogue();
             cutscene[4].Play();
-            StartCoroutine(RescueScene());
+            if (view.IsMine && playerRole.role == "Teacher")
+            {
+                view.RPC("BackToIsland", RpcTarget.All);
+            }
         }
-
     }
+
+    public void SaveIndex(int newIndex)
+        {
+            PlayerPrefs.SetInt("SavedIndex", newIndex);
+            PlayerPrefs.Save();
+        }
 
     IEnumerator NextLine(float duration){
         yield return new WaitForSeconds(duration);
@@ -136,10 +144,15 @@ public class ShoreScene : MonoBehaviour
         sceneObjects[1].SetActive(true);
     }
 
+    [PunRPC]
+    public void BackToIsland(){
+        StartCoroutine(RescueScene());
+    }
+
     IEnumerator RescueScene(){
         yield return new WaitForSeconds(2f);
-        ANPDialogue.instance.index = 13;
-        SceneManager.LoadScene(12);
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.LoadLevel(12);
     }
 
     public void HideDialogue(){
