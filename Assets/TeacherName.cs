@@ -33,6 +33,6 @@ public class TeacherName : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallba
     [PunRPC]
     void SetPlayerNickname(string newNickname)
     {
-        nicknameGame.text = "Teacher: " + newNickname;
+        nicknameGame.text = newNickname;
     }
 }

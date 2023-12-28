@@ -10,7 +10,6 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] public PlayerMovement target;
     [SerializeField] public Joystick joystick;
     [SerializeField] public Button button;
-    [SerializeField] public Image image;
     [SerializeField] public Button mic;
 
     // Start is called before the first frame update
@@ -21,7 +20,7 @@ public class PlayerUI : MonoBehaviour
 
     void Awake()
     {
-        this.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
+        this.transform.SetParent(GameObject.FindGameObjectWithTag("UI").gameObject.GetComponent<Transform>(), false);
     }
 
     // Update is called once per frame
@@ -38,6 +37,7 @@ public class PlayerUI : MonoBehaviour
         if (target.joystick != null)
         {
             target.joystick = joystick;
+            Debug.Log("joystick done");
         }
     }
 

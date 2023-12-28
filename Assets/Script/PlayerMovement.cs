@@ -52,15 +52,16 @@ public class PlayerMovement : MonoBehaviourPun
 
         if(photonView.IsMine)
         {
-            if(PlayerUIPrefab != null)
+            if (PlayerUIPrefab != null)
             {
-            GameObject _uiGo = Instantiate(PlayerUIPrefab);
-            _uiGo.SendMessage ("SetTarget", this, SendMessageOptions.RequireReceiver);
+                GameObject _uiGo =  Instantiate(PlayerUIPrefab);
+                _uiGo.SendMessage ("SetTarget", this, SendMessageOptions.RequireReceiver);
+                Debug.Log("UI Instantiated");
             }
-        else
+            else
             {
-            Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
-        }
+                Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUIPrefab reference on player Prefab.", this);
+            }
         }
         
 
@@ -130,7 +131,7 @@ public class PlayerMovement : MonoBehaviourPun
     }
 
     public void phoenixForm()
-    {
+    {   
         inPhoenixform = true;
         phoenixObj.SetActive(inPhoenixform);
         inTeacherForm = false;
