@@ -74,14 +74,7 @@ public class PlayerMovement : MonoBehaviourPun
     void Update()
     {
 
-        if(this.gameObject.tag == "Player")
-        {
-            joystick = this.gameObject.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Joystick>();
-        }
-        else if(this.gameObject.tag == "Teacher")
-        {
-            joystick = this.gameObject.transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Joystick>();
-        }
+        
         
 
         speed = movement.sqrMagnitude;

@@ -42,5 +42,7 @@ public class QuitRoom : MonoBehaviourPunCallbacks
         {
             Debug.LogWarning("Role not found in Custom Properties.");
         }
+
+
     }
 }

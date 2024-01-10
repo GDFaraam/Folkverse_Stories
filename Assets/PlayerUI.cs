@@ -34,7 +34,7 @@ public class PlayerUI : MonoBehaviour
         }
 
 
-        if (target.joystick != null)
+        if (target.joystick == null)
         {
             target.joystick = joystick;
             Debug.Log("joystick done");
