@@ -23,7 +23,7 @@ public class signUpAnim : MonoBehaviour
 
     public void loginPanel()
     {
-        signupanim.SetBool("logIsOpen", true);
+        signupanim.SetBool("logtIsOpen", true);
     }
 
     public void signPanel()
@@ -34,6 +34,7 @@ public class signUpAnim : MonoBehaviour
     public void logtOpen()
     {
         signupanim.SetBool("logtIsOpen", true);
+        signupanim.SetBool("signIsOpen", false);
     }
 
     public void logtClose()

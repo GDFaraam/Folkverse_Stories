@@ -19,7 +19,7 @@ MonoBehaviour:
     AppIdVoice: 9b843f3d-d6b1-44f2-ab7c-27db1a26ae3a
     AppVersion: 
     UseNameServer: 1
-    FixedRegion: 
+    FixedRegion: asia
     Server: 
     Port: 0
     ProxyServer: 
@@ -27,9 +27,9 @@ MonoBehaviour:
     EnableProtocolFallback: 1
     AuthMode: 0
     EnableLobbyStatistics: 0
-    NetworkLogging: 1
-  DevRegion: asia
-  PunLogging: 0
+    NetworkLogging: 5
+  DevRegion: 
+  PunLogging: 2
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
@@ -66,6 +66,7 @@ MonoBehaviour:
   - SetStoryRoom
   - StoryRoom
   - BackToIsland
+  - AddSyncedPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

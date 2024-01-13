@@ -14,12 +14,17 @@ public class SceneManigger : MonoBehaviourPunCallbacks
     public Button[] buttons;
 
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI waitForSync;
     public string[] lines;
     public float textSpeed;
     public int index;
 
     private PhotonView view;
     private PlayerRole playerRole;
+
+    public int syncDialogueCount;
+    public int totalPlayerSynced;
+    
 
     void Start(){
         AudioController.ACinstance.PlayAudioClip(2);
@@ -55,7 +60,25 @@ public class SceneManigger : MonoBehaviourPunCallbacks
     {
         if (view.IsMine && playerRole.role == "Teacher")
         {
+            if (syncDialogueCount == totalPlayerSynced){
             view.RPC("NextButton", RpcTarget.All);
+            }
+            else if (syncDialogueCount > totalPlayerSynced){
+            view.RPC("NextButton", RpcTarget.All);
+            }
+        }
+    }
+
+    void Update(){
+        totalPlayerSynced = PhotonNetwork.CurrentRoom.PlayerCount;
+        waitForSync.text = $"Waiting for everyone to finish the dialogue... {syncDialogueCount} / {totalPlayerSynced}";
+        if (syncDialogueCount == totalPlayerSynced){
+            buttons[0].interactable = true;
+            sceneObjects[6].SetActive(true);
+        }
+        if (syncDialogueCount > totalPlayerSynced){
+            buttons[0].interactable = true;
+            sceneObjects[6].SetActive(true);
         }
     }
 
@@ -96,6 +119,8 @@ public class SceneManigger : MonoBehaviourPunCallbacks
                 cutscene[0].Play();
                 StartCoroutine(NextDialogue());
             }
+
+        syncDialogueCount = 0;
     }
 
     IEnumerator TypeLine(){
@@ -105,13 +130,16 @@ public class SceneManigger : MonoBehaviourPunCallbacks
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        StartCoroutine(EnableButton());
+        EnableButton();
     }
 
-    IEnumerator EnableButton(){
-        yield return new WaitForSeconds(2f);
-        buttons[0].interactable = true;
-        sceneObjects[6].SetActive(true);
+    public void EnableButton(){
+        view.RPC("AddSyncedPlayer", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void AddSyncedPlayer(){
+        syncDialogueCount++;
     }
 
     IEnumerator NextDialogue(){

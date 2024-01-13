@@ -12,6 +12,7 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
     public Button[] buttons;
     public GameObject[] sceneObjects;
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI waitForSync;
     public string[] lines;
     public string[] bambooLines;
     public float textSpeed;
@@ -27,6 +28,9 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
     private PhotonView view;
     private PlayerRole playerRole;
 
+    public int syncDialogueCount;
+    public int totalPlayerSynced;
+
     void Start()
     {
         view = this.gameObject.GetComponent<PhotonView>();
@@ -35,6 +39,19 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
         uiDisabler.CutOut = false;
         sceneObjects[0].SetActive(false);
         StartCoroutine(DialogueShow());
+    }
+
+    void Update(){
+        totalPlayerSynced = PhotonNetwork.CurrentRoom.PlayerCount;
+        waitForSync.text = $"Waiting for everyone to finish the dialogue... {syncDialogueCount} / {totalPlayerSynced}";
+        if (syncDialogueCount == totalPlayerSynced){
+            buttons[0].interactable = true;
+            sceneObjects[1].SetActive(true);
+        }
+        if (syncDialogueCount > totalPlayerSynced){
+            buttons[0].interactable = true;
+            sceneObjects[1].SetActive(true);
+        }
     }
 
     IEnumerator BambooLines(float duration){
@@ -65,7 +82,12 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
     {
         if (view.IsMine && playerRole.role == "Teacher")
         {
+            if (syncDialogueCount == totalPlayerSynced){
             view.RPC("NextButton", RpcTarget.All);
+            }
+            else if (syncDialogueCount > totalPlayerSynced){
+            view.RPC("NextButton", RpcTarget.All);
+            }
         }
     }
 
@@ -92,6 +114,7 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
                             }
                         }
                     }
+                    syncDialogueCount = 0;
                 }
 
                 else if (lines.Length > 1)
@@ -105,6 +128,7 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
                         textComponent.text = string.Empty;
                         uiDisabler.EnableAllUITaggedCanvases();
                     }
+                    syncDialogueCount = 0;
                 }
 
                 if (textComponent.text == bambooLines[0]){
@@ -219,7 +243,9 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
                     cutscene[3].Play();
                     HideDialogue();
                 }
-            }
+
+                syncDialogueCount = 0;
+    }
 
 
     public void HideDialogue(){
@@ -233,13 +259,16 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        StartCoroutine(EnableButton(2f));
+        EnableButton();
     }
 
-    IEnumerator EnableButton(float duration){
-        yield return new WaitForSeconds(duration);
-        buttons[0].interactable = true;
-        sceneObjects[1].SetActive(true);
+    public void EnableButton(){
+        view.RPC("AddSyncedPlayer", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void AddSyncedPlayer(){
+        syncDialogueCount++;
     }
 
     IEnumerator TypeLineBamboo(){
@@ -249,7 +278,7 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        StartCoroutine(EnableButton(1f));
+        EnableButton();
     }
 
     public void CallOnOutro(){

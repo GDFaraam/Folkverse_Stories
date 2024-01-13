@@ -128,10 +128,12 @@ public class databaseManager : MonoBehaviour
         {
             if(name == loginPassword.text)
             {
+                PlayerPrefs.SetString("userID", loginUsername.text);
                 Debug.Log("success");
                 loginPassword.text = "";
                 loginUsername.text = "";
                 SceneManager.LoadScene("LOADING TO MAIN");
+                Debug.Log("Your current userID is " + PlayerPrefs.GetString("userID"));
             }
             else
             {

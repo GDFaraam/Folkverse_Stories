@@ -66,14 +66,12 @@ public class RequiredPlayers : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdownTime--;
 
-            // Update the countdown text with the remaining minutes
             int minutes = Mathf.FloorToInt(countdownTime / 60f);
             int seconds = Mathf.FloorToInt(countdownTime % 60f);
 
             countDownText[0].text = "Minutes: " + minutes.ToString("D2") + " Seconds: " + seconds.ToString("D2");
         }
 
-        // The timer has reached 0, call the method
         RunMalakasAtM();
     }
 
@@ -91,19 +89,14 @@ public class RequiredPlayers : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdownTime--;
 
-            // Update the countdown text with the remaining minutes
             int minutes = Mathf.FloorToInt(countdownTime / 60f);
             int seconds = Mathf.FloorToInt(countdownTime % 60f);
 
             countDownText[1].text = "Minutes: " + minutes.ToString("D2") + " Seconds: " + seconds.ToString("D2");
         }
 
-        // The timer has reached 0, call the method
         RunAlamatNgP();
     }
-
-
-
 
     public void RunMalakasAtM(){
         if (view.IsMine && playerRole.role == "Teacher")
