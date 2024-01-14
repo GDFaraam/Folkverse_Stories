@@ -26,6 +26,8 @@ TagManager:
   - Recorder
   - Mic
   - StoryRoom
+  - KickMuteScript
+  - Quit
   layers:
   - Default
   - TransparentFX

@@ -25,6 +25,8 @@ public class CreateRoom : MonoBehaviourPunCallbacks
     {
         string roomName = "Room: " + createInput.text;
 
+        PlayerPrefs.SetString("currentRoomID", createInput.text);
+
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
         string userID = PlayerPrefs.GetString("userID"); 
@@ -40,8 +42,8 @@ public class CreateRoom : MonoBehaviourPunCallbacks
         DatabaseReference attendanceReference = roomNodeReference.Child("Recorded Attendance");
 
         string playerName = PlayerPrefs.GetString("PlayerNickname");
-        playersReference.Child(userID).Child("name").SetValueAsync(playerName);
-        attendanceReference.Child(userID).Child("name").SetValueAsync(playerName);
+        playersReference.Child("Teacher: " + userID).Child("name").SetValueAsync(playerName);
+        attendanceReference.Child("Teacher: " + userID).Child("name").SetValueAsync(playerName);
 
         PhotonNetwork.CreateRoom(createInput.text);
     }

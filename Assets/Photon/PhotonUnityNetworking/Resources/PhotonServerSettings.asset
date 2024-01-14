@@ -67,6 +67,9 @@ MonoBehaviour:
   - StoryRoom
   - BackToIsland
   - AddSyncedPlayer
+  - MutePlayer
+  - KickPlayer
+  - MuteAllPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
