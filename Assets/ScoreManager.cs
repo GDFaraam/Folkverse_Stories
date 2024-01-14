@@ -66,7 +66,7 @@ public class ScoreManager : MonoBehaviour
         {
                 Exam newExam = new Exam(this.StringScore);
                 string json = JsonUtility.ToJson(newExam);
-                reference.Child("exam").Child(name.text).Child(section.text).Child(typeExamString.text).SetRawJsonValueAsync(json);
+                reference.Child("exam").Child(StoryName).Child(section.text).Child(name.text).Child(typeExamString.text).SetRawJsonValueAsync(json);
                 name.text = "";
                 Debug.Log("score sent");            
         }
