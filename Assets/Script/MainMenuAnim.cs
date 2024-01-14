@@ -97,4 +97,16 @@ public class MainMenuAnim : MonoBehaviour
         UIanim.SetBool("createIsOpen", false);
     }
 
+    public void assOpen()
+    {
+        UIanim.SetBool("assIsOpen", true);
+    }
+
+    public void assClose()
+    {
+        UIanim.SetBool("assIsOpen", false);
+    }
+
+    
+
 }
