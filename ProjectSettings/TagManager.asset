@@ -28,6 +28,9 @@ TagManager:
   - StoryRoom
   - KickMuteScript
   - Quit
+  - AttendanceBehavior
+  - CreatedRooms
+  - ChooseButton
   layers:
   - Default
   - TransparentFX

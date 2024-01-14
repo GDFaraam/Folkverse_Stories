@@ -53,6 +53,10 @@ public class KickMute : MonoBehaviour
         }
     }
 
+    public void KickAll(){
+        view.RPC("KickPlayer", RpcTarget.All);
+    }
+
     [PunRPC]
     public void MutePlayer()
     {

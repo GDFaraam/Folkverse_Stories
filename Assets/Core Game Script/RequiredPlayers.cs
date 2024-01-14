@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 
 public class RequiredPlayers : MonoBehaviour
@@ -19,6 +20,8 @@ public class RequiredPlayers : MonoBehaviour
 
     public PlayerRole playerRole;
     public InteractStone interactStone;
+
+    private const string IsLockedKey = "IsLocked";
 
     void Start()
     {
@@ -122,6 +125,7 @@ public class RequiredPlayers : MonoBehaviour
     [PunRPC]
     void ANPcut()
     {
+        LockRoom();
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.LoadLevel(12);
         requiredCount = 0;
@@ -130,6 +134,7 @@ public class RequiredPlayers : MonoBehaviour
     [PunRPC]
     void NextScenePun()
     {
+        LockRoom();
         PhotonNetwork.AutomaticallySyncScene = true;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
@@ -140,8 +145,23 @@ public class RequiredPlayers : MonoBehaviour
     [PunRPC]
     void StoryRoom()
     {
+        LockRoom();
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.LoadLevel(9);
         requiredCount = 0;
+    }
+
+    public void LockRoom()
+    {
+        ExitGames.Client.Photon.Hashtable customRoomProperties = new ExitGames.Client.Photon.Hashtable();
+        customRoomProperties[IsLockedKey] = true;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(customRoomProperties);
+    }
+
+    public void UnlockRoom()
+    {
+        ExitGames.Client.Photon.Hashtable customRoomProperties = new ExitGames.Client.Photon.Hashtable();
+        customRoomProperties[IsLockedKey] = false;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(customRoomProperties);
     }
 }

@@ -16,6 +16,12 @@ public class SpawnPlayers : MonoBehaviour
 
     public GameObject[] spawnPoint;
 
+    public RequiredPlayers requiredPlayers;
+
+    void OnEnable(){
+        requiredPlayers.UnlockRoom();
+    }
+
 
     [PunRPC]
     // Start is called before the first frame update
