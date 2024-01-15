@@ -356,8 +356,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 290549796, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -825,7 +825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -784, y: 421}
+  m_AnchoredPosition: {x: -646, y: 343}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303191977
@@ -871,19 +871,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 303191978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 283428685}
-        m_TargetAssemblyTypeName: testStart, Assembly-CSharp
-        m_MethodName: MainMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &303191978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,8 +892,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7247574, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1881,8 +1869,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7247574, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2153,8 +2141,8 @@ Camera:
   m_GameObject: {fileID: 989002336}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2316,6 +2304,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001221809}
   m_CullTransparentMesh: 1
+--- !u!1 &1004475491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004475492}
+  - component: {fileID: 1004475494}
+  - component: {fileID: 1004475493}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1004475492
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004475491}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1862966041}
+  m_Father: {fileID: 1007818146}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -764.3928, y: 87}
+  m_SizeDelta: {x: 677.2155, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1004475493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004475491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1650512416, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1004475494
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004475491}
+  m_CullTransparentMesh: 1
 --- !u!1 &1007818145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,8 +2412,8 @@ RectTransform:
   - {fileID: 2075737318}
   - {fileID: 1334722348}
   - {fileID: 67811825}
-  - {fileID: 1868932656}
-  - {fileID: 1862966041}
+  - {fileID: 1325600673}
+  - {fileID: 1004475492}
   - {fileID: 1385836986}
   - {fileID: 820110058}
   m_Father: {fileID: 1355454031}
@@ -2356,7 +2421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 254, y: 14}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1160678351
@@ -2528,14 +2593,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 63ec59fd5e53e25468a1b904ca892105, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2643,6 +2708,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289966480}
+  m_CullTransparentMesh: 1
+--- !u!1 &1325600672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325600673}
+  - component: {fileID: 1325600675}
+  - component: {fileID: 1325600674}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1325600673
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325600672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1868932656}
+  m_Father: {fileID: 1007818146}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -764.3928, y: 294.99997}
+  m_SizeDelta: {x: 677.2155, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1325600674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325600672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1650512416, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1325600675
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325600672}
   m_CullTransparentMesh: 1
 --- !u!1 &1332539976
 GameObject:
@@ -2853,8 +2995,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1396360368, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3040,7 +3182,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3171,8 +3313,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7247574, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3336,42 +3478,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Questions: Sino ang hari ng mga ibon sa kwento?
+  - Questions: Sino-sino ang mga anak ng higante?
     Answers:
-    - Si Malakas
-    - Hindi nabanggit
-    - Si Maganda
-    - Isang dakilang ibon
-    correctAnswer: 1
-  - Questions: Ano ang pangalan ng asawa ni Malakas at paano sila pinalaya mula sa
-      kawayan?
+    - Minda
+    - Lus
+    - Bisaya
+    - Lahat ng nabanggit
+    correctAnswer: 4
+  - Questions: Ano ang bilin ng ama hinggil sa paglabas ng mga anak ng kuweba?
     Answers:
-    - Si Maganda; tinuktok ng hari ng ibon ang kawayan
-    - Si Malakas; dumapo sa kawayan ang hari ng ibon
-    - Si Malakas; tinuktok ng hari ng ibon ang kawayan
-    - Si Maganda; dumapo sa kawayan ang hari ng ibon
-    correctAnswer: 1
-  - Questions: Ano ang ginawa ni Haring Ibon pagkatapos tuktokin ang kawayan?
-    Answers:
-    - Inihatid si Maganda sa pulong luntian
-    - Nag-awit sa himpapawid
-    - Natuklasan sina Malakas at Maganda sa loob ng kawayan
-    - Lumipad palayo mula sa kawayan
-    correctAnswer: 3
-  - Questions: Ano ang pangako ng ibon sa mag-asawang Malakas at Maganda?
-    Answers:
-    - Dadalhin sila sa Lupang Hinirang
-    - Aawitin ang mga supling sa hinaharap
-    - Aawitin sila habang buhay
-    - Ibibigay ang kanyang bagwis sa kanila
-    correctAnswer: 3
-  - Questions: Sino ang nagbigay ng kalayaan kay Malakas at Maganda mula sa kawayan?
-    Answers:
-    - Isang kaibigang ibon
-    - Ang hari ng mga ibon
-    - Hindi nabanggit
-    - Si Malakas at Maganda mismo
+    - Lumabas ng malakas
+    - Huwag lalabas ng kuweba
+    - Mamasyal sa malayo
+    - 'Magtago sa kagubatan '
     correctAnswer: 2
+  - Questions: Ano ang nangyari kay Minda nang lumabas siya ng kuweba?
+    Answers:
+    - Naabutan ng malaking alon
+    - Nakahanap ng kayamanan
+    - Nagtago sa kagubatan
+    - 'Sumakay sa bangka '
+    correctAnswer: 1
+  - Questions: Paano nagsimula ang pangalan ng bansang Pilipinas?
+    Answers:
+    - Sa pangalan ng higante
+    - Sa pangalan ng mga anak ng higante
+    - Sa pangalan ng aso ng higante
+    - Sa pangalan ng isang bayan
+    correctAnswer: 2
+  - Questions: Ano ang ginawa ng tatlong magkakapatid upang sagipin si Minda?
+    Answers:
+    - Tumakbo sa kagubatan
+    - Nagtago sa kuweba
+    - Nagtulong-tulong upang iligtas si Minda
+    - Naglakbay sa ibang pulo
+    correctAnswer: 3
   options:
   - {fileID: 2042784612}
   - {fileID: 489405661}
@@ -3692,12 +3833,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1007818146}
-  m_RootOrder: 4
+  m_Father: {fileID: 1004475492}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640.01855, y: 85}
+  m_AnchoredPosition: {x: 9.392822, y: -2}
   m_SizeDelta: {x: 917.7947, y: 105.1262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862966042
@@ -3722,12 +3863,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_FontSize: 67
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 6
     m_MaxSize: 83
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3772,12 +3913,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1007818146}
-  m_RootOrder: 3
+  m_Father: {fileID: 1325600673}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640.01855, y: 291}
+  m_AnchoredPosition: {x: 4.3928223, y: 5}
   m_SizeDelta: {x: 917.7947, y: 105.1262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868932657
@@ -3802,12 +3943,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_FontSize: 67
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 83
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -4094,8 +4235,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7247574, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4390,8 +4531,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1396360368, guid: e80a4ce34e21a0b4c891487b8c9d14ba, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
