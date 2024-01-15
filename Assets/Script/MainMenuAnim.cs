@@ -107,6 +107,16 @@ public class MainMenuAnim : MonoBehaviour
         UIanim.SetBool("assIsOpen", false);
     }
 
+    public void attendanceOpen()
+    {
+        UIanim.SetBool("openAttendanceSheet", true);
+    }
+
+    public void attendanceClose()
+    {
+        UIanim.SetBool("openAttendanceSheet", false);
+    }
+
     
 
 }
