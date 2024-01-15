@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class KickMute : MonoBehaviour
+public class KickMute : MonoBehaviourPunCallbacks
 {
     private PhotonView view;
 
     private bool micOn = true;
     private bool allMicOn = true;
+
+    public string teacherSceneName;
+    public string studentSceneName;
 
     void Start()
     {
@@ -54,7 +58,7 @@ public class KickMute : MonoBehaviour
     }
 
     public void KickAll(){
-        view.RPC("KickPlayer", RpcTarget.All);
+        view.RPC("KickPlayer", RpcTarget.All    );
     }
 
     [PunRPC]
@@ -95,8 +99,37 @@ public class KickMute : MonoBehaviour
 
     [PunRPC]
     public void KickPlayer(){
-        GameObject quitRoom = GameObject.FindWithTag("Quit");
-        QuitRoom quitRoomScript = quitRoom.GetComponent<QuitRoom>();
-        quitRoomScript.LeaveRoomAndLoadScene();
+        LeaveRoomAndLoadScene();
     }
+
+    public override void OnLeftRoom()
+    {
+        LoadSceneBasedOnRole();
+    }
+
+    public void LeaveRoomAndLoadScene()
+    {
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.Disconnect();
+    }
+
+    void LoadSceneBasedOnRole()
+    {
+        Debug.Log("LoadSceneBasedRole");
+        
+        if (PhotonNetwork.LocalPlayer != null && PhotonNetwork.LocalPlayer.IsMasterClient)
+        {
+            Debug.Log("Local player is the master client");
+            SceneManager.LoadScene(teacherSceneName);
+            Debug.Log("Successfully moved to teacher scene");
+        }
+        else
+        {
+            Debug.Log("Local player is not the master client");
+            SceneManager.LoadScene(studentSceneName);
+            Debug.Log("Successfully moved to student scene");
+        }
+    }
+
+
 }

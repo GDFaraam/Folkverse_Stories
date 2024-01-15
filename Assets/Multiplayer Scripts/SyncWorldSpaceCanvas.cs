@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class SyncWorldSpaceCanvas : MonoBehaviourPun, IPunObservable
 {
-    public InputField teacherInputField;
+    public TMP_InputField teacherInputField;
     public RawImage studentImage;
     public Text studentText;
 

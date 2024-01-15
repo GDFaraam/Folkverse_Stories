@@ -11,11 +11,17 @@ public class InteractStone : MonoBehaviour
     private bool MalakasAtM = false;
     private bool AlamatNgP = false;
     private bool StoryRoom = false;
+    private bool ExitStoryRoom = false;
     public bool addedOne = false;
     private PhotonView view;
 
+    public GameObject lobbyPosition;
+
+    private PlayerRole playerRole;
+
     void Start(){
         view = this.gameObject.GetComponent<PhotonView>();
+        playerRole = this.gameObject.GetComponent<PlayerRole>();
     }
 
     void Update()
@@ -56,6 +62,12 @@ public class InteractStone : MonoBehaviour
             interactPedestal = true;
             StoryRoom = true;
         }
+
+        if (other.gameObject.CompareTag("C Pole"))
+        {
+            interactPedestal = true;
+            ExitStoryRoom = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -76,6 +88,12 @@ public class InteractStone : MonoBehaviour
             interactPedestal = false;
             StoryRoom = false;
         }
+
+        if (other.gameObject.CompareTag("C Pole"))
+        {
+            interactPedestal = false;
+            ExitStoryRoom = false;
+        }
     }
 
     public void ToggleCountAll(){
@@ -91,14 +109,25 @@ public class InteractStone : MonoBehaviour
         else if (AlamatNgP){
             view.RPC("ToggleANPCanvas", RpcTarget.All);
         }
-        else if (StoryRoom){
+        else if (StoryRoom && playerRole.role == "Teacher"){
             view.RPC("SetStoryRoom", RpcTarget.All);
+        }
+        else if (ExitStoryRoom && playerRole.role == "Teacher"){
+            view.RPC("ExitStoryRoomCall", RpcTarget.All);
         }
         if (interactPedestal && !addedOne)
         {
             view.RPC("AddCurrentCount", RpcTarget.All);
             addedOne = true;
         }
+    }
+
+    [PunRPC]
+    public void ExitStoryRoomCall(){
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.LoadLevel(1);
+        ExitStoryRoom = false;
+        interactPedestal = false;
     }
 
     [PunRPC]

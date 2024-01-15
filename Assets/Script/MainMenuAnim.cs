@@ -117,6 +117,15 @@ public class MainMenuAnim : MonoBehaviour
         SceneManager.LoadScene("PilipinasExam");
     }
 
+    public void attendanceOpen()
+    {
+        UIanim.SetBool("openAttendanceSheet", true);
+    }
+
+    public void attendanceClose()
+    {
+        UIanim.SetBool("openAttendanceSheet", false);
+    }
 
     
 

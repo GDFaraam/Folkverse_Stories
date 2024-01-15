@@ -15,6 +15,7 @@ public class QuitRoom : MonoBehaviourPunCallbacks
     public override void OnLeftRoom()
     {
         LoadSceneBasedOnRole();
+        Debug.Log("All players left");
     }
 
     public void LeaveRoomAndLoadScene()
@@ -24,14 +25,19 @@ public class QuitRoom : MonoBehaviourPunCallbacks
 
     void LoadSceneBasedOnRole()
     {
+        Debug.Log("LoadSceneBasedRole");
         if (PhotonNetwork.LocalPlayer != null && PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("Role", out object roleObj))
         {
+            Debug.Log("quit role is: " + roleObj);
             string currentPlayerRole = (string)roleObj;
             string nextSceneName = (currentPlayerRole == "Teacher") ? teacherSceneName : studentSceneName;
+
+            Debug.Log("nextSceneName is "+ nextSceneName);
 
             if (!string.IsNullOrEmpty(nextSceneName))
             {
                 SceneManager.LoadScene(nextSceneName);
+                Debug.Log("Successfully moved to scene" + nextSceneName);
             }
             else
             {
@@ -42,7 +48,5 @@ public class QuitRoom : MonoBehaviourPunCallbacks
         {
             Debug.LogWarning("Role not found in Custom Properties.");
         }
-
-
     }
 }

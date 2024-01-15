@@ -21,6 +21,8 @@ public class RequiredPlayers : MonoBehaviour
     public PlayerRole playerRole;
     public InteractStone interactStone;
 
+    public GameObject storyRoomPosition;
+
     private const string IsLockedKey = "IsLocked";
 
     void Start()
@@ -104,6 +106,7 @@ public class RequiredPlayers : MonoBehaviour
     public void RunMalakasAtM(){
         if (view.IsMine && playerRole.role == "Teacher")
         {
+            LockRoom();
             view.RPC("NextScenePun", RpcTarget.All);
         }
     }
@@ -111,6 +114,7 @@ public class RequiredPlayers : MonoBehaviour
     public void RunAlamatNgP(){
         if (view.IsMine && playerRole.role == "Teacher")
         {
+            LockRoom();
             view.RPC("ANPcut", RpcTarget.All);
         }
     }
@@ -118,6 +122,7 @@ public class RequiredPlayers : MonoBehaviour
     public void RunStoryRoom(){
         if (view.IsMine && playerRole.role == "Teacher")
         {
+            LockRoom();
             view.RPC("StoryRoom", RpcTarget.All);
         }
     }
@@ -145,23 +150,29 @@ public class RequiredPlayers : MonoBehaviour
     [PunRPC]
     void StoryRoom()
     {
+        GameObject teacherObject = GameObject.FindWithTag("Teacher");
+        GameObject[] students = GameObject.FindGameObjectsWithTag("Player");
+        teacherObject.transform.position = storyRoomPosition.transform.position;
+        foreach (GameObject studentGo in students)
+        {
+            studentGo.transform.position = storyRoomPosition.transform.position;
+        }
         LockRoom();
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.LoadLevel(9);
         requiredCount = 0;
     }
 
+
     public void LockRoom()
     {
-        ExitGames.Client.Photon.Hashtable customRoomProperties = new ExitGames.Client.Photon.Hashtable();
-        customRoomProperties[IsLockedKey] = true;
-        PhotonNetwork.CurrentRoom.SetCustomProperties(customRoomProperties);
+        PhotonNetwork.CurrentRoom.IsOpen = false;
+        PhotonNetwork.CurrentRoom.IsVisible = false;
     }
 
     public void UnlockRoom()
     {
-        ExitGames.Client.Photon.Hashtable customRoomProperties = new ExitGames.Client.Photon.Hashtable();
-        customRoomProperties[IsLockedKey] = false;
-        PhotonNetwork.CurrentRoom.SetCustomProperties(customRoomProperties);
+        PhotonNetwork.CurrentRoom.IsOpen = true;
+        PhotonNetwork.CurrentRoom.IsVisible = true;
     }
 }

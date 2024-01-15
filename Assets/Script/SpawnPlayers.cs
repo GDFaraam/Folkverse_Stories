@@ -18,10 +18,6 @@ public class SpawnPlayers : MonoBehaviour
 
     public RequiredPlayers requiredPlayers;
 
-    void OnEnable(){
-        requiredPlayers.UnlockRoom();
-    }
-
 
     [PunRPC]
     // Start is called before the first frame update
@@ -49,8 +45,6 @@ public class SpawnPlayers : MonoBehaviour
         {
             GameObject.FindWithTag("Player").transform.position = this.gameObject.transform.position;
         }
-
-        
         
     }
 
