@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Database;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class ScoreManager : MonoBehaviour
                 string json = JsonUtility.ToJson(newExam);
                 reference.Child("exam").Child(StoryName).Child(section.text).Child(name.text).Child(typeExamString.text).SetRawJsonValueAsync(json);
                 name.text = "";
+                SceneManager.LoadScene("MAIN MENU STUDENT");
                 Debug.Log("score sent");            
         }
         }

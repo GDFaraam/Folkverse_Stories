@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: {fileID: 2075737319}
   section: {fileID: 1334722349}
-  StoryName: Test
+  StoryName: Malakas At Maganda
   score: 0
   StringScore: 
   typeExamString: {fileID: 1378029561}
@@ -3324,34 +3324,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Questions: 1
+  - Questions: Sino ang hari ng mga ibon sa kwento?
     Answers:
-    - 1
-    - 2
-    - 3
-    - 4
+    - Si Malakas
+    - Hindi nabanggit
+    - Si Maganda
+    - Isang dakilang ibon
     correctAnswer: 1
-  - Questions: 2
+  - Questions: Ano ang pangalan ng asawa ni Malakas at paano sila pinalaya mula sa
+      kawayan?
     Answers:
-    - 1
-    - 2
-    - 3
-    - 4
-    correctAnswer: 2
-  - Questions: 3
+    - Si Maganda; tinuktok ng hari ng ibon ang kawayan
+    - Si Malakas; dumapo sa kawayan ang hari ng ibon
+    - Si Malakas; tinuktok ng hari ng ibon ang kawayan
+    - Si Maganda; dumapo sa kawayan ang hari ng ibon
+    correctAnswer: 1
+  - Questions: Ano ang ginawa ni Haring Ibon pagkatapos tuktokin ang kawayan?
     Answers:
-    - 1
-    - 2
-    - 3
-    - 4
+    - Inihatid si Maganda sa pulong luntian
+    - Nag-awit sa himpapawid
+    - Natuklasan sina Malakas at Maganda sa loob ng kawayan
+    - Lumipad palayo mula sa kawayan
     correctAnswer: 3
-  - Questions: 4
+  - Questions: Ano ang pangako ng ibon sa mag-asawang Malakas at Maganda?
     Answers:
-    - 1
-    - 2
-    - 3
-    - 4
-    correctAnswer: 4
+    - Dadalhin sila sa Lupang Hinirang
+    - Aawitin ang mga supling sa hinaharap
+    - Aawitin sila habang buhay
+    - Ibibigay ang kanyang bagwis sa kanila
+    correctAnswer: 3
+  - Questions: Sino ang nagbigay ng kalayaan kay Malakas at Maganda mula sa kawayan?
+    Answers:
+    - Isang kaibigang ibon
+    - Ang hari ng mga ibon
+    - Hindi nabanggit
+    - Si Malakas at Maganda mismo
+    correctAnswer: 2
   options:
   - {fileID: 2042784612}
   - {fileID: 489405661}

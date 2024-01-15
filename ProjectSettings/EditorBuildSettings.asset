@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alamat ng Pilipinas/Coastal Scene.unity
     guid: 97e0ab13323ebd84fba0910d75b5f7f3
+  - enabled: 1
+    path: Assets/Scenes/MalakasExam.unity
+    guid: 03417aec39dc8324fb14a19b849bda21
   m_configObjects: {}
