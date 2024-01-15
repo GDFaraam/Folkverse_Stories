@@ -5,18 +5,19 @@ using UnityEngine;
 public class miniMapCreate : MonoBehaviour
 {
 
-    public GameObject camera;
+    public Camera camera;
     public bool cameraBool;
+    public int newPriority = 1;
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        camera = GameObject.FindGameObjectWithTag("MiniMap");
+        camera = GameObject.FindGameObjectWithTag("MiniMap").gameObject.GetComponent<Camera>();
     }
 
     public void CameraOff()
@@ -24,12 +25,12 @@ public class miniMapCreate : MonoBehaviour
         if(cameraBool != true)
         {
             cameraBool = true;
-            camera.gameObject.SetActive(cameraBool);
+            camera.depth = newPriority;
         }
         else
         {
             cameraBool = false;
-            camera.gameObject.SetActive(cameraBool);
+            camera.depth = -2;
         }
         
     }
