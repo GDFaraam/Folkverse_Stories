@@ -32,6 +32,6 @@ public class testStart : MonoBehaviour
 
     public void MainMenu()
     {
-
+        SceneManager.LoadScene("MAIN MENU STUDENT");
     }
 }

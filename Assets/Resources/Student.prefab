@@ -460,9 +460,11 @@ MonoBehaviour:
   phoenix: {fileID: 0}
   phoenixAnimator: {fileID: 0}
   phoenixAnimatorShadow: {fileID: 0}
-  PlayerUIPrefab: {fileID: 3735659125453455686, guid: 55878ebe88d1ff6458a6ea906513c6e4, type: 3}
+  PlayerUIPrefab: {fileID: 8862094709940404768, guid: 55878ebe88d1ff6458a6ea906513c6e4, type: 3}
   boxCollider2D: {fileID: 0}
   speed: 0
+  mapCam: {fileID: 0}
+  cameraBool: 0
   teacherObj: {fileID: 0}
   phoenixObj: {fileID: 0}
 --- !u!114 &1420052529909304016

@@ -338,7 +338,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.1}
-    oldSize: {x: 0.28, y: 0.5}
+    oldSize: {x: 0.28004208, y: 0.5}
     newSize: {x: 0.28, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -646,9 +646,11 @@ MonoBehaviour:
   phoenix: {fileID: 2497528391895386748}
   phoenixAnimator: {fileID: 2239963707884582756}
   phoenixAnimatorShadow: {fileID: 1770372539703589392}
-  PlayerUIPrefab: {fileID: 3735659125453455686, guid: 55878ebe88d1ff6458a6ea906513c6e4, type: 3}
+  PlayerUIPrefab: {fileID: 8862094709940404768, guid: 55878ebe88d1ff6458a6ea906513c6e4, type: 3}
   boxCollider2D: {fileID: 836352935783689509}
   speed: 0
+  mapCam: {fileID: 0}
+  cameraBool: 0
   teacherObj: {fileID: 836352935105518693}
   phoenixObj: {fileID: 8657271458130068124}
 --- !u!114 &1420052529909304016
@@ -1885,7 +1887,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.1}
-    oldSize: {x: 0.28, y: 0.5}
+    oldSize: {x: 0.28004208, y: 0.5}
     newSize: {x: 0.28, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2893,7 +2895,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5806580787931792763}
+  - {fileID: 855932861129883339}
   m_Father: {fileID: 836352935783689504}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3780,8 +3782,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55878ebe88d1ff6458a6ea906513c6e4, type: 3}
---- !u!224 &5806580787931792763 stripped
+--- !u!224 &855932861129883339 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1328578946465848095, guid: 55878ebe88d1ff6458a6ea906513c6e4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5261879556420821167, guid: 55878ebe88d1ff6458a6ea906513c6e4, type: 3}
   m_PrefabInstance: {fileID: 4820278720275193444}
   m_PrefabAsset: {fileID: 0}

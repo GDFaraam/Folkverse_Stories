@@ -107,15 +107,16 @@ public class MainMenuAnim : MonoBehaviour
         UIanim.SetBool("assIsOpen", false);
     }
 
-    public void attendanceOpen()
+    public void assMalakasPre()
     {
-        UIanim.SetBool("openAttendanceSheet", true);
+        SceneManager.LoadScene("MalakasExam"); 
     }
 
-    public void attendanceClose()
+    public void assPilipinasPre()
     {
-        UIanim.SetBool("openAttendanceSheet", false);
+        SceneManager.LoadScene("PilipinasExam");
     }
+
 
     
 

@@ -31,6 +31,7 @@ TagManager:
   - AttendanceBehavior
   - CreatedRooms
   - ChooseButton
+  - MiniMap
   layers:
   - Default
   - TransparentFX

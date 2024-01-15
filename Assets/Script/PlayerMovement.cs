@@ -22,7 +22,9 @@ public class PlayerMovement : MonoBehaviourPun
     public float speed;
     private bool inTeacherForm = true;
     private bool inPhoenixform = false;
+    public GameObject mapCam;
 
+    public bool cameraBool;
     
 
 
@@ -75,7 +77,7 @@ public class PlayerMovement : MonoBehaviourPun
     {
 
         
-        
+
 
         speed = movement.sqrMagnitude;
 
@@ -121,6 +123,21 @@ public class PlayerMovement : MonoBehaviourPun
     {
         GameObject _uiGo = Instantiate(this.PlayerUIPrefab);
         _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+    }
+
+    public void CameraOff()
+    {
+        if(cameraBool != true)
+        {
+            cameraBool = true;
+            GetComponent<Camera>().gameObject.SetActive(cameraBool);
+        }
+        else
+        {
+            cameraBool = false;
+            GetComponent<Camera>().gameObject.SetActive(cameraBool);
+        }
+        
     }
 
     public void phoenixForm()
