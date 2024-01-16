@@ -26,6 +26,10 @@ public class ShoreScene : MonoBehaviour
     private PhotonView view;
     private PlayerRole playerRole;
 
+    public int syncDialogueCount;
+    public int totalPlayerSynced;
+    public TextMeshProUGUI waitForSync;
+
     private void Awake()
     {
         if (SHOREinstance == null)
@@ -62,6 +66,19 @@ public class ShoreScene : MonoBehaviour
         }
     }
 
+    void Update(){
+        totalPlayerSynced = PhotonNetwork.CurrentRoom.PlayerCount;
+        waitForSync.text = $"Waiting for everyone to finish the dialogue... {syncDialogueCount} / {totalPlayerSynced}";
+        if (syncDialogueCount == totalPlayerSynced){
+            buttons[0].interactable = true;
+            sceneObjects[1].SetActive(true);
+        }
+        if (syncDialogueCount > totalPlayerSynced){
+            buttons[0].interactable = true;
+            sceneObjects[1].SetActive(true);
+        }
+    }
+
     IEnumerator DialogueShow(){
         yield return new WaitForSeconds(3f);
         ShowDialogue();
@@ -77,7 +94,12 @@ public class ShoreScene : MonoBehaviour
     {
         if (view.IsMine && playerRole.role == "Teacher")
         {
+            if (syncDialogueCount == totalPlayerSynced){
             view.RPC("NextButton", RpcTarget.All);
+            }
+            else if (syncDialogueCount > totalPlayerSynced){
+            view.RPC("NextButton", RpcTarget.All);
+            }
         }
     }
 
@@ -120,6 +142,8 @@ public class ShoreScene : MonoBehaviour
                 view.RPC("BackToIsland", RpcTarget.All);
             }
         }
+
+        syncDialogueCount = 0;
     }
 
     public void SaveIndex(int newIndex)
@@ -140,8 +164,16 @@ public class ShoreScene : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        buttons[0].interactable = true;
-        sceneObjects[1].SetActive(true);
+        EnableButton();
+    }
+
+    public void EnableButton(){
+        view.RPC("AddSyncedPlayer", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void AddSyncedPlayer(){
+        syncDialogueCount++;
     }
 
     [PunRPC]

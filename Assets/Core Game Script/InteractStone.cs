@@ -138,7 +138,9 @@ public class InteractStone : MonoBehaviour
         if (reqPlayers.indicators[1] != null){
         reqPlayers.indicators[1].SetActive(false);
         }
+        if (playerRole.role == "Teacher"){
         reqPlayers.StartTimer();
+        }
     }
 
     [PunRPC]
@@ -149,7 +151,9 @@ public class InteractStone : MonoBehaviour
         if (reqPlayers.indicators[1] != null){
         reqPlayers.indicators[1].SetActive(true);
         }
+        if (playerRole.role == "Teacher"){
         reqPlayers.StartTimerANP();
+        }
     }
 
     [PunRPC]

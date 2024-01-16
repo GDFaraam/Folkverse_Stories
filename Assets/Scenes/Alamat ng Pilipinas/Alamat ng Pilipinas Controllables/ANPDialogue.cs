@@ -28,6 +28,10 @@ public class ANPDialogue : MonoBehaviour
 
     private bool rescueSceneDone = false;
 
+    public int syncDialogueCount;
+    public int totalPlayerSynced;
+    public TextMeshProUGUI waitForSync;
+
     private void Awake()
     {
         if (instance == null)
@@ -88,6 +92,19 @@ public class ANPDialogue : MonoBehaviour
         }
     }
 
+    void Update(){
+        totalPlayerSynced = PhotonNetwork.CurrentRoom.PlayerCount;
+        waitForSync.text = $"Waiting for everyone to finish the dialogue... {syncDialogueCount} / {totalPlayerSynced}";
+        if (syncDialogueCount == totalPlayerSynced){
+            buttons[0].interactable = true;
+            sceneObjects[1].SetActive(true);
+        }
+        if (syncDialogueCount > totalPlayerSynced){
+            buttons[0].interactable = true;
+            sceneObjects[1].SetActive(true);
+        }
+    }
+
     IEnumerator DialogueShow(){
         yield return new WaitForSeconds(3f);
         ShowDialogue();
@@ -109,7 +126,12 @@ public class ANPDialogue : MonoBehaviour
     {
         if (view.IsMine && playerRole.role == "Teacher")
         {
+            if (syncDialogueCount == totalPlayerSynced){
             view.RPC("NextButton", RpcTarget.All);
+            }
+            else if (syncDialogueCount > totalPlayerSynced){
+            view.RPC("NextButton", RpcTarget.All);
+            }
         }
     }
 
@@ -219,6 +241,8 @@ public class ANPDialogue : MonoBehaviour
             cutscene[8].Play();
         }
 
+        syncDialogueCount = 0;
+
     }
 
     IEnumerator NextLine(float duration){
@@ -233,8 +257,16 @@ public class ANPDialogue : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        buttons[0].interactable = true;
-        sceneObjects[1].SetActive(true);
+        EnableButton();
+    }
+
+    public void EnableButton(){
+        view.RPC("AddSyncedPlayer", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void AddSyncedPlayer(){
+        syncDialogueCount++;
     }
 
     public void HideDialogue(){
