@@ -7,37 +7,44 @@ public class QuitRoom : MonoBehaviourPunCallbacks
     public string teacherSceneName; // Assign the name of the scene for the teacher
     public string studentSceneName; // Assign the name of the scene for the student
 
+
+    public static QuitRoom instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this) {
+            Destroy(instance.gameObject);
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
     }
 
-    public override void OnLeftRoom()
-    {
-        LoadSceneBasedOnRole();
-        Debug.Log("All players left");
-    }
-
-    public void LeaveRoomAndLoadScene()
+    public void LeaveRoomAndLoadScene(string quittingPlayerRole)
     {
         PhotonNetwork.LeaveRoom();
+        LoadSceneBasedOnRole(quittingPlayerRole);
     }
 
-    void LoadSceneBasedOnRole()
+    void LoadSceneBasedOnRole(string role)
     {
-        Debug.Log("LoadSceneBasedRole");
-        if (PhotonNetwork.LocalPlayer != null && PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("Role", out object roleObj))
+        if (teacherSceneName != null)
         {
-            Debug.Log("quit role is: " + roleObj);
-            string currentPlayerRole = (string)roleObj;
+            string currentPlayerRole = role;
             string nextSceneName = (currentPlayerRole == "Teacher") ? teacherSceneName : studentSceneName;
-
-            Debug.Log("nextSceneName is "+ nextSceneName);
 
             if (!string.IsNullOrEmpty(nextSceneName))
             {
+                Debug.Log("Loading scene: " + nextSceneName);
                 SceneManager.LoadScene(nextSceneName);
-                Debug.Log("Successfully moved to scene" + nextSceneName);
             }
             else
             {
@@ -49,4 +56,5 @@ public class QuitRoom : MonoBehaviourPunCallbacks
             Debug.LogWarning("Role not found in Custom Properties.");
         }
     }
+
 }

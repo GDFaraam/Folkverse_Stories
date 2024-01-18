@@ -8,11 +8,8 @@ public class Attendance : MonoBehaviourPunCallbacks
 {
     private DatabaseReference reference;
     public static List<string> activePlayers = new List<string>();
-    private KickMute dcAll;
 
     void Start(){
-        GameObject QuitObject = GameObject.FindWithTag("KickMuteScript");
-        dcAll = QuitObject.GetComponent<KickMute>();
         PhotonNetwork.AddCallbackTarget(this);
     }
 
@@ -77,6 +74,6 @@ public class Attendance : MonoBehaviourPunCallbacks
 
     public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
     {
-        dcAll.KickAll();
+        KickMute.instance.KickAll();
     }
 }

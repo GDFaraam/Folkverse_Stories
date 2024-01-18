@@ -1,22 +1,22 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class PlayerRole : MonoBehaviour
+public class PlayerRole : MonoBehaviourPunCallbacks
 {
     public string role;
-    public PhotonView view;
+    private PhotonView view;
 
     private void Start()
     {
         view = GetComponent<PhotonView>();
-        if (view.IsMine)
+
+        if (view != null && view.IsMine)
         {
-            // Set the role as a custom property for the local player
-            view.Owner.SetCustomProperties(new ExitGames.Client.Photon.Hashtable
-            {
-                { "Role", role }
-            });
+            ExitGames.Client.Photon.Hashtable customProperties = new ExitGames.Client.Photon.Hashtable();
+            customProperties.Add("Role", role);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(customProperties);
         }
+
         Debug.Log("Role is: " + role);
         Debug.Log("Player count: " + PhotonNetwork.PlayerList.Length);
         Debug.Log("Room name: " + PhotonNetwork.CurrentRoom.Name);

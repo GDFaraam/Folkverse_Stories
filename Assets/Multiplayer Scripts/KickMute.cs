@@ -12,53 +12,68 @@ public class KickMute : MonoBehaviourPunCallbacks
     private bool micOn = true;
     private bool allMicOn = true;
 
-    public string teacherSceneName;
-    public string studentSceneName;
+    public static KickMute instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this) {
+            Destroy(instance.gameObject);
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     void Start()
     {
         view = GetComponent<PhotonView>();
-        DontDestroyOnLoad(gameObject);
     }
 
-    public void Mute(int targetPlayerID)
+    public void Mute(string targetPlayerNickname)
     {
-        Debug.Log("Target Player ID: " + targetPlayerID);
+        Debug.Log("Target Player Nickname: " + targetPlayerNickname);
 
-        if (PhotonNetwork.CurrentRoom.Players.TryGetValue(targetPlayerID, out Photon.Realtime.Player targetPlayer))
+        foreach (var player in PhotonNetwork.CurrentRoom.Players.Values)
         {
-            Debug.Log("Target Player ID: " + targetPlayerID);
-            view.RPC("MutePlayer", targetPlayer);
-            Debug.Log("Target Owner: " + targetPlayer);
+            if (player.NickName == targetPlayerNickname)
+            {
+                view.RPC("MutePlayer", player);
+                Debug.Log("Target Owner: " + player);
+                return; // Exit the loop once you find the matching player
+            }
         }
-        else
+
+        Debug.LogError("Target player not found.");
+    }
+
+    public void Kick(string targetPlayerNickname)
+    {
+        Debug.Log("Target Player Nickname: " + targetPlayerNickname);
+
+        foreach (var player in PhotonNetwork.CurrentRoom.Players.Values)
         {
-            Debug.LogError("Target player not found.");
+            if (player.NickName == targetPlayerNickname)
+            {
+                view.RPC("KickPlayer", player);
+                Debug.Log("Target Owner: " + player);
+                return; // Exit the loop once you find the matching player
+            }
         }
+
+        Debug.LogError("Target player not found.");
+    }
+
+
+    public void KickAll(){
+        view.RPC("KickPlayer", RpcTarget.All);
     }
 
     public void MuteStudents(){
         view.RPC("MuteAllPlayer", RpcTarget.Others);
-    }
-
-    public void Kick(int targetPlayerID)
-    {
-        Debug.Log("Target Player ID: " + targetPlayerID);
-
-        if (PhotonNetwork.CurrentRoom.Players.TryGetValue(targetPlayerID, out Photon.Realtime.Player targetPlayer))
-        {
-            Debug.Log("Target Player ID: " + targetPlayerID);
-            view.RPC("KickPlayer", targetPlayer);
-            Debug.Log("Target Owner: " + targetPlayer);
-        }
-        else
-        {
-            Debug.LogError("Target player not found.");
-        }
-    }
-
-    public void KickAll(){
-        view.RPC("KickPlayer", RpcTarget.All    );
     }
 
     [PunRPC]
@@ -99,37 +114,10 @@ public class KickMute : MonoBehaviourPunCallbacks
 
     [PunRPC]
     public void KickPlayer(){
-        LeaveRoomAndLoadScene();
+        Debug.Log("KickPlayer RPC executed");
+        GameObject quitObject = GameObject.FindWithTag("QuitComponent");
+        GetQuitComponent quitCommand = quitObject.GetComponent<GetQuitComponent>();
+        quitCommand.Quit(); 
     }
-
-    public override void OnLeftRoom()
-    {
-        LoadSceneBasedOnRole();
-    }
-
-    public void LeaveRoomAndLoadScene()
-    {
-        PhotonNetwork.LeaveRoom();
-        PhotonNetwork.Disconnect();
-    }
-
-    void LoadSceneBasedOnRole()
-    {
-        Debug.Log("LoadSceneBasedRole");
-        
-        if (PhotonNetwork.LocalPlayer != null && PhotonNetwork.LocalPlayer.IsMasterClient)
-        {
-            Debug.Log("Local player is the master client");
-            SceneManager.LoadScene(teacherSceneName);
-            Debug.Log("Successfully moved to teacher scene");
-        }
-        else
-        {
-            Debug.Log("Local player is not the master client");
-            SceneManager.LoadScene(studentSceneName);
-            Debug.Log("Successfully moved to student scene");
-        }
-    }
-
 
 }

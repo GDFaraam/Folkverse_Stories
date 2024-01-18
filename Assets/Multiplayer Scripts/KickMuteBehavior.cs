@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class KickMuteBehavior : MonoBehaviour
 {
-    public int playerID;
+    public string playerID;
     private KickMute kickMute;
 
     public Sprite[] images;
@@ -17,28 +17,14 @@ public class KickMuteBehavior : MonoBehaviour
     private bool muted = false;
     private bool allMuted = false;
 
-    void Start()
-    {
-        GameObject kickMuteObject = GameObject.FindWithTag("KickMuteScript");
-
-        if (kickMuteObject != null)
-        {
-            kickMute = kickMuteObject.GetComponent<KickMute>();
-        }
-        else
-        {
-            Debug.LogError("KickMute script not found.");
-        }
-    }
-
     public void KickPlayerButton()
     {
-        kickMute.Kick(playerID);
+        KickMute.instance.Kick(playerID);
     }
 
     public void MutePlayerButton()
     {
-        kickMute.Mute(playerID);
+        KickMute.instance.Mute(playerID);
         if (muted){
         muteButton.sprite = images[0];
         muted = false;
@@ -51,7 +37,7 @@ public class KickMuteBehavior : MonoBehaviour
 
     public void MuteAll()
     {
-        kickMute.MuteStudents();
+        KickMute.instance.MuteStudents();
         if (allMuted){
         muteAllButton.sprite = images[2];
         allMuted = false;
