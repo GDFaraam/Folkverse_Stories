@@ -2534,7 +2534,6 @@ MonoBehaviour:
   CutOut: 0
   firstChildToDisableIndex: 0
   secondChildToDisableIndex: 1
-  thirdChildToDisableIndex: 4
 --- !u!4 &723602518
 Transform:
   m_ObjectHideFlags: 0
@@ -5970,6 +5969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 0}
+  mapbuttonon: 0
 --- !u!4 &1661940414
 Transform:
   m_ObjectHideFlags: 0

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class mapDisabler : MonoBehaviour
 {
-    
+
     public GameObject map;
+    public bool mapbuttonon = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,7 @@ public class mapDisabler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        map = GameObject.FindGameObjectWithTag("MiniMap");
-        map.gameObject.SetActive(false);
+        map = GameObject.FindGameObjectWithTag("mapbutton");
+        map.gameObject.SetActive(mapbuttonon);
     }
 }
