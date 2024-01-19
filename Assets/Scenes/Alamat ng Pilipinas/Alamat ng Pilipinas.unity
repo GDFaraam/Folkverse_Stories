@@ -24578,6 +24578,7 @@ MonoBehaviour:
   CutOut: 0
   firstChildToDisableIndex: 0
   secondChildToDisableIndex: 1
+  thirdChildToDisableIndex: 4
 --- !u!4 &1670709819
 Transform:
   m_ObjectHideFlags: 0
@@ -28325,6 +28326,7 @@ GameObject:
   - component: {fileID: 3498346024317331274}
   - component: {fileID: 3498346024317331273}
   - component: {fileID: 3401971627134941870}
+  - component: {fileID: 3498346024317331280}
   m_Layer: 5
   m_Name: Proceed
   m_TagString: Untagged
@@ -28332,6 +28334,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3498346024317331280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498346024317331279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9effcb3c00a8d47a776ca53db97b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4352151386173810440
 GameObject:
   m_ObjectHideFlags: 0

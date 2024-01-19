@@ -7,7 +7,6 @@ public class QuitRoom : MonoBehaviourPunCallbacks
     public string teacherSceneName; // Assign the name of the scene for the teacher
     public string studentSceneName; // Assign the name of the scene for the student
 
-
     public static QuitRoom instance;
 
     private void Awake()

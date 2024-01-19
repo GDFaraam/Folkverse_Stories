@@ -18,7 +18,6 @@ public class KickMute : MonoBehaviourPunCallbacks
     {
         if (instance == null)
         {
-
             instance = this;
             DontDestroyOnLoad(gameObject);
         }

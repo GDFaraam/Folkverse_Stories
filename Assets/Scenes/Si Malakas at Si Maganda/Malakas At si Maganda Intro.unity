@@ -2534,6 +2534,7 @@ MonoBehaviour:
   CutOut: 0
   firstChildToDisableIndex: 0
   secondChildToDisableIndex: 1
+  thirdChildToDisableIndex: 4
 --- !u!4 &723602518
 Transform:
   m_ObjectHideFlags: 0
@@ -7572,6 +7573,7 @@ GameObject:
   - component: {fileID: 7032811266450508770}
   - component: {fileID: 7032811266450508769}
   - component: {fileID: 9089166278637491718}
+  - component: {fileID: 9089166278637491719}
   m_Layer: 5
   m_Name: Proceed
   m_TagString: Untagged
@@ -7599,3 +7601,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &9089166278637491719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032811266450508775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9effcb3c00a8d47a776ca53db97b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

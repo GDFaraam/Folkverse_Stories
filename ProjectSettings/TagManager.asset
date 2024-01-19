@@ -33,6 +33,7 @@ TagManager:
   - ChooseButton
   - MiniMap
   - QuitComponent
+  - LobbyButton
   layers:
   - Default
   - TransparentFX
