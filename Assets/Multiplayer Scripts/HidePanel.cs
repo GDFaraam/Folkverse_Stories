@@ -9,8 +9,4 @@ public class HidePanel : MonoBehaviour
     public void HidePanelButton(){
         Panel.SetActive(false);
     }
-
-    public void ShowPanelButton(){
-        Panel.SetActive(true);
-    }
 }
