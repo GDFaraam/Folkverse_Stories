@@ -5,6 +5,7 @@ public class UIDisabler : MonoBehaviour
     public bool CutOut = false;
     public int firstChildToDisableIndex = 0; // Index of the first child to be disabled
     public int secondChildToDisableIndex = 1; // Index of the second child to be disabled
+    public int thirdChildToDisableIndex = 4; // Index of the third child to be disabled
 
     void Update()
     {
@@ -42,8 +43,8 @@ public class UIDisabler : MonoBehaviour
         {
             Transform emptyGameObject = parent.GetChild(emptyGameObjectIndex);
 
-            // Disable two specific children based on the indices within the emptyGameObject
-            DisableSpecificChildren(emptyGameObject, firstChildToDisableIndex, secondChildToDisableIndex);
+            // Disable three specific children based on the indices within the emptyGameObject
+            DisableSpecificChildren(emptyGameObject, firstChildToDisableIndex, secondChildToDisableIndex, thirdChildToDisableIndex);
         }
         else
         {
@@ -60,8 +61,8 @@ public class UIDisabler : MonoBehaviour
         {
             Transform emptyGameObject = parent.GetChild(emptyGameObjectIndex);
 
-            // Disable two specific children based on the indices within the emptyGameObject
-            DisableSpecificChildren(emptyGameObject, firstChildToDisableIndex, secondChildToDisableIndex);
+            // Disable three specific children based on the indices within the emptyGameObject
+            DisableSpecificChildren(emptyGameObject, firstChildToDisableIndex, secondChildToDisableIndex, thirdChildToDisableIndex);
         }
         else
         {
@@ -69,21 +70,24 @@ public class UIDisabler : MonoBehaviour
         }
     }
 
-    // Disable two specific children based on the provided indices within the emptyGameObject
-    void DisableSpecificChildren(Transform emptyGameObject, int firstChildIndex, int secondChildIndex)
+    // Disable three specific children based on the provided indices within the emptyGameObject
+    void DisableSpecificChildren(Transform emptyGameObject, int firstChildIndex, int secondChildIndex, int thirdChildIndex)
     {
         if (emptyGameObject.childCount > 0)
         {
             Transform childOfEmpty = emptyGameObject.GetChild(0);
 
             if (firstChildIndex >= 0 && firstChildIndex < childOfEmpty.childCount &&
-                secondChildIndex >= 0 && secondChildIndex < childOfEmpty.childCount)
+                secondChildIndex >= 0 && secondChildIndex < childOfEmpty.childCount &&
+                thirdChildIndex >= 0 && thirdChildIndex < childOfEmpty.childCount)
             {
                 Transform firstChildToDisable = childOfEmpty.GetChild(firstChildIndex);
                 Transform secondChildToDisable = childOfEmpty.GetChild(secondChildIndex);
+                Transform thirdChildToDisable = childOfEmpty.GetChild(thirdChildIndex);
 
                 firstChildToDisable.gameObject.SetActive(CutOut);
                 secondChildToDisable.gameObject.SetActive(CutOut);
+                thirdChildToDisable.gameObject.SetActive(CutOut);
             }
             else
             {
