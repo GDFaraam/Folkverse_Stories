@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3730722176813502875}
   - component: {fileID: 6648167881975420381}
   - component: {fileID: 1588162089639914130}
-  - component: {fileID: 5401507567634499261}
   m_Layer: 5
   m_Name: FINAL UI I HOPE (1)
   m_TagString: Quit
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5401507567634499261}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuitRoom, Assembly-CSharp
         m_MethodName: LeaveRoomAndLoadScene
         m_Mode: 1
@@ -134,20 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5401507567634499261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79898028073864736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 446e9f38a5a76ad41b76178970bf53f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teacherSceneName: MAIN MENU TEACHER
-  studentSceneName: MAIN MENU STUDENT
 --- !u!1 &156741266092667377
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +149,7 @@ GameObject:
   - component: {fileID: 1748213020619133007}
   m_Layer: 6
   m_Name: Button (Legacy) Variant 1 (1)
-  m_TagString: Mic
+  m_TagString: MiniMap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

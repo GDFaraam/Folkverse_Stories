@@ -111,6 +111,13 @@ public class RequiredPlayers : MonoBehaviour
         }
     }
 
+    public void RunMalakasAtMOutro(){
+        if (view.IsMine && playerRole.role == "Teacher")
+        {
+            view.RPC("MalakasOutro", RpcTarget.All);
+        }
+    }
+
     public void RunAlamatNgP(){
         if (view.IsMine && playerRole.role == "Teacher")
         {
@@ -130,7 +137,6 @@ public class RequiredPlayers : MonoBehaviour
     [PunRPC]
     void ANPcut()
     {
-        LockRoom();
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.LoadLevel(12);
         requiredCount = 0;
@@ -139,7 +145,6 @@ public class RequiredPlayers : MonoBehaviour
     [PunRPC]
     void NextScenePun()
     {
-        LockRoom();
         PhotonNetwork.AutomaticallySyncScene = true;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
@@ -157,9 +162,18 @@ public class RequiredPlayers : MonoBehaviour
         {
             studentGo.transform.position = storyRoomPosition.transform.position;
         }
-        LockRoom();
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.LoadLevel(9);
+        requiredCount = 0;
+    }
+
+    [PunRPC]
+    void MalakasOutro()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        PhotonNetwork.LoadLevel(nextSceneIndex);
         requiredCount = 0;
     }
 

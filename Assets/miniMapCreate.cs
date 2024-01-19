@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class miniMapCreate : MonoBehaviour
 {
@@ -18,6 +20,12 @@ public class miniMapCreate : MonoBehaviour
     void Update()
     {
         camera = GameObject.FindGameObjectWithTag("MiniMap").gameObject.GetComponent<Camera>();
+        string currentScene = SceneManager.GetActiveScene().name;
+        
+        if (currentScene == "MAIN MENU TEACHER" || currentScene == "MAIN MENU STUDENT")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void CameraOff()

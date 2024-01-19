@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Voice.Unity;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PushToTalkButton : MonoBehaviourPunCallbacks, IPointerDownHandler, IPointerUpHandler
 {
@@ -38,6 +39,12 @@ public class PushToTalkButton : MonoBehaviourPunCallbacks, IPointerDownHandler, 
     void Update()
     {
         recorder = GameObject.FindGameObjectWithTag("Recorder").GetComponent<Recorder>();
+        string currentScene = SceneManager.GetActiveScene().name;
+        
+        if (currentScene == "MAIN MENU TEACHER" || currentScene == "MAIN MENU STUDENT")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -33,6 +33,16 @@ public class KickMute : MonoBehaviourPunCallbacks
         view = GetComponent<PhotonView>();
     }
 
+    void Update()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        
+        if (currentScene == "MAIN MENU TEACHER" || currentScene == "MAIN MENU STUDENT")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void Mute(string targetPlayerNickname)
     {
         Debug.Log("Target Player Nickname: " + targetPlayerNickname);

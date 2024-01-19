@@ -14,7 +14,6 @@ public class QuitRoom : MonoBehaviourPunCallbacks
     {
         if (instance == null)
         {
-
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
@@ -24,8 +23,14 @@ public class QuitRoom : MonoBehaviourPunCallbacks
         }
     }
 
-    void Start()
+    void Update()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
+        
+        if (currentScene == "MAIN MENU TEACHER" || currentScene == "MAIN MENU STUDENT")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void LeaveRoomAndLoadScene(string quittingPlayerRole)
