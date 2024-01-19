@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
     public int score;
     public string StringScore;
     public Text typeExamString;
+    public Text ScoreText;
 
     private DatabaseReference reference;
 
@@ -27,6 +28,8 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         StringScore = score.ToString();
+        ScoreText.text = "Score: " + StringScore;
+
     }
 
     public void startTest()
