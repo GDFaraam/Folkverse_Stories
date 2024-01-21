@@ -75,33 +75,7 @@ public class PlayerMovement : MonoBehaviourPun
 
     void Update()
     {
-
-        
-
-
         speed = movement.sqrMagnitude;
-
-        if(photonView.IsMine)
-        {
-
-            movement.x = joystick.Horizontal;
-            movement.y = joystick.Vertical;
-        }
-        
-            characterAnimator.SetFloat("Horizontal", movement.x);
-            characterAnimator.SetFloat("Vertical", movement.y);
-            characterAnimator.SetFloat("speed", speed);
-            characterAnimatorShadow.SetFloat("Horizontal", movement.x);
-            characterAnimatorShadow.SetFloat("Vertical", movement.y);
-            characterAnimatorShadow.SetFloat("speed", speed);
-
-            phoenixAnimator.SetFloat("Horizontal", movement.x);
-            phoenixAnimator.SetFloat("Vertical", movement.y);
-            phoenixAnimator.SetFloat("Speed", speed);
-            phoenixAnimatorShadow.SetFloat("Horizontal", movement.x);
-            phoenixAnimatorShadow.SetFloat("Vertical", movement.y);
-            phoenixAnimatorShadow.SetFloat("Speed", speed);
-    
     }
 
     private void Awake() 
@@ -117,6 +91,27 @@ public class PlayerMovement : MonoBehaviourPun
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        if(photonView.IsMine)
+        {
+            float horizontalMovement = Mathf.Abs(movement.x);
+            float verticalMovement = Mathf.Abs(movement.y);
+
+            characterAnimator.SetFloat("Horizontal", movement.x);
+            characterAnimator.SetFloat("Vertical", movement.y);
+            characterAnimator.SetFloat("speed", horizontalMovement + verticalMovement);
+
+            characterAnimatorShadow.SetFloat("Horizontal", movement.x);
+            characterAnimatorShadow.SetFloat("Vertical", movement.y);
+            characterAnimatorShadow.SetFloat("speed", horizontalMovement + verticalMovement);
+
+            phoenixAnimator.SetFloat("Horizontal", movement.x);
+            phoenixAnimator.SetFloat("Vertical", movement.y);
+            phoenixAnimator.SetFloat("Speed", speed);
+            phoenixAnimatorShadow.SetFloat("Horizontal", movement.x);
+            phoenixAnimatorShadow.SetFloat("Vertical", movement.y);
+            phoenixAnimatorShadow.SetFloat("Speed", speed);
+        }
     }
 
     void CalledOnLevelWasLoaded()

@@ -36,12 +36,12 @@ public class emoteWheel : MonoBehaviour
 
     public void sideswipe()
     {
-        Em.SetTrigger("flop");
+        Em.SetTrigger("sideswipe");
     }
 
     public void flop()
     {
-        Em.SetTrigger("sideswipe");
+        Em.SetTrigger("flop");
     }
 
     public void emoteWheelOn()
