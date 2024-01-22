@@ -76,6 +76,12 @@ public class PlayerMovement : MonoBehaviourPun
     void Update()
     {
         speed = movement.sqrMagnitude;
+
+        if (photonView.IsMine)
+        {
+            movement.x = joystick.Horizontal;
+            movement.y = joystick.Vertical;
+        }
     }
 
     private void Awake() 
@@ -93,6 +99,7 @@ public class PlayerMovement : MonoBehaviourPun
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         if(photonView.IsMine)
+
         {
             float horizontalMovement = Mathf.Abs(movement.x);
             float verticalMovement = Mathf.Abs(movement.y);

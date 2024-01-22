@@ -32,7 +32,6 @@ public class miniMapCreate : MonoBehaviour
             cameraBool = false;
             camera.depth = -2;
         }
-        
     }
 
 
