@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &34739646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2483,6 +2483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1007818146}
+  - component: {fileID: 1007818147}
   m_Layer: 5
   m_Name: ScoreSender
   m_TagString: Untagged
@@ -2518,6 +2519,20 @@ RectTransform:
   m_AnchoredPosition: {x: 254, y: 14}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1007818147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007818145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fc343655424574f922641602b4090a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: {fileID: 2075737319}
+  section: {fileID: 1334722349}
 --- !u!1 &1160678351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,7 +2624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1173369823
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3179,10 +3194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3578,7 +3593,7 @@ MonoBehaviour:
     - Hindi nabanggit
     - Si Maganda
     - Isang dakilang ibon
-    correctAnswer: 1
+    correctAnswer: 3
   - Questions: Ano ang pangalan ng asawa ni Malakas at paano sila pinalaya mula sa
       kawayan?
     Answers:
@@ -3586,20 +3601,20 @@ MonoBehaviour:
     - Si Malakas; dumapo sa kawayan ang hari ng ibon
     - Si Malakas; tinuktok ng hari ng ibon ang kawayan
     - Si Maganda; dumapo sa kawayan ang hari ng ibon
-    correctAnswer: 1
+    correctAnswer: 0
   - Questions: Ano ang ginawa ni Haring Ibon pagkatapos tuktokin ang kawayan?
     Answers:
     - Inihatid si Maganda sa pulong luntian
     - Nag-awit sa himpapawid
     - Natuklasan sina Malakas at Maganda sa loob ng kawayan
     - Lumipad palayo mula sa kawayan
-    correctAnswer: 3
+    correctAnswer: 2
   - Questions: Ano ang pangako ng ibon sa mag-asawang Malakas at Maganda?
     Answers:
     - Dadalhin sila sa Lupang Hinirang
-    - Aawitin ang mga supling sa hinaharap
-    - Aawitin sila habang buhay
-    - Ibibigay ang kanyang bagwis sa kanila
+    - Aawitan ng sila ng kanyang mga supling sa hinaharap
+    - Aawitan sila habang buhay
+    - Lahat ng nabanggit
     correctAnswer: 3
   - Questions: Sino ang nagbigay ng kalayaan kay Malakas at Maganda mula sa kawayan?
     Answers:
@@ -3607,6 +3622,80 @@ MonoBehaviour:
     - Ang hari ng mga ibon
     - Hindi nabanggit
     - Si Malakas at Maganda mismo
+    correctAnswer: 1
+  - Questions: Ano ang tahanan ng Diyos bago nagsimula ang panahon?
+    Answers:
+    - Kakahuyan
+    - Langit
+    - Dagat
+    - Kalawakan
+    correctAnswer: 3
+  - Questions: Ano ang nagpapalamutian ng langit sa oras ng sikat ng araw?
+    Answers:
+    - Mapuputing ulap
+    - Bituin
+    - Araw
+    - Buwan
+    correctAnswer: 0
+  - Questions: Ano ang nagbigay liwanag sa buong sanlibutan sa unang iglap?
+    Answers:
+    - Araw
+    - Bituin
+    - Buwan
+    - Diyos
+    correctAnswer: 0
+  - Questions: Ano ang nangyari nang iniangat ng Diyos ang Kanyang kamay at ito'y
+      itinurong pababa?
+    Answers:
+    - Sumibol ang mga bulaklak
+    - Lumitaw ang libong mga bituin
+    - Nalalang ang mundo
+    - Umalon ang mga dagat
+    correctAnswer: 2
+  - Questions: Ano ang sinabi ni Malakas kay Hari ng mga ibon upang mapalaya siya?
+    Answers:
+    - '"Kainin mo ang kawayan."'
+    - '"Tuktukin mo ang kawayan."'
+    - '"Sundin mo ang lahat ng aking utos."'
+    - '"Ibigay mo ang iyong korona."'
+    correctAnswer: 1
+  - Questions: Ano ang reaksyon ng hari ng mga ibon nang marinig ang tinig mula sa
+      kawayan?
+    Answers:
+    - Natuwa
+    - Kinagulat
+    - Natakot
+    - Nagalak
+    correctAnswer: 1
+  - Questions: Ano ang sinabi ng Haring Ibon tungkol sa kanyang bagwis?
+    Answers:
+    - Ito ay kayang makipagsabayan sa mga eroplano.
+    - Ito ay may kapansanan.
+    - Ito ay hindi gumagana.
+    - Ito ay sinadya sa paglipad.
+    correctAnswer: 3
+  - Questions: Saan nagsimula namuhay ang mag-asawang Malakas at Maganda?
+    Answers:
+    - Sa malawak na papawirin
+    - Sa ilalim ng dagat
+    - Sa Perlas ng Dagat Silangan
+    - Sa Bundok
+    correctAnswer: 2
+  - Questions: Ano ang ibig sabihin ng "Lupang Hinirang" na ipinakita ng Haring Ibon
+      kay Malakas at Maganda?
+    Answers:
+    - Banal na lupain
+    - Ito ay ang Pilipinas
+    - Bayang kinikilala
+    - Lupang Tinubuan
+    correctAnswer: 1
+  - Questions: Ano ang hayop na gumapang sa itaas ng kawayan na tinuka ng Haring
+      Ibon?
+    Answers:
+    - Ahas
+    - Pagong
+    - Butiki
+    - Kuneho
     correctAnswer: 2
   options:
   - {fileID: 2042784612}

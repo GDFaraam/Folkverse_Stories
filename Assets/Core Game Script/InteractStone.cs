@@ -7,11 +7,11 @@ using Photon.Pun;
 public class InteractStone : MonoBehaviour
 {
     public RequiredPlayers reqPlayers;
-    private bool interactPedestal = false;
-    private bool MalakasAtM = false;
-    private bool AlamatNgP = false;
-    private bool StoryRoom = false;
-    private bool ExitStoryRoom = false;
+    public bool interactPedestal = false;
+    public bool MalakasAtM = false;
+    public bool AlamatNgP = false;
+    public bool StoryRoom = false;
+    public bool ExitStoryRoom = false;
     public bool addedOne = false;
     private PhotonView view;
 
@@ -105,6 +105,7 @@ public class InteractStone : MonoBehaviour
     {
         if (MalakasAtM){
             view.RPC("ToggleMAMCanvas", RpcTarget.All);
+            
         }
         else if (AlamatNgP){
             view.RPC("ToggleANPCanvas", RpcTarget.All);

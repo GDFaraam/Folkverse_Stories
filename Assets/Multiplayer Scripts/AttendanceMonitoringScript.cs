@@ -73,6 +73,8 @@ public class AttendanceMonitoringScript : MonoBehaviour
     }
 
     public void PlayersJoined(){
+
+        UISound.Instance.UIOpen();
         
         string roomName = PlayerPrefs.GetString("ChosenRoom");
 
@@ -92,6 +94,9 @@ public class AttendanceMonitoringScript : MonoBehaviour
     }
 
     public void RecordAttendance(){
+
+        UISound.Instance.UIOpen();
+        
         string roomName = PlayerPrefs.GetString("ChosenRoom");
 
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
@@ -153,14 +158,17 @@ public class AttendanceMonitoringScript : MonoBehaviour
     }
 
     public void GoToChooseButton(){
+        UISound.Instance.UIOpen();
         ChooseButton.SetActive(true);
         ChooseRoom.SetActive(false);
     }
     public void BackToChooseButton(){
+        UISound.Instance.UIOpen();
         StudentList.SetActive(false);
         ChooseButton.SetActive(true);
     }
     public void BackToChooseRoom(){
+        UISound.Instance.UIOpen();
         ChooseButton.SetActive(false);
         ChooseRoom.SetActive(true);
     }

@@ -19,12 +19,16 @@ public class KickMuteBehavior : MonoBehaviour
 
     public void KickPlayerButton()
     {
-        KickMute.instance.Kick(playerID);
+        UISound.Instance.UIOpen();
+        KickMute kickMute = GameObject.FindWithTag("KickMuteScript")?.GetComponent<KickMute>();
+        kickMute.Kick(playerID);
     }
 
     public void MutePlayerButton()
     {
-        KickMute.instance.Mute(playerID);
+        UISound.Instance.UIOpen();
+        KickMute kickMute = GameObject.FindWithTag("KickMuteScript")?.GetComponent<KickMute>();
+        kickMute.Mute(playerID);
         if (muted){
         muteButton.sprite = images[0];
         muted = false;
@@ -37,7 +41,9 @@ public class KickMuteBehavior : MonoBehaviour
 
     public void MuteAll()
     {
-        KickMute.instance.MuteStudents();
+        UISound.Instance.UIOpen();
+        KickMute kickMute = GameObject.FindWithTag("KickMuteScript")?.GetComponent<KickMute>();
+        kickMute.MuteStudents();
         if (allMuted){
         muteAllButton.sprite = images[2];
         allMuted = false;

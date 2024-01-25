@@ -8,7 +8,9 @@ public class GetQuitComponent : MonoBehaviour
     public PlayerRole playerRole;
 
     public void Quit(){
+        UISound.Instance.UIOpen();
         yourRole = playerRole.role;
-        QuitRoom.instance.LeaveRoomAndLoadScene(yourRole);
+        QuitRoom quit = GameObject.FindWithTag("Quit")?.GetComponent<QuitRoom>();
+        quit.LeaveRoomAndLoadScene(yourRole);
     }
 }

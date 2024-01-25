@@ -12,34 +12,9 @@ public class KickMute : MonoBehaviourPunCallbacks
     private bool micOn = true;
     private bool allMicOn = true;
 
-    public static KickMute instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != this) {
-            Destroy(instance.gameObject);
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
     void Start()
     {
         view = GetComponent<PhotonView>();
-    }
-
-    void Update()
-    {
-        string currentScene = SceneManager.GetActiveScene().name;
-        
-        if (currentScene == "MAIN MENU TEACHER" || currentScene == "MAIN MENU STUDENT")
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     public void Mute(string targetPlayerNickname)

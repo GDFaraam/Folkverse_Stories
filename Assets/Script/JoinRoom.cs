@@ -14,6 +14,7 @@ public class JoinRoom : MonoBehaviourPunCallbacks
 
     public void joinRoom()
     {
+        UISound.Instance.UIOpen();
         PlayerPrefs.SetString("currentRoomID", joinInput.text);
         string nickname = PlayerPrefs.GetString("PlayerNickname");
         PhotonNetwork.LocalPlayer.NickName = nickname;

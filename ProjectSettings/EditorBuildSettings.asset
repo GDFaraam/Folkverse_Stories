@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MalakasExam.unity
     guid: 03417aec39dc8324fb14a19b849bda21
+  - enabled: 1
+    path: Assets/Scenes/PilipinasExam.unity
+    guid: d362ae629ccae72439ef83a21e8a51dd
   m_configObjects: {}

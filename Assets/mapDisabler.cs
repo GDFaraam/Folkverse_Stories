@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mapDisabler : MonoBehaviour
 {
@@ -17,7 +18,14 @@ public class mapDisabler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        map = GameObject.FindGameObjectWithTag("mapbutton");
-        map.gameObject.SetActive(mapbuttonon);
+        string currentScene = SceneManager.GetActiveScene().name;
+        
+        if (currentScene == "Lobby World Map")
+        {
+            map.gameObject.SetActive(true);
+        }
+        else{
+            map.gameObject.SetActive(false);
+        }
     }
 }

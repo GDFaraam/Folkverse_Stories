@@ -108,6 +108,8 @@ public class RequiredPlayers : MonoBehaviour
         {
             LockRoom();
             view.RPC("NextScenePun", RpcTarget.All);
+            interactStone.interactPedestal = false;
+            interactStone.MalakasAtM = false;
         }
     }
 
@@ -123,6 +125,8 @@ public class RequiredPlayers : MonoBehaviour
         {
             LockRoom();
             view.RPC("ANPcut", RpcTarget.All);
+            interactStone.interactPedestal = false;
+            interactStone.AlamatNgP = false;
         }
     }
 

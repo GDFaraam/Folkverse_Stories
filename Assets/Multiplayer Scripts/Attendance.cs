@@ -52,6 +52,7 @@ public class Attendance : MonoBehaviourPunCallbacks
 
     public void RecordAttendance()
     {
+        UISound.Instance.UIOpen();
         string roomName = "Room: " + PlayerPrefs.GetString("currentRoomID");
 
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
@@ -74,6 +75,7 @@ public class Attendance : MonoBehaviourPunCallbacks
 
     public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
     {
-        KickMute.instance.KickAll();
+        KickMute kickMute = GameObject.FindWithTag("KickMuteScript")?.GetComponent<KickMute>();
+        kickMute.KickAll();
     }
 }

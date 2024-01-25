@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AudioController : MonoBehaviour
 {
     public Slider volumeSlider;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
+
+    private bool menuThemePlaying = false;
 
     // Singleton instance
     public static AudioController ACinstance;
@@ -27,18 +30,34 @@ public class AudioController : MonoBehaviour
 
     void Start()
     {
-        // Initialize the volume based on the slider value
         audioSource.volume = volumeSlider.value;
-
-        // Add a listener for the slider's value change event
         volumeSlider.onValueChanged.AddListener(OnVolumeSliderChanged);
-        PlayAudioClip(0);
     }
 
     void Update()
     {
-        // You can add additional logic here if needed
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "MAIN MENU TEACHER" || currentScene == "MAIN MENU STUDENT")
+        {
+            if (!menuThemePlaying){
+                PlayAudioClip(0);
+                menuThemePlaying = true;
+            }
+        }
+        else
+        {
+            menuThemePlaying = false;
+        }
+
+        if (volumeSlider == null){
+        GameObject sliderObject = GameObject.FindWithTag("Slider");
+        volumeSlider = sliderObject.GetComponent<Slider>();
+        audioSource.volume = volumeSlider.value;
+        volumeSlider.onValueChanged.AddListener(OnVolumeSliderChanged);
+        }
     }
+
 
     void OnVolumeSliderChanged(float volume)
     {

@@ -17,12 +17,24 @@ public class QuizManager : MonoBehaviour
 
     void Start()
     {
+        ShuffleQuestions();
         generateQuestion();
     }
 
     void Update()
     {
 
+    }
+
+    void ShuffleQuestions()
+    {
+        for (int i = QnA.Count - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+            QuestionsAndAnswers temp = QnA[i];
+            QnA[i] = QnA[randomIndex];
+            QnA[randomIndex] = temp;
+        }
     }
 
     public void generateQuestion()
@@ -37,12 +49,7 @@ public class QuizManager : MonoBehaviour
             scoreSender.SetActive(true);
             testObj.SetActive(false);
         }
-        
-
-        
     }
-
-
 
     public void correct()
     {
@@ -64,12 +71,11 @@ public class QuizManager : MonoBehaviour
             options[i].GetComponent<AnswerScript>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
 
-            if(QnA[currentQuestion].correctAnswer == i+1)
+            if(QnA[currentQuestion].correctAnswer == i)
             {
                 options[i].GetComponent<AnswerScript>().isCorrect = true;
                 Debug.Log("koriq");
             }
-
         }
     }
 }

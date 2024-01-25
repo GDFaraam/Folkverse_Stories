@@ -86,6 +86,7 @@ public class SceneManigger : MonoBehaviourPunCallbacks
     [PunRPC]
     public void NextButton()
     {
+        UISound.Instance.UIOpen();
         if (textComponent.text == lines[index])
             {
                 if (textComponent.text == lines[0])

@@ -36,6 +36,9 @@ TagManager:
   - LobbyButton
   - mapmap
   - mapbutton
+  - Slider
+  - ChatObject
+  - ChatContent
   layers:
   - Default
   - TransparentFX

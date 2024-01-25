@@ -23,39 +23,38 @@ public class emoteWheel : MonoBehaviour
 
     public void Dance()
     {
+        UISound.Instance.UIOpen();
         Em.SetTrigger("dance");
-        
-        
-        
     }
 
     public void swipe()
     {
+        UISound.Instance.UIOpen();
         Em.SetTrigger("swipe");
     }
 
     public void sideswipe()
     {
+        UISound.Instance.UIOpen();
         Em.SetTrigger("sideswipe");
     }
 
     public void flop()
     {
+        UISound.Instance.UIOpen();
         Em.SetTrigger("flop");
     }
 
     public void emoteWheelOn()
     {
-        if(EmOn!=true)
-        {
-            EmOn = true;
-            Wheel.gameObject.SetActive(EmOn);
-        }
-        else
-        {
-            EmOn = false;
-            Wheel.gameObject.SetActive(EmOn);
-        }
+        UISound.Instance.UIOpen();
+        Wheel.gameObject.SetActive(true);
+    }
+
+    public void emoteWheelOff()
+    {
+        UISound.Instance.UIOpen();
+        Wheel.gameObject.SetActive(false);
     }
 
 

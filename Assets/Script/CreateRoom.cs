@@ -23,6 +23,7 @@ public class CreateRoom : MonoBehaviourPunCallbacks
 
     public void createRoom()
     {
+        UISound.Instance.UIOpen();
         string roomName = "Room: " + createInput.text;
 
         PlayerPrefs.SetString("currentRoomID", createInput.text);

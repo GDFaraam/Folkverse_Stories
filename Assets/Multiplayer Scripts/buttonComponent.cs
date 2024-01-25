@@ -23,6 +23,7 @@ public class buttonComponent : MonoBehaviour
 
     public void Next()
     {
+        UISound.Instance.UIOpen();
         interactStone.ToggleCount();
     }
 }

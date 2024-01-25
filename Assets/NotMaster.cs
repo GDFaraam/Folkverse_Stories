@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class NotMaster : MonoBehaviourPunCallbacks
 {
+    private PhotonView view;
+
     void Start()
     {
-        // Check if the local player is not the master client
-        if (!PhotonNetwork.IsMasterClient)
+        view = GetComponent<PhotonView>();
+        if (view.IsMine)
         {
-            // Enable the Canvas for non-host players
             GetComponent<Canvas>().enabled = true;
         }
         else
         {
-            // Disable the Canvas for the master client (host)
             GetComponent<Canvas>().enabled = false;
         }
     }

@@ -31,6 +31,8 @@ public class ANPDialogue : MonoBehaviour
     public int syncDialogueCount;
     public int totalPlayerSynced;
     public TextMeshProUGUI waitForSync;
+    
+    private bool summerTheme = false;
 
     private void Awake()
     {
@@ -61,6 +63,7 @@ public class ANPDialogue : MonoBehaviour
         GameObject teacher = GameObject.FindWithTag("Teacher");
         playerRole = teacher.gameObject.GetComponent<PlayerRole>();
         if (index == 13){
+        summerTheme = true;
             foreach (GameObject sceneGo in storyScenes){
             sceneGo.SetActive(false);
         }
@@ -83,6 +86,9 @@ public class ANPDialogue : MonoBehaviour
         }
         foreach (GameObject charactersGo in characters){
             charactersGo.SetActive(false);
+        }
+        if (!summerTheme){
+        AudioController.ACinstance.PlayAudioClip(4);
         }
         buttons[1].gameObject.SetActive(false);
         storyScenes[0].SetActive(true);
@@ -137,6 +143,7 @@ public class ANPDialogue : MonoBehaviour
 
     [PunRPC]
     public void NextButton(){
+        UISound.Instance.UIOpen();
         if (index == 0){
             textComponent.text = string.Empty;
             index++;

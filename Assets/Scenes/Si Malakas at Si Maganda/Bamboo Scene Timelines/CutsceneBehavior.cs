@@ -94,6 +94,7 @@ public class CutsceneBehavior : MonoBehaviourPunCallbacks
     [PunRPC]
     public void NextButton()
     {
+        UISound.Instance.UIOpen();
             if (lines.Length == 1)
                 {
                     if (OnFolkverseScene)

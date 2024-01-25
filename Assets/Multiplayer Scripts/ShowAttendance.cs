@@ -6,15 +6,13 @@ public class ShowAttendance : MonoBehaviour
 {
     public GameObject Panel;
 
-    void Start(){
-        Panel.SetActive(false);
-    }
-
     public void ShowPanel(){
+        UISound.Instance.UIOpen();
         Panel.SetActive(true);
     }
     
     public void HidePanel(){
+        UISound.Instance.UIOpen();
         Panel.SetActive(false);
     }
 }

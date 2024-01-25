@@ -30,6 +30,8 @@ public class ShoreScene : MonoBehaviour
     public int totalPlayerSynced;
     public TextMeshProUGUI waitForSync;
 
+    private bool autumnTheme = false;
+
     private void Awake()
     {
         if (SHOREinstance == null)
@@ -53,6 +55,10 @@ public class ShoreScene : MonoBehaviour
         view = this.GetComponent<PhotonView>();
         GameObject teacher = GameObject.FindWithTag("Teacher");
         playerRole = teacher.gameObject.GetComponent<PlayerRole>();
+        if (!autumnTheme){
+        AudioController.ACinstance.PlayAudioClip(5);
+        autumnTheme = true;
+        }
         if (index == 5){
             diaBox.SetActive(false);
             StartCoroutine(DialogueShow());
@@ -105,6 +111,7 @@ public class ShoreScene : MonoBehaviour
 
     [PunRPC]
     public void NextButton(){
+        UISound.Instance.UIOpen();
         if (index == 0){
             textComponent.text = string.Empty;
             index++;
